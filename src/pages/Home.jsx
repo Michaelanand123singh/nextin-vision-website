@@ -69,36 +69,42 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#121212] text-gray-100">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10" />
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/assets/videos/hero-poster.jpg"
-        >
-          <source src="/assets/videos/hero-video.mp4" type="video/mp4" />
-        </video>
+        {/* YouTube Background Video */}
+        <div className="absolute inset-0 overflow-hidden">
+          <iframe
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto z-0 opacity-30 filter blur-sm"
+            src="https://player.vimeo.com/video/1037057432?autoplayer=1"
+            title="Background Video"
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          />
+        </div>
+
+
+        
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60 z-10" />
         
         <div className="container relative z-20 text-white">
           <div className="max-w-3xl space-y-6">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in-up">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in-up text-gray-100">
               Transforming Corporate Stories into 
-              <span className="text-orange-400"> Visual Impact</span>
+              <span className="text-amber-500"> Visual Impact</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 animate-fade-in-up delay-200">
+            <p className="text-xl md:text-2xl text-gray-300 animate-fade-in-up delay-200">
               Professional video production services that elevate your brand and engage your audience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in-up delay-300">
-              <Link to="/contact" className="group inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold transition-all hover:bg-blue-700 hover:transform hover:scale-105">
+              <Link to="/contact" className="group inline-flex items-center justify-center px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold transition-all hover:bg-amber-700 hover:transform hover:scale-105">
                 Get Started
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/portfolio" className="group inline-flex items-center justify-center px-8 py-4 bg-orange-500 text-white rounded-lg backdrop-blur-sm font-semibold transition-all hover:bg-white/20">
+              <Link to="/portfolio" className="group inline-flex items-center justify-center px-8 py-4 bg-gray-800 text-gray-100 rounded-lg backdrop-blur-sm font-semibold transition-all hover:bg-gray-700">
                 View Our Work
                 <Play className="ml-2 w-4 h-4" />
               </Link>
@@ -107,26 +113,26 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-          <div className="w-8 h-12 rounded-full border-2 border-white flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-orange-400 rounded-full animate-scroll"></div>
+          <div className="w-8 h-12 rounded-full border-2 border-gray-600 flex items-start justify-center p-2">
+            <div className="w-1 h-3 bg-amber-500 rounded-full animate-scroll"></div>
           </div>
         </div>
       </section>
 
       {/* About Video Section */}
-      <section className="py-24 bg-primary">
+      <section className="py-24 bg-[#121212]">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Welcome to Nextin Vision {/*Implement logo sttyle cmpany name*/}
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-100">
+                Welcome to Nextin Vision
               </h2>
-              <p className="text-orange-400 text-lg">
+              <p className="text-amber-500 text-lg">
                 Discover how we transform ideas into compelling visual stories
               </p>
             </div>
             
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-800">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-[#1e1e1e]">
               <div className="aspect-video">
                 <iframe
                   className="w-full h-full"
@@ -138,13 +144,13 @@ export default function Home() {
                 />
               </div>
               
-              <div className="absolute inset-0 bg/10 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
             </div>
 
             <div className="mt-12 text-center">
               <Link
                 to="/about"
-                className="inline-flex items-center px-6 py-4  text-orange-400 rounded-lg font-semibold transition-all hover:bg-orange-500 hover:text-white hover:transform hover:scale-105"
+                className="inline-flex items-center px-6 py-4 text-amber-500 rounded-lg font-semibold transition-all hover:bg-gray-800 hover:text-amber-400 hover:transform hover:scale-105"
               >
                 About Us
                 <ArrowRight className="ml-2" />
@@ -155,20 +161,20 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-100 to-indigo-50">
+      <section className="py-20 bg-gradient-to-r from-[#0a0a0a] to-[#1e1e1e]">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div 
                 key={stat.label}
-                className="group p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="group p-8 bg-[#1e1e1e] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="flex flex-col items-center text-center">
-                  <stat.icon className="w-8 h-8 text-orange-600 mb-4" />
-                  <div className="text-4xl font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">
+                  <stat.icon className="w-8 h-8 text-amber-500 mb-4" />
+                  <div className="text-4xl font-bold text-gray-100 mb-2 group-hover:text-amber-500 transition-colors">
                     {stat.value}
                   </div>
-                  <div className="text-gray-600">{stat.label}</div>
+                  <div className="text-gray-400">{stat.label}</div>
                 </div>
               </div>
             ))}
@@ -177,7 +183,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20">
+      <section className="py-20 bg-[#0a0a0a]">
         <div className="container">
           <SectionTitle
             subtitle="Our Services"
@@ -190,20 +196,20 @@ export default function Home() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="group p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group p-6 bg-[#1e1e1e] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-orange-500 transition-colors">
-                  <service.icon className="w-7 h-7 text-orange-600 group-hover:text-white transition-colors" />
+                <div className="w-14 h-14 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                  <service.icon className="w-7 h-7 text-amber-500 group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-orange-500 transition-colors">
+                <h3 className="text-xl font-semibold mb-3 text-gray-100 group-hover:text-amber-500 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
+                <p className="text-gray-400 mb-4">{service.description}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-gray-900">${service.price}</span>
+                  <span className="text-2xl font-bold text-gray-100">${service.price}</span>
                   <Link 
                     to={`/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="inline-flex items-center text-blue-500 hover:text-orange-600 font-semibold"
+                    className="inline-flex items-center text-amber-500 hover:text-amber-400 font-semibold"
                   >
                     Learn More 
                     <ChevronRight className="ml-1 w-4 h-4" />
@@ -216,7 +222,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#121212]">
         <div className="container">
           <SectionTitle
             subtitle="Featured Work"
@@ -229,27 +235,27 @@ export default function Home() {
             {portfolioItems.map((item) => (
               <div
                 key={item.title}
-                className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="group relative bg-[#1e1e1e] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
                 onClick={() => setSelectedVideo(item.videoUrl)}
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300 brightness-75"
                   />
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <Play className="w-16 h-16 text-white" />
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <Play className="w-16 h-16 text-amber-500" />
                   </div>
                 </div>
                 <div className="p-6">
-                  <span className="text-sm text-orange-500 font-semibold">
+                  <span className="text-sm text-amber-500 font-semibold">
                     {item.category}
                   </span>
-                  <h3 className="text-xl font-semibold mt-2 mb-2">
+                  <h3 className="text-xl font-semibold mt-2 mb-2 text-gray-100">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-400">
                     {item.description}
                   </p>
                 </div>
@@ -260,7 +266,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               to="/portfolio"
-              className="inline-flex items-center px-8 py-4 bg-orange-500 text-white rounded-lg font-semibold transition-all hover:bg-blue-700 hover:transform hover:scale-105"
+              className="inline-flex items-center px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold transition-all hover:bg-amber-700 hover:transform hover:scale-105"
             >
               View All Projects
               <ArrowRight className="ml-2" />
@@ -276,11 +282,11 @@ export default function Home() {
           onClick={() => setSelectedVideo(null)}
         >
           <div 
-            className="relative max-w-4xl w-full bg-white rounded-xl overflow-hidden"
+            className="relative max-w-4xl w-full bg-[#1e1e1e] rounded-xl overflow-hidden"
             onClick={e => e.stopPropagation()}
           >
             <button
-              className="absolute top-4 right-4 w-10 h-10 bg-black/60 text-white rounded-full flex items-center justify-center hover:bg-black/80 transition-colors z-10"
+              className="absolute top-4 right-4 w-10 h-10 bg-gray-800 text-gray-200 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
               onClick={() => setSelectedVideo(null)}
             >
               ×
