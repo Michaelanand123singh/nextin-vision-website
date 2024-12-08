@@ -75,7 +75,7 @@ export default function Home() {
         {/* YouTube Background Video */}
         <div className="absolute inset-0 overflow-hidden">
           <iframe
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto z-0 opacity-30 filter blur-sm"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto z-0 opacity-80 filter blur-sm"
             src="https://player.vimeo.com/video/1037057432?autoplayer=1"
             title="Background Video"
             frameBorder="0"
@@ -136,7 +136,7 @@ export default function Home() {
               <div className="aspect-video">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/hv-DNrvID1U?"
+                  src="https://www.youtube.com/embed/Ex_W0GnrSkk?si=50MbSJreVWbDuMgM"
                   title="About Nextin Vision"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

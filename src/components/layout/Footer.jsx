@@ -33,10 +33,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/services" className="text-gray-400 hover:text-blue-500">Brand Videos</Link></li>
-              <li><Link to="/services" className="text-gray-400 hover:text-blue-500">Product Showcases</Link></li>
-              <li><Link to="/services" className="text-gray-400 hover:text-blue-500">Training Content</Link></li>
-              <li><Link to="/services" className="text-gray-400 hover:text-blue-500">Social Media</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-orange-500">Brand Videos</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-orange-500">Product Showcases</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-orange-500">Training Content</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-orange-500">Social Media</Link></li>
             </ul>
           </div>
 
@@ -44,10 +44,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-gray-400 hover:text-blue-500">About Us</Link></li>
-              <li><Link to="/portfolio" className="text-gray-400 hover:text-blue-500">Portfolio</Link></li>
-              <li><Link to="/process" className="text-gray-400 hover:text-blue-500">Our Process</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-blue-500">Contact</Link></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-orange-500">About Us</Link></li>
+              <li><Link to="/portfolio" className="text-gray-400 hover:text-orange-500">Portfolio</Link></li>
+              <li><Link to="/process" className="text-gray-400 hover:text-orange-500">Our Process</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-orange-500">Contact</Link></li>
             </ul>
           </div>
 

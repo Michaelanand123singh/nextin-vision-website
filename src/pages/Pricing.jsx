@@ -296,7 +296,7 @@ export default function PremiumPricing() {
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
             We understand that every project is unique. Our team of expert editors is ready to craft a bespoke solution that perfectly matches your creative vision and technical requirements.
           </p>
-          <button className="px-8 py-3 rounded-full border border-orange-600/20 bg-orange-600/10 hover:bg-orange-600/20 transition-all text-white">
+          <button className="px-8 py-3 rounded-full border border-white bg-orange-600/10 hover:bg-orange-600/20 transition-all text-white">
             Discuss Your Project
           </button>
         </motion.div>

@@ -43,11 +43,11 @@ const SectionTitle = ({ subtitle, title, description, center = false }) => (
     <span className="text-orange-500 font-semibold tracking-wider uppercase text-sm">
       {subtitle}
     </span>
-    <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4 text-white">
+    <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-3 text-white">
       {title}
     </h2>
     {description && (
-      <p className="text-gray-300 text-lg leading-relaxed">
+      <p className="text-gray-300 text-base leading-relaxed">
         {description}
       </p>
     )}
@@ -105,24 +105,24 @@ const ProcessPage = () => {
       
       {/* Hero Section */}
       <motion.section 
-        className="relative py-24 px-6 text-center"
+        className="relative py-40 px-6 text-center"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-3xl mx-auto relative z-10">
-          <h1 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-yellow-400">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-yellow-400">
             Video Production Reimagined
           </h1>
-          <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+          <p className="text-lg text-gray-300 mb-6 leading-relaxed max-w-xl mx-auto">
             Transforming your vision into captivating visual stories.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-orange-500 text-black px-10 py-4 rounded-full font-bold hover:bg-orange-400 transition-colors"
+            className="bg-orange-500 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-400 transition-colors"
           >
-            Start Your Project <ArrowRight className="inline ml-2" />
+            Start Your Project <ArrowRight className="inline ml-2 w-5 h-5" />
           </motion.button>
         </div>
       </motion.section>
@@ -136,29 +136,29 @@ const ProcessPage = () => {
             description="A strategic approach to creating impactful visual content"
             center
           />
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
+          <div className="grid md:grid-cols-3 gap-6 mt-8">
             {processSteps.map((step, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-900/50 backdrop-blur-md rounded-xl p-8 text-center border border-orange-500/20"
+                className="bg-gray-900/50 backdrop-blur-md rounded-xl p-6 text-center border border-orange-500/20 h-full"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2, duration: 0.6 }}
               >
-                <div className="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <step.icon className="text-orange-500 w-8 h-8" />
+                <div className="w-14 h-14 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <step.icon className="text-orange-500 w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-orange-400">
+                <h3 className="text-xl font-bold mb-3 text-orange-400">
                   {step.title}
                 </h3>
-                <p className="text-gray-300 mb-6">
+                <p className="text-gray-300 mb-4 text-sm">
                   {step.description}
                 </p>
                 <ul className="space-y-2">
                   {step.details.map((detail, detailIndex) => (
                     <li 
                       key={detailIndex} 
-                      className="flex items-center justify-center gap-2 text-gray-400"
+                      className="flex items-center justify-center gap-2 text-gray-400 text-xs"
                     >
                       <CheckCircle className="w-4 h-4 text-orange-500" />
                       {detail}
@@ -173,24 +173,24 @@ const ProcessPage = () => {
 
       {/* Deliverables Section */}
       <section className="py-16 px-6 relative">
-        <div className="max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-md rounded-2xl p-12 border border-orange-500/20">
+        <div className="max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-md rounded-2xl p-8 border border-orange-500/20">
           <SectionTitle 
             subtitle="What We Deliver"
             title="Comprehensive Video Solutions"
             description="Premium services designed to elevate your brand's visual storytelling"
             center
           />
-          <div className="grid md:grid-cols-2 gap-6 mt-10">
+          <div className="grid md:grid-cols-2 gap-4 mt-6">
             {deliverables.map((item, index) => (
               <motion.div
                 key={index}
-                className="flex items-center gap-4"
+                className="flex items-center gap-3"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.2 }}
               >
-                <CheckCircle className="text-orange-500 w-6 h-6 shrink-0" />
-                <span className="text-gray-300">{item}</span>
+                <CheckCircle className="text-orange-500 w-5 h-5 shrink-0" />
+                <span className="text-gray-300 text-sm">{item}</span>
               </motion.div>
             ))}
           </div>
@@ -198,9 +198,9 @@ const ProcessPage = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-orange-500 text-black px-10 py-4 rounded-full font-bold hover:bg-orange-400 transition-colors"
+              className="bg-orange-500 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-400 transition-colors"
             >
-              Schedule Consultation <ChevronRight className="inline ml-2" />
+              Schedule Consultation <ChevronRight className="inline ml-2 w-5 h-5" />
             </motion.button>
           </div>
         </div>

@@ -103,7 +103,7 @@ const PremiumContactPage = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-300 to-orange-500 mb-4">
-            Next Invision
+            NEXTIN VISION
           </h1>
           <p className="text-gray-300 max-w-2xl mx-auto">
             Transforming Visions into Cinematic Realities
@@ -165,7 +165,7 @@ const PremiumContactPage = () => {
                 <Mail className="text-orange-500" />
                 <div>
                   <h3 className="font-semibold text-white">Email</h3>
-                  <p className="text-gray-300">info.nextinvision@gmail.com</p>
+                  <p className="text-gray-300">official.nextinvision@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -177,10 +177,10 @@ const PremiumContactPage = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-8 w-full flex items-center justify-center bg-gradient-to-r from-orange-600 to-orange-800 text-white py-3 rounded-lg hover:from-orange-700 hover:to-orange-900 transition-all"
+              className="mt-8 w-full flex items-center justify-center bg-gradient-to-r from-green-500 to-green-800 text-white py-3 rounded-lg hover:from-green-800 hover:to-green-500 transition-all"
             >
               <MessageCircle className="mr-2" />
-              Quick Connect
+              Quick Connect on What's App
             </motion.a>
           </motion.div>
 
