@@ -106,6 +106,22 @@ const portfolioItems = [
     youtubeUrl: 'https://www.youtube.com/embed/BWtajwT6Weg?si=Ynf3B1bJ4qfBZvOA'
   },
 
+  {
+    title: 'Project Porter',
+    category: 'Motion Graphics',
+    image: '/assets/images/portfolio/motion-1.jpg',
+    description: 'A mesmerizing visual journey that transports viewers to a world of wonder and discovery',
+    youtubeUrl: 'https://www.youtube.com/embed/_0JlqhxRx3Q?si=gA6WGJ9rrKur2vGZ'
+  }
+
+  {
+    title: 'Project Lumina',
+    category: 'Motion Graphics',
+    image: '/assets/images/portfolio/motion-1.jpg',
+    description: 'A captivating narrative that weaves together the threads of imagination and innovation',
+    youtubeUrl: 'https://www.youtube.com/embed/f6aKWrDJ3CM?si=fCvjekAQZRkksy-k',
+  }
+
 ];
 
 
