@@ -1,6 +1,7 @@
 import React from 'react';
 import SectionTitle from '../components/common/SectionTitle';
 import { Award, Target, Globe, FileText, Zap, Brain } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const team = [
   {
@@ -54,12 +55,16 @@ export default function About() {
             Transforming Corporate Narratives Through Innovative Visual Storytelling
           </p>
           <div className="flex justify-center space-x-6">
+            <Link href="/Portfolio">
             <button className="px-8 py-3 bg-orange-500 text-black font-semibold rounded-full hover:bg-orange-400 transition-all duration-300 transform hover:scale-105">
               Our Portfolio
             </button>
+            </Link>
+            <Link href="/Contact">
             <button className="px-8 py-3 border-2 border-orange-500 text-white rounded-full hover:bg-orange-500 hover:text-black transition-all duration-300 transform hover:scale-105">
               Contact Us
             </button>
+            </Link>
           </div>
         </div>
         <div className="absolute inset-0 bg-black opacity-50"></div>
