@@ -96,6 +96,19 @@ const portfolioItems = [
     youtubeUrl: 'https://www.youtube.com/embed/3fumBcKC6RE'
   },
 
+  //Motion Graphics
+
+  {
+    title: 'Project Tramontia',
+    category: 'Motion Graphics',
+    image: '/assets/images/portfolio/motion-1.jpg',
+    description: 'Engaging animations that break down complex concepts into easy-to-understand visualizations',
+    youtubeUrl: 'https://www.youtube.com/embed/BWtajwT6Weg?si=Ynf3B1bJ4qfBZvOA'
+  },
+
 ];
+
+
+
 
 export { categories, portfolioItems };
