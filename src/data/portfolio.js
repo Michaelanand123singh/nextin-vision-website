@@ -1,6 +1,6 @@
 const categories = [
-  'All', 'Brand Story', 'Product Animation', 'Training Content', 'Social Media',
-  '2D Explainer Video', 'Ads', 'CGI Ads', '3D Animations', 'Commericial Product Animation', 'AI Generated Animation', 'VFX & CGI Videos'
+  'All', 'Brand Story', 'Product Animation', 'Training Content', 'Social Media', 
+  '2D Explainer Video', 'Motion Graphics', 'CGI Ads', '3D Animations', 'Commericial Product Animation', 'AI Generated Animation', 'VFX & CGI Videos'
 ];
 
 const portfolioItems = [
