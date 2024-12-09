@@ -38,22 +38,22 @@ const services = [
 
 const portfolioItems = [
   {
-    title: 'Corporate Branding Video',
+    title: 'Motion Graphics with Porter',
     description: 'A captivating story about a leading corporation.',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/embed/f6aKWrDJ3CM?si=P8dGUYI7cxZnDR3V',
     category: 'Branding'
   },
   {
     title: 'Product Launch Campaign',
     description: 'Showcasing a successful product launch.',
-    videoUrl: 'https://www.youtube.com/embed/3JZ_D3ELwOQ',
+    videoUrl: 'https://www.youtube.com/embed/BWtajwT6Weg?si=ZXV_oGhlh6YMOdAo',
     category: 'Product'
   },
   {
-    title: 'Employee Training Module',
-    description: 'Engaging training content for employees.',
-    videoUrl: 'https://www.youtube.com/embed/tgbNymZ7vqY',
-    category: 'Training'
+    title: 'Green Screen VFX',
+    description: 'A green video shifted to rendered video using VFX',
+    videoUrl: 'https://www.youtube.com/embed/5bwsX0fMSI0?si=3IaK6ZahJbxYYhOy',
+    category: 'VFX'
   },
 ];
 
