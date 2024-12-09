@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Video, Monitor, Users, Award, Play, ArrowRight, ChevronRight, Star } from 'lucide-react';
+import { 
+  Video, Monitor, Users, Award, Play, ArrowRight, 
+  ChevronRight, Star, MessageCircle, BookOpen, 
+  Quote, CheckCircle 
+} from 'lucide-react';
 import SectionTitle from '../components/common/SectionTitle';
 import ServiceCard from '../components/common/ServiceCard';
 
-const stats = [
-  { label: 'Projects Completed', value: '275+', icon: Award },
-  { label: 'Satisfied Clients', value: '36+', icon: Users },
-  { label: 'Team Members', value: '12+', icon: Users },
-  { label: 'Combined Experience', value: '13+', icon: Star },
+const initialStats = [
+  { label: 'Projects Completed', value: 275, icon: Award },
+  { label: 'Satisfied Clients', value: 36, icon: Users },
+  { label: 'Team Members', value: 12, icon: Users },
+  { label: 'Combined Experience', value: 13, icon: Star },
 ];
 
 const services = [
@@ -36,30 +40,116 @@ const portfolioItems = [
   {
     title: 'Corporate Branding Video',
     description: 'A captivating story about a leading corporation.',
-    image: '/assets/images/portfolio1.jpg',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     category: 'Branding'
   },
   {
     title: 'Product Launch Campaign',
     description: 'Showcasing a successful product launch.',
-    image: '/assets/images/portfolio2.jpg',
     videoUrl: 'https://www.youtube.com/embed/3JZ_D3ELwOQ',
     category: 'Product'
   },
   {
     title: 'Employee Training Module',
     description: 'Engaging training content for employees.',
-    image: '/assets/images/portfolio3.jpg',
     videoUrl: 'https://www.youtube.com/embed/tgbNymZ7vqY',
     category: 'Training'
   },
 ];
 
+const testimonials = [
+  {
+    name: 'John Smith',
+    role: 'CEO, Tech Innovations',
+    quote: 'Nextin Vision transformed our corporate story into an incredible visual narrative that truly resonates with our audience.',
+    image: '/assets/images/testimonial1.jpg'
+  },
+  {
+    name: 'Sarah Lee',
+    role: 'Marketing Director, Global Solutions',
+    quote: 'Their video production expertise elevated our brand communication to a whole new level.',
+    image: '/assets/images/testimonial2.jpg'
+  },
+  {
+    name: 'Michael Chen',
+    role: 'Startup Founder',
+    quote: 'The team\'s creativity and professionalism exceeded our expectations.',
+    image: '/assets/images/testimonial3.jpg'
+  }
+];
+
+const resources = [
+  {
+    icon: BookOpen,
+    title: 'Video Marketing Guide',
+    description: 'Comprehensive guide to leveraging video for business growth.',
+    link: '/resources/video-marketing-guide'
+  },
+  {
+    icon: CheckCircle,
+    title: 'Production Checklist',
+    description: 'Essential steps for creating compelling corporate videos.',
+    link: '/resources/production-checklist'
+  },
+  {
+    icon: MessageCircle,
+    title: 'Industry Insights Blog',
+    description: 'Latest trends and tips in video production and marketing.',
+    link: '/blog'
+  }
+];
+
 export default function Home() {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [stats, setStats] = useState(initialStats.map(stat => ({ ...stat, currentValue: 0 })));
+  const [portfolioThumbnails, setPortfolioThumbnails] = useState([]);
 
+  // Animated Stats Counter
+  useEffect(() => {
+    const statsCounters = stats.map(stat => {
+      const duration = 2000; // Total animation duration
+      const increment = stat.value / (duration / 50);
+      
+      const counter = setInterval(() => {
+        setStats(prevStats => 
+          prevStats.map(s => 
+            s.label === stat.label 
+              ? { 
+                  ...s, 
+                  currentValue: Math.min(
+                    Math.ceil(s.currentValue + increment), 
+                    s.value
+                  ) 
+                }
+              : s
+          )
+        );
+      }, 50);
+
+      setTimeout(() => clearInterval(counter), duration);
+      return () => clearInterval(counter);
+    });
+
+    return () => statsCounters.forEach(counter => counter());
+  }, []);
+
+  // YouTube Thumbnail Fetcher
+  useEffect(() => {
+    const fetchThumbnails = async () => {
+      const thumbnails = await Promise.all(
+        portfolioItems.map(async (item) => {
+          const videoId = item.videoUrl.split('embed/')[1].split('?')[0];
+          return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+        })
+      );
+      setPortfolioThumbnails(thumbnails);
+    };
+
+    fetchThumbnails();
+  }, []);
+
+  // Scroll Event Listener
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -83,9 +173,6 @@ export default function Home() {
             allowFullScreen
           />
         </div>
-
-
-        
 
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60 z-10" />
@@ -172,7 +259,7 @@ export default function Home() {
                 <div className="flex flex-col items-center text-center">
                   <stat.icon className="w-8 h-8 text-amber-500 mb-4" />
                   <div className="text-4xl font-bold text-gray-100 mb-2 group-hover:text-amber-500 transition-colors">
-                    {stat.value}
+                    {stat.currentValue}+
                   </div>
                   <div className="text-gray-400">{stat.label}</div>
                 </div>
@@ -232,7 +319,7 @@ export default function Home() {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {portfolioItems.map((item) => (
+            {portfolioItems.map((item, index) => (
               <div
                 key={item.title}
                 className="group relative bg-[#1e1e1e] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
@@ -240,7 +327,7 @@ export default function Home() {
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
-                    src={item.image}
+                    src={portfolioThumbnails[index] || '/placeholder-image.jpg'}
                     alt={item.title}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300 brightness-75"
                   />
@@ -264,13 +351,82 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link
-              to="/portfolio"
-              className="inline-flex items-center px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold transition-all hover:bg-amber-700 hover:transform hover:scale-105"
-            >
-              View All Projects
-              <ArrowRight className="ml-2" />
-            </Link>
+          <Link
+            to="/portfolio"
+            className="inline-flex items-center px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold transition-all hover:bg-amber-700 hover:transform hover:scale-105"
+          >
+            View All Projects
+            <ArrowRight className="ml-2" />
+          </Link>
+        </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-[#121212]">
+        <div className="container">
+          <SectionTitle
+            subtitle="What Our Clients Say"
+            title="Client Testimonials"
+            description="Hear from businesses that have experienced our video production magic."
+            center
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonial.name}
+                className="bg-[#1e1e1e] rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <Quote className="text-amber-500 mb-4" />
+                <p className="text-gray-300 italic mb-6">"{testimonial.quote}"</p>
+                <div className="flex items-center">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name} 
+                    className="w-12 h-12 rounded-full mr-4 object-cover"
+                  />
+                  <div>
+                    <h4 className="font-semibold text-gray-100">{testimonial.name}</h4>
+                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Resources Section */}
+      <section className="py-20 bg-[#0a0a0a]">
+        <div className="container">
+          <SectionTitle
+            subtitle="Learn & Grow"
+            title="Industry Resources"
+            description="Free resources to help you leverage video for your business."
+            center
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {resources.map((resource) => (
+              <Link
+                to={resource.link}
+                key={resource.title}
+                className="group bg-[#1e1e1e] rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-900"
+              >
+                <div className="w-14 h-14 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                  <resource.icon className="w-7 h-7 text-amber-500 group-hover:text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-100 group-hover:text-amber-500">
+                  {resource.title}
+                </h3>
+                <p className="text-gray-400 mb-4">{resource.description}</p>
+                <div className="flex items-center text-amber-500 group-hover:text-amber-400">
+                  Learn More
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
