@@ -112,7 +112,7 @@ const portfolioItems = [
     image: '/assets/images/portfolio/motion-1.jpg',
     description: 'A mesmerizing visual journey that transports viewers to a world of wonder and discovery',
     youtubeUrl: 'https://www.youtube.com/embed/_0JlqhxRx3Q?si=gA6WGJ9rrKur2vGZ'
-  }
+  },
 
   {
     title: 'Project Lumina',
