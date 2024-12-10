@@ -21,7 +21,7 @@ function Header() {
         <nav className="container py-1 px-5">
           <div className="flex items-center justify-between">
             {/* Logo with split color */}
-            <Link to="/" className="text-3xl font-bold">
+            <Link to="/" className="text-2xl font-bold">
               <span className="text-black">NEXTIN</span>
               <span className="text-orange-600 ml-2">VISION</span>
             </Link>
