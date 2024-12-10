@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, X } from 'lucide-react';
+import { Play, X, ArrowDown } from 'lucide-react';
 import SectionTitle from '../components/common/SectionTitle';
 import { categories, portfolioItems } from '../data/portfolio';
 
@@ -155,6 +155,70 @@ const ParticleBackground = () => {
   );
 };
 
+// Hero Component
+const Hero = () => {
+  const scrollToPortfolio = () => {
+    document.querySelector('.portfolio-section').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <div className="relative h-screen flex items-center justify-center text-center overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <ParticleBackground />
+      </div>
+      
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 px-4 max-w-4xl mx-auto"
+      >
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+          <span className="text-amber-500">Creative</span> Video Production
+        </h1>
+        
+        <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
+          Transforming ideas into compelling visual stories that captivate, 
+          inspire, and drive meaningful connections.
+        </p>
+        
+        <div className="flex justify-center space-x-6">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-amber-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-amber-700 transition-colors"
+          >
+            View Our Work
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-gray-800 text-gray-300 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-700 transition-colors"
+          >
+            Contact Us
+          </motion.button>
+        </div>
+        
+        <motion.button
+          onClick={scrollToPortfolio}
+          animate={{ 
+            y: [0, 10, 0],
+            transition: { 
+              duration: 1.5, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }
+          }}
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white/70 hover:text-white transition-colors"
+        >
+          <ArrowDown className="w-12 h-12" />
+        </motion.button>
+      </motion.div>
+    </div>
+  );
+};
+
+// Main Portfolio Component
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [openDialog, setOpenDialog] = useState(false);
@@ -176,10 +240,10 @@ export default function Portfolio() {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#121212] text-gray-100 overflow-hidden">
-      {/* Particle Background */}
-      <ParticleBackground />
+      {/* Hero Section */}
+      <Hero />
 
-      <div className="relative z-10 pt-20">
+      <div className="relative z-10 pt-20 portfolio-section">
         <section className="section">
           <div className="container">
             <SectionTitle
