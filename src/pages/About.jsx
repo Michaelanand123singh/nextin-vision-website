@@ -48,22 +48,22 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-orange-900 to-black">
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-orange-500">
-            Nextin Vision
+          <h1 className="text-5xl md:text-8xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-orange-500">
+            NEXTIN VISION
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300 mb-12">
             Transforming Corporate Narratives Through Innovative Visual Storytelling
           </p>
           <div className="flex justify-center space-x-6">
             <Link href="/Portfolio">
-            <button className="px-8 py-3 bg-orange-500 text-black font-semibold rounded-full hover:bg-orange-400 transition-all duration-300 transform hover:scale-105">
-              Our Portfolio
-            </button>
+              <button className="px-8 py-3 bg-orange-500 text-black font-semibold rounded-full hover:bg-orange-400 transition-all duration-300 transform hover:scale-105">
+                Our Portfolio
+              </button>
             </Link>
             <Link href="/Contact">
-            <button className="px-8 py-3 border-2 border-orange-500 text-white rounded-full hover:bg-orange-500 hover:text-black transition-all duration-300 transform hover:scale-105">
-              Contact Us
-            </button>
+              <button className="px-8 py-3 border-2 border-orange-500 text-white rounded-full hover:bg-orange-500 hover:text-black transition-all duration-300 transform hover:scale-105">
+                Contact Us
+              </button>
             </Link>
           </div>
         </div>

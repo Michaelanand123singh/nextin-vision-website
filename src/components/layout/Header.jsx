@@ -6,9 +6,9 @@ const navigation = [
   { name: 'Home', path: '/' },
   { name: 'Services', path: '/services' },
   { name: 'Portfolio', path: '/portfolio' },
-  { name: 'Process', path: '/process' },
   { name: 'Pricing', path: '/pricing' },
   { name: 'Contact', path: '/contact' },
+  { name: 'About', path: '/About' },
 ];
 
 function Header() {

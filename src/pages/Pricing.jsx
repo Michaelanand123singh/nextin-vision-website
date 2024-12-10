@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Star, Check, Video, Film, Scissors, Globe } from 'lucide-react';
+import { Sparkles, Star, Check, Video, Film, Scissors, Globe, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // Particle background component (same as previous implementation)
 const ParticleBackground = () => {
@@ -103,35 +104,40 @@ export default function PremiumPricing() {
   const pricingPlans = [
     {
       name: 'Essential Edit',
-      price: '$499',
+      price: '$499/Monthly',
       features: [
         'Basic video editing',
-        'Color correction',
-        'Simple transitions',
+        'Color grading',
+        'Social Media Editing',
         'Up to 30 min footage'
       ]
     },
     {
       name: 'Pro Package',
-      price: '$999',
+      price: '$999/Monthly',
       featured: true,
       features: [
+        'Including Essential Edit Package',
         'Advanced editing',
-        'Color grading',
+        '2D Animation',
         'Motion graphics',
         'Sound design',
-        'Up to 2 hours footage'
+        'Color grading',
+        'Up to 2 hours footage',
+        'AI Generated Animation'
       ]
     },
     {
-      name: 'Elite Cinematics',
-      price: '$1,999',
+      name: 'Advanced Package',
+      price: '$2,499/3-Month',
       features: [
+        'Including Pro + Essential Package',
         'Premium cinematography',
-        'Advanced VFX',
-        'Custom animations',
+        'VFX & CGI',
+        'CGI Ads',
+        '2D/3D animations',
         'Comprehensive post-production',
-        'Unlimited revisions'
+        'Unlimited revisions*'
       ]
     }
   ];
@@ -227,15 +233,57 @@ export default function PremiumPricing() {
                   </li>
                 ))}
               </ul>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full py-3 rounded-full bg-gradient-to-r from-orange-600 to-orange-800 hover:from-orange-700 hover:to-orange-900 text-white font-bold"
+              <Link
+                to="/contact"
+                className="w-full py-3 rounded-full bg-gradient-to-r from-orange-600 to-orange-800 hover:from-orange-700 hover:to-orange-900 text-white font-bold inline-block text-center"
               >
-                Select Plan
-              </motion.button>
+                Contact us
+              </Link>
             </motion.div>
           ))}
+        </div>
+
+        {/* New Custom Pricing Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600">
+            Custom Project Pricing
+          </h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-gray-900/50 rounded-2xl p-8 border border-gray-800 text-center"
+          >
+            <div className="flex justify-center mb-6">
+              <MessageCircle className="w-16 h-16 text-orange-600" />
+            </div>
+            <h3 className="text-2xl font-semibold mb-4 text-white">
+              Tailored Solutions for Your Unique Vision
+            </h3>
+            <p className="text-gray-400 max-w-3xl mx-auto mb-6">
+              Every project is unique, and we understand that one-size-fits-all pricing doesn't work. Our team offers completely customized pricing based on:
+            </p>
+            <div className="grid md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
+              <div className="bg-gray-800/50 p-4 rounded-xl">
+                <h4 className="font-bold text-orange-400 mb-2">Project Complexity</h4>
+                <p className="text-gray-300 text-sm">Detailed assessment of editing requirements</p>
+              </div>
+              <div className="bg-gray-800/50 p-4 rounded-xl">
+                <h4 className="font-bold text-orange-500 mb-2">Footage Length</h4>
+                <p className="text-gray-300 text-sm">Pricing scaled to your specific footage</p>
+              </div>
+              <div className="bg-gray-800/50 p-4 rounded-xl">
+                <h4 className="font-bold text-orange-600 mb-2">Special Requirements</h4>
+                <p className="text-gray-300 text-sm">Custom effects, animations, and post-production needs</p>
+              </div>
+            </div>
+            <Link
+              to="/contact"
+              className="px-8 py-3 rounded-full bg-gradient-to-r from-orange-600 to-orange-800 hover:from-orange-700 hover:to-orange-900 text-white font-bold inline-block"
+            >
+              Get Custom Quote
+            </Link>
+          </motion.div>
         </div>
 
         {/* Services Section */}
@@ -296,9 +344,12 @@ export default function PremiumPricing() {
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
             We understand that every project is unique. Our team of expert editors is ready to craft a bespoke solution that perfectly matches your creative vision and technical requirements.
           </p>
-          <button className="px-8 py-3 rounded-full border border-white bg-orange-600/10 hover:bg-orange-600/20 transition-all text-white">
+          <Link 
+            to="/contact"
+            className="px-8 py-3 rounded-full border border-white bg-orange-600/10 hover:bg-orange-600/20 transition-all text-white"
+          >
             Discuss Your Project
-          </button>
+          </Link>
         </motion.div>
       </div>
     </div>
