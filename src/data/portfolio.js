@@ -228,42 +228,10 @@ const portfolioItems = [
     youtubeUrl: 'https://www.youtube.com/embed/GySzTAFRzS8?si=-tgwGt1U1kaCuTXs',
   },
 
-  {
-    title: 'Dubai Cream CGI',
-    category: 'CGI Ads',
-    image: '/assets/images/portfolio/cg-ad-1.jpg',
-    description: 'A captivating narrative that weaves together the threads of imagination and innovation',
-    youtubeUrl: 'https://www.youtube.com/embed/FQKN770-r5M?si=CWtOLTHIEwI6X4S8',
-  },
-
-  {
-    title: 'Dubai Cream CGI',
-    category: 'CGI Ads',
-    image: '/assets/images/portfolio/cg-ad-1.jpg',
-    description: 'A visually stunning campaign that showcases the beauty of our product in a futuristic world',
-    youtubeUrl: 'https://www.youtube.com/embed/KlYVmrd7Bns?si=MHOlwTKw6p-csACC',
-  },
-
-  {
-    title: 'Dubai Cream CGI',
-    category: 'CGI Ads',
-    image: '/assets/images/portfolio/cg-ad-1.jpg',
-    description: 'A captivating narrative that weaves together the threads of imagination and innovation',
-    youtubeUrl: 'https://www.youtube.com/embed/igtJVJSw0_s?si=U7FkO2WXgx0EkpWg',
-  },
-
-  {
-    title: 'Dubai Cream CGI',
-    category: 'CGI Ads',
-    image: '/assets/images/portfolio/cg-ad-1.jpg',
-    description: 'A visually stunning campaign that showcases the beauty of our product in a futuristic world',
-    youtubeUrl: 'https://www.youtube.com/embed/5bwsX0fMSI0?si=xZiR-nYD71QipdHH',
-  },
-
   // 2D Explainer Videos
   {
     title: 'Project Sky Arc',
-    category: '2D Explainer Videos',
+    category: '2D Explainer Video',
     image: '/assets/images/portfolio/2d-explainer-video-1.jpg',
     description: 'A captivating narrative that weaves together the threads of imagination and innovation',
     youtubeUrl: 'https://www.youtube.com/embed/JM9bCHdZ_LA?si=SnZpotFBxi7aZaw3',
@@ -271,13 +239,13 @@ const portfolioItems = [
 
   {
     title: 'Dubai Cream Explainer', 
-    category: '2D Explainer Videos',
+    category: '2D Explainer Video',
     image: '/assets/images/portfolio/2d-explainer-video-1.jpg',
     description: 'A visually stunning campaign that showcases the beauty of our product in a futuristic world',
     youtubeUrl: 'https://www.youtube.com/embed/2LhaLXd8zGo?si=6pR1Bmz_sDAJthlG',
   }
 
-  
+
 
 
 ];
