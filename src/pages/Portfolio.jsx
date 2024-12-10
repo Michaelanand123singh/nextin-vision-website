@@ -173,7 +173,7 @@ const Hero = () => {
         transition={{ duration: 0.8 }}
         className="relative z-10 px-4 max-w-4xl mx-auto"
       >
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
           <span className="text-amber-500">Creative</span> Video Production
         </h1>
         
@@ -209,7 +209,7 @@ const Hero = () => {
               ease: "easeInOut" 
             }
           }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white/70 hover:text-white transition-colors"
+          className="absolute bottom- left-1/2 transform -translate-x-1/2 text-white/70 hover:text-white transition-colors"
         >
           <ArrowDown className="w-12 h-12" />
         </motion.button>
@@ -243,7 +243,7 @@ export default function Portfolio() {
       {/* Hero Section */}
       <Hero />
 
-      <div className="relative z-10 pt-20 portfolio-section">
+      <div className="relative z-10  portfolio-section">
         <section className="section">
           <div className="container">
             <SectionTitle
