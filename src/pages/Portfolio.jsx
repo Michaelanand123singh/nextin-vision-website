@@ -1,8 +1,75 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X } from 'lucide-react';
 import SectionTitle from '../components/common/SectionTitle';
 import { categories, portfolioItems } from '../data/portfolio';
+
+// YouTube Thumbnail Component
+const YouTubeThumbnail = ({ videoUrl, alt, className }) => {
+  const [thumbnailUrl, setThumbnailUrl] = useState(null);
+
+  useEffect(() => {
+    const extractVideoId = (url) => {
+      const patterns = [
+        /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
+        /(?:https?:\/\/)?(?:www\.)?youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/
+      ];
+
+      for (const pattern of patterns) {
+        const match = url.match(pattern);
+        if (match) {
+          return match[1];
+        }
+      }
+      return null;
+    };
+
+    const videoId = extractVideoId(videoUrl);
+    
+    if (videoId) {
+      // Attempt different thumbnail sizes
+      const thumbnailOptions = [
+        `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+        `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
+        `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+      ];
+
+      // Try thumbnails in order
+      const loadThumbnail = (urls) => {
+        if (urls.length === 0) return;
+
+        const img = new Image();
+        img.onload = () => {
+          setThumbnailUrl(img.src);
+        };
+        img.onerror = () => {
+          // Try next thumbnail if current fails
+          loadThumbnail(urls.slice(1));
+        };
+        img.src = urls[0];
+      };
+
+      loadThumbnail(thumbnailOptions);
+    }
+  }, [videoUrl]);
+
+  if (!thumbnailUrl) {
+    // Placeholder or loading state
+    return (
+      <div className={`${className} bg-gray-800 animate-pulse`}>
+        <Play className="w-16 h-16 text-gray-600 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={thumbnailUrl}
+      alt={alt}
+      className={className}
+    />
+  );
+};
 
 // Particle Background Component
 const ParticleBackground = () => {
@@ -159,8 +226,8 @@ export default function Portfolio() {
                   onClick={() => handleOpenDialog(item)}
                 >
                   <div className="relative">
-                    <img
-                      src={item.image}
+                    <YouTubeThumbnail
+                      videoUrl={item.youtubeUrl}
                       alt={item.title}
                       className="w-full h-64 object-cover brightness-75 group-hover:brightness-50 transition-all duration-300"
                     />

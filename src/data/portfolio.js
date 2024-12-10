@@ -120,7 +120,165 @@ const portfolioItems = [
     image: '/assets/images/portfolio/motion-1.jpg',
     description: 'A captivating narrative that weaves together the threads of imagination and innovation',
     youtubeUrl: 'https://www.youtube.com/embed/f6aKWrDJ3CM?si=fCvjekAQZRkksy-k',
+  },
+
+  //CGI Ads
+  {
+    title: 'Project Aurora',
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A visually stunning campaign that showcases the beauty of our product in a futuristic world',
+    youtubeUrl: 'https://www.youtube.com/embed/pp7WBN5c0-c?si=4vBICjyLag5OFwzg',
+  },
+
+  {
+    title: 'Project Nova',
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A captivating narrative that transports viewers to a world of wonder and discovery',
+    youtubeUrl: 'https://www.youtube.com/embed/Lku978C7MVk?si=CzBB8aO_ECB4VK4z',
+  },
+
+  {
+    title: 'Head & Shoulder CGI Ads',
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A visually stunning campaign that showcases the beauty of our product in a futuristic world',
+    youtubeUrl: 'https://www.youtube.com/embed/hs2eBxJEG8w?si=sBi3o5uIMC1E1vDk',
+  },
+
+  {
+    title: 'Final Sky Arc', 
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A captivating narrative that weaves together the threads of imagination and innovation',
+    youtubeUrl: 'https://www.youtube.com/embed/PQwUWmYvHok?si=z0gp1hsvtKimwUbj',
+  },
+
+  {
+    title: 'Project Sky Arc',
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A visually stunning campaign that showcases the beauty of our product in a futuristic world',
+    youtubeUrl: 'https://www.youtube.com/embed/CtZBjekZaq4?si=nTyZA8U5Il34iSBi',
+  },
+
+  {
+    title: 'Dubai Cream CGI',
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A captivating narrative that transports viewers to a world of wonder and discovery',
+    youtubeUrl: 'https://www.youtube.com/embed/CtZBjekZaq4?si=2vmLdsz8M-ifTwMi',
+  },
+
+  {
+    title: 'Dubai Cream CGI',
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A CGI Videos',
+    youtubeUrl: 'https://www.youtube.com/embed/9amfDhXygZs?si=ZqXMzKozokqhph3Q',
+  },
+
+  {
+    title: 'Dubai Cream CGI',
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A visually stunning campaign that showcases the beauty of our product in a futuristic world',
+    youtubeUrl: 'https://www.youtube.com/embed/TM-5-uiUiQQ?si=hbKAzjZC5otQ0W-k',
+  },
+
+  {
+    title: 'Dubai Cream CGI',
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A captivating narrative that weaves together the threads of imagination and innovation',
+    youtubeUrl: 'https://www.youtube.com/embed/nE3OLDmpocU?si=NS7L1282c-6vXt5A',
+  },
+
+  {
+    title: 'Dubai Cream CGI',
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A visually stunning campaign that showcases the beauty of our product in a futuristic world',
+    youtubeUrl: 'https://www.youtube.com/embed/KBF5X5vkuek?si=czfAIv9oDa2bCFhT',
+  },
+
+  //VFX & CGI Videos
+  {
+    title: 'Project Sky Arc',
+    category: 'VFX & CGI Videos',
+    image: '/assets/images/portfolio/vfx-cgivideo-1.jpg',
+    description: 'A visually stunning campaign that showcases the beauty of our product in a futuristic world',
+    youtubeUrl: 'https://www.youtube.com/embed/OoULgCJP3QI?si=a5yH5xYKs4o8U2PI',
+  },
+
+  {
+    title: 'Project Sky Arc',
+    category: 'VFX & CGI Videos',
+    image: '/assets/images/portfolio/vfx-cgivideo-1.jpg',
+    description: 'A captivating narrative that weaves together the threads of imagination and innovation',
+    youtubeUrl: 'https://www.youtube.com/embed/Th7YG6-67Ms?si=nx0I6z__EtWTRp0F',
+  },
+
+  {
+    title: 'Project Sky Arc',
+    category: 'VFX & CGI Videos',
+    image: '/assets/images/portfolio/vfx-cgivideo-1.jpg',
+    description: 'A visually stunning campaign that showcases the beauty of our product in a futuristic world',
+    youtubeUrl: 'https://www.youtube.com/embed/GySzTAFRzS8?si=-tgwGt1U1kaCuTXs',
+  },
+
+  {
+    title: 'Dubai Cream CGI',
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A captivating narrative that weaves together the threads of imagination and innovation',
+    youtubeUrl: 'https://www.youtube.com/embed/FQKN770-r5M?si=CWtOLTHIEwI6X4S8',
+  },
+
+  {
+    title: 'Dubai Cream CGI',
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A visually stunning campaign that showcases the beauty of our product in a futuristic world',
+    youtubeUrl: 'https://www.youtube.com/embed/KlYVmrd7Bns?si=MHOlwTKw6p-csACC',
+  },
+
+  {
+    title: 'Dubai Cream CGI',
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A captivating narrative that weaves together the threads of imagination and innovation',
+    youtubeUrl: 'https://www.youtube.com/embed/igtJVJSw0_s?si=U7FkO2WXgx0EkpWg',
+  },
+
+  {
+    title: 'Dubai Cream CGI',
+    category: 'CGI Ads',
+    image: '/assets/images/portfolio/cg-ad-1.jpg',
+    description: 'A visually stunning campaign that showcases the beauty of our product in a futuristic world',
+    youtubeUrl: 'https://www.youtube.com/embed/5bwsX0fMSI0?si=xZiR-nYD71QipdHH',
+  },
+
+  // 2D Explainer Videos
+  {
+    title: 'Project Sky Arc',
+    category: '2D Explainer Videos',
+    image: '/assets/images/portfolio/2d-explainer-video-1.jpg',
+    description: 'A captivating narrative that weaves together the threads of imagination and innovation',
+    youtubeUrl: 'https://www.youtube.com/embed/JM9bCHdZ_LA?si=SnZpotFBxi7aZaw3',
+  },
+
+  {
+    title: 'Dubai Cream Explainer', 
+    category: '2D Explainer Videos',
+    image: '/assets/images/portfolio/2d-explainer-video-1.jpg',
+    description: 'A visually stunning campaign that showcases the beauty of our product in a futuristic world',
+    youtubeUrl: 'https://www.youtube.com/embed/2LhaLXd8zGo?si=6pR1Bmz_sDAJthlG',
   }
+
+  
+
 
 ];
 
