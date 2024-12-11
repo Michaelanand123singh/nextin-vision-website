@@ -11,7 +11,7 @@ const portfolioItems = [
     category: 'Brand Story',
     image: '/assets/images/portfolio/brand-1.jpg',
     description: 'A compelling brand story for a leading tech company.',
-    youtubeUrl: 'https://www.youtube.com/embed/8sG6rWT6HjI?si=TttrND7BKWukZas0'
+    youtubeUrl: 'https://www.youtube.com/embed/9uY_VEFGPUA?si=rXf3ufVwexWvUlu5'
   },
 
   {
@@ -19,7 +19,7 @@ const portfolioItems = [
     category: 'Brand Story',
     image: '/assets/images/portfolio/brand-2.jpg',
     description: 'A founder story for a leading tech company.',
-    youtubeUrl: 'https://www.youtube.com/embed/8sG6rWT6HjI?si=TttrND7BKWukZas0'
+    youtubeUrl: 'https://www.youtube.com/embed/8sG6rWT6HjI?si=0IPgoj67bI0wUt-R'
   },
 
   {
@@ -35,7 +35,7 @@ const portfolioItems = [
     category: 'Brand Story',
     image: '/assets/images/portfolio/company-origins.jpg',
     description: 'Uncover the compelling narrative of our company\'s inception, highlighting the challenges, breakthroughs, and pivotal moments that shaped our early years.',
-    youtubeUrl: 'https://www.youtube.com/embed/HUoxgGolIFk?si=9Bk7dr-s8Fgf4C25'
+    youtubeUrl: 'https://www.youtube.com/embed/CQe1IQ0zjqc?si=m60TnNS7cxA68_dk'
   },
 
   //Motion Graphics
