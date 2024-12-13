@@ -12,6 +12,7 @@ const Process = React.lazy(() => import('./pages/ProcessPage'));
 const Pricing = React.lazy(() => import('./pages/Pricing'));
 const About = React.lazy(() => import('./pages/About'));
 const Contact = React.lazy(() => import('./pages/Contact'));
+const Testimonial = React.lazy(() => import('./pages/Testimonial'));
 
 // Lazy load detailed service pages
 const BrandStoryVideos = React.lazy(() => import('./pages/detailServices/BrandStoryVideos'));
@@ -29,6 +30,11 @@ class ErrorBoundary extends React.Component {
 
   static getDerivedStateFromError(error) {
     return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // You can log the error to an error reporting service
+    console.error("Uncaught error:", error, errorInfo);
   }
 
   render() {
@@ -73,13 +79,14 @@ const AnimatedRoutes = () => {
         <Route path="/pricing" element={<Suspense fallback={<PageLoader />}><Pricing /></Suspense>} />
         <Route path="/about" element={<Suspense fallback={<PageLoader />}><About /></Suspense>} />
         <Route path="/contact" element={<Suspense fallback={<PageLoader />}><Contact /></Suspense>} />
+        <Route path="/testimonial" element={<Suspense fallback={<PageLoader />}><Testimonial /></Suspense>} />
 
         {/* Detailed Service Pages */}
-        <Route path="/pages/detailServices/BrandStoryVideos" element={<Suspense fallback={<PageLoader />}><BrandStoryVideos /></Suspense>} />
-        <Route path="/pages/detailServices/ProductShowcases" element={<Suspense fallback={<PageLoader />}><ProductShowcases /></Suspense>} />
-        <Route path="/pages/detailServices/TrainingContent" element={<Suspense fallback={<PageLoader />}><TrainingContent /></Suspense>} />
-        <Route path="/pages/detailServices/SocialMediaContent" element={<Suspense fallback={<PageLoader />}><SocialMediaContent /></Suspense>} />
-        <Route path="/pages/detailServices/ExecutiveCommunication" element={<Suspense fallback={<PageLoader />}><ExecutiveCommunication /></Suspense>} />
+        <Route path="/services/brand-story-videos" element={<Suspense fallback={<PageLoader />}><BrandStoryVideos /></Suspense>} />
+        <Route path="/services/product-showcases" element={<Suspense fallback={<PageLoader />}><ProductShowcases /></Suspense>} />
+        <Route path="/services/training-content" element={<Suspense fallback={<PageLoader />}><TrainingContent /></Suspense>} />
+        <Route path="/services/social-media-content" element={<Suspense fallback={<PageLoader />}><SocialMediaContent /></Suspense>} />
+        <Route path="/services/executive-communication" element={<Suspense fallback={<PageLoader />}><ExecutiveCommunication /></Suspense>} />
       </Routes>
     </AnimatePresence>
   );

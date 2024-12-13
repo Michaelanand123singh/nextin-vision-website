@@ -5,10 +5,11 @@ import { Menu, X } from 'lucide-react';
 const navigation = [
   { name: 'Home', path: '/' },
   { name: 'Services', path: '/services' },
-  { name: 'Portfolio', path: '/portfolio' },
+  { name: 'Our Work', path: '/portfolio' },
+  { name: 'Testimonial', path: '/testimonial' },
   { name: 'Pricing', path: '/pricing' },
   { name: 'Contact', path: '/contact' },
-  { name: 'About', path: '/About' },
+  
 ];
 
 function Header() {

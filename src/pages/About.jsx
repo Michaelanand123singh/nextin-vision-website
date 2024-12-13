@@ -55,12 +55,12 @@ export default function About() {
             Transforming Corporate Narratives Through Innovative Visual Storytelling
           </p>
           <div className="flex justify-center space-x-6">
-            <Link href="/Portfolio">
+            <Link to="/Portfolio">
               <button className="px-8 py-3 bg-orange-500 text-black font-semibold rounded-full hover:bg-orange-400 transition-all duration-300 transform hover:scale-105">
                 Our Portfolio
               </button>
             </Link>
-            <Link href="/Contact">
+            <Link to="/Contact">
               <button className="px-8 py-3 border-2 border-orange-500 text-white rounded-full hover:bg-orange-500 hover:text-black transition-all duration-300 transform hover:scale-105">
                 Contact Us
               </button>
@@ -82,12 +82,20 @@ export default function About() {
                 subtitleColor="text-orange-500"
               />
               <p className="text-gray-300 leading-relaxed">
-                Nextin Vision emerged from a passion to revolutionize corporate communication. 
-                We believe in the power of visual storytelling to connect, inspire, and drive meaningful change.
+                  NEXTIN VISION is a cutting-edge Delhi-based Video Editing company
+                  dedicated to transforming corporate visual narratives through innovative
+                  multimedia solutions, With a skilled team of creative Professionals, we
+                  specialize in delivering high-quality 2D and 3D Videos, Motion Graphics, and
+                  comprehensive visual storytelling services
               </p>
               <p className="text-gray-300 leading-relaxed">
-                Our multidisciplinary team combines strategic insights, creative expertise, 
-                and cutting-edge technology to deliver compelling video content that resonates.
+                  Our commitment lies in leveraging
+                  advanced technology and creative expertise to craft compelling visual
+                  experiences that effectively communicate our clients' brand messages and
+                  strategic objectives. We transform raw visual content into powerful,
+                  engaging media that resonates with target audiences and elevates
+                  corporate communication.
+
               </p>
             </div>
             <div className="bg-gradient-to-br from-gray-900 to-black border border-orange-900 p-8 rounded-xl shadow-2xl">
@@ -145,7 +153,7 @@ export default function About() {
             center
           />
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-16">
             {team.map((member) => (
               <div 
                 key={member.name} 
