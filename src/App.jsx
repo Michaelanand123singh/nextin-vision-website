@@ -90,7 +90,6 @@ const AnimatedRoutes = () => {
         <Route path="/services/training-content" element={<Suspense fallback={<PageLoader />}><TrainingContent /></Suspense>} />
         <Route path="/services/social-media-content" element={<Suspense fallback={<PageLoader />}><SocialMediaContent /></Suspense>} />
         <Route path="/services/executive-communication" element={<Suspense fallback={<PageLoader />}><ExecutiveCommunication /></Suspense>} />
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   );
