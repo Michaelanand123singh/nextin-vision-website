@@ -3,8 +3,12 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Layout from './components/layout/Layout';
 import LoadingSpinner from './components/common/LoadingSpinner';
 import { AnimatePresence } from 'framer-motion';
+<<<<<<< HEAD
 import ScrollToTop from './ScrollToTop';
 
+=======
+import NotFound from './components/404';
+>>>>>>> 34c4ca4e2a4de577ba04e8b90fe00c859239d219
 
 // Lazy load main pages
 const Home = React.lazy(() => import('./pages/Home'));
@@ -90,6 +94,7 @@ const AnimatedRoutes = () => {
         <Route path="/services/training-content" element={<Suspense fallback={<PageLoader />}><TrainingContent /></Suspense>} />
         <Route path="/services/social-media-content" element={<Suspense fallback={<PageLoader />}><SocialMediaContent /></Suspense>} />
         <Route path="/services/executive-communication" element={<Suspense fallback={<PageLoader />}><ExecutiveCommunication /></Suspense>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   );
