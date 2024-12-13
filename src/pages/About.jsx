@@ -7,19 +7,19 @@ const team = [
   {
     name: 'Anand Singh',
     role: 'Founder & CEO',
-    image: 'assets/Portfolio/Team/Anand.svg',
+    image: 'anand.png',
     bio: 'Visionary leader with 5+ years of experience in digital media and strategic communication.',
   },
   {
     name: 'Aditya Kumar',
     role: 'Creative Director',
-    image: '/assets/images/team/jane.jpg',
+    image: 'aditya.jpg',
     bio: 'Award-winning creative professional specializing in innovative visual storytelling.',
   },
   {
     name: 'Ankit Raj',
     role: 'Art Director',
-    image: '/assets/images/team/sarah.jpg',
+    image: 'ankit.jpg',
     bio: 'Expert in developing data-driven content strategies that drive engagement and conversions.',
   }
 ];
