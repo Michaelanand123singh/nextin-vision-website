@@ -18,21 +18,21 @@ const initialStats = [
 const services = [
   {
     icon: Video,
-    title: 'Brand Story Videos',
+    title: 'Short Form Content',
     description: 'Compelling narratives that showcase your company\'s mission and values.',
-    price: '2,000'
+    price: '99'
   },
   {
     icon: Monitor,
-    title: 'Product Showcases',
+    title: 'Commercial Product Animation',
     description: 'Dynamic demonstrations that highlight your product\'s key features.',
-    price: '1,500'
+    price: '99'
   },
   {
     icon: Users,
-    title: 'Training Content',
+    title: 'CGI Ads/ VFX',
     description: 'Engaging educational videos for employee development.',
-    price: '1,000'
+    price: '99'
   },
 ];
 
@@ -274,7 +274,7 @@ export default function Home() {
         <div className="container">
           <SectionTitle
             subtitle="Our Services"
-            title="Professional Video Solutions"
+            title="Professional Video Services"
             description="We offer a comprehensive range of video production services tailored to your business needs."
             center
           />
