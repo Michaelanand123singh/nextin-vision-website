@@ -47,6 +47,30 @@ const testimonialData = [
     role: "Head of Content",
     quote: "Nextin Vision's training content videos are engaging, clear, and precisely what we needed to revolutionize our learning modules.",
     rating: 5
+  },
+  {
+    id: 5,
+    name: "Jessica Lee",
+    company: "Digital Marketing Agency",
+    role: "Creative Director",
+    quote: "Their ability to translate complex brand messages into visually stunning videos is unparalleled. Absolutely game-changing!",
+    rating: 5
+  },
+  {
+    id: 6,
+    name: "Alex Rivera",
+    company: "Tech Innovations Inc.",
+    role: "Marketing Lead",
+    quote: "From concept to final cut, Nextin Vision demonstrates exceptional creativity and technical prowess.",
+    rating: 4
+  },
+  {
+    id: 7,
+    name: "Rachel Wong",
+    company: "Global Education Solutions",
+    role: "Content Strategy Manager",
+    quote: "The most collaborative and innovative video production team I've ever worked with. Truly exceptional!",
+    rating: 5
   }
 ];
 
@@ -159,78 +183,34 @@ const ServiceDetailCard = ({ icon: Icon, title, description, details, color }) =
   </motion.div>
 );
 
-const TestimonialSlider = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => 
-      (prev + 1) % testimonialData.length
-    );
-  };
-
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => 
-      prev === 0 ? testimonialData.length - 1 : prev - 1
-    );
-  };
-
-  const currentTest = testimonialData[currentTestimonial];
-
+const TestimonialCard = ({ testimonial }) => {
   return (
-    <section className="py-20 px-4 md:px-12 lg:px-24 bg-black">
-      <div className="container mx-auto max-w-4xl">
-        <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-orange-500"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Client Success Stories
-        </motion.h2>
-
-        <motion.div 
-          key={currentTestimonial}
-          className="bg-neutral-900 rounded-xl p-8 relative"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Quote className="absolute top-4 left-4 text-orange-500/20 w-16 h-16" />
-          <p className="text-gray-200 italic text-xl mb-6 pl-8">"{currentTest.quote}"</p>
-          
-          <div className="flex justify-between items-center">
-            <div>
-              <h3 className="text-white text-2xl font-semibold">{currentTest.name}</h3>
-              <p className="text-gray-400">{currentTest.company} - {currentTest.role}</p>
-            </div>
-            <div className="flex text-orange-500">
-              {[...Array(currentTest.rating)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 fill-current" />
-              ))}
-            </div>
-          </div>
-
-          <div className="flex justify-center space-x-4 mt-8">
-            <motion.button 
-              onClick={prevTestimonial}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="bg-neutral-800 text-orange-500 p-2 rounded-full hover:bg-neutral-700 transition"
-            >
-              <ChevronLeft className="w-8 h-8" />
-            </motion.button>
-            <motion.button 
-              onClick={nextTestimonial}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="bg-neutral-800 text-orange-500 p-2 rounded-full hover:bg-neutral-700 transition"
-            >
-              <ChevronRight className="w-8 h-8" />
-            </motion.button>
-          </div>
-        </motion.div>
+    <motion.div 
+      className="bg-neutral-900 rounded-xl p-6 relative flex flex-col justify-between h-full"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ scale: 1.05 }}
+    >
+      <div>
+        <Quote className="absolute top-4 left-4 text-orange-500/20 w-12 h-12" />
+        <p className="text-gray-200 italic mb-6 pl-8 flex-grow">"{testimonial.quote}"</p>
       </div>
-    </section>
+      
+      <div>
+        <div className="flex justify-between items-center">
+          <div>
+            <h3 className="text-white text-xl font-semibold">{testimonial.name}</h3>
+            <p className="text-gray-400 text-sm">{testimonial.company} - {testimonial.role}</p>
+          </div>
+          <div className="flex text-orange-500">
+            {[...Array(testimonial.rating)].map((_, i) => (
+              <Star key={i} className="w-5 h-5 fill-current" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 
@@ -252,6 +232,48 @@ const ServicesSection = () => {
             <ServiceDetailCard key={index} {...service} />
           ))}
         </div>
+      </div>
+    </section>
+  );
+};
+
+const TestimonialsSection = () => {
+  const [visibleTestimonials, setVisibleTestimonials] = useState(4);
+
+  const handleViewAll = () => {
+    setVisibleTestimonials(testimonialData.length);
+  };
+
+  return (
+    <section className="py-20 px-4 md:px-12 lg:px-24 bg-black">
+      <div className="container mx-auto">
+        <motion.h2 
+          className="text-4xl md:text-5xl font-bold text-center mb-16 text-orange-500"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Client Success Stories
+        </motion.h2>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {testimonialData.slice(0, visibleTestimonials).map((testimonial) => (
+            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+          ))}
+        </div>
+
+        {visibleTestimonials < testimonialData.length && (
+          <div className="flex justify-center">
+            <motion.button 
+              onClick={handleViewAll}
+              className="bg-orange-500 text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View All
+            </motion.button>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -314,7 +336,7 @@ const NextinVisionContent = () => {
   return (
     <div className="bg-black text-white">
       <ServicesSection />
-      <TestimonialSlider />
+      <TestimonialsSection />
       <WhyChooseUs />
     </div>
   );
