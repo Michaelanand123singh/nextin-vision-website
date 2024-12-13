@@ -3,12 +3,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Layout from './components/layout/Layout';
 import LoadingSpinner from './components/common/LoadingSpinner';
 import { AnimatePresence } from 'framer-motion';
-<<<<<<< HEAD
 import ScrollToTop from './ScrollToTop';
 
-=======
-import NotFound from './components/404';
->>>>>>> 34c4ca4e2a4de577ba04e8b90fe00c859239d219
 
 // Lazy load main pages
 const Home = React.lazy(() => import('./pages/Home'));
