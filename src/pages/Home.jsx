@@ -223,7 +223,7 @@ export default function Home() {
               <div className="aspect-video">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/Ex_W0GnrSkk?si=50MbSJreVWbDuMgM"
+                  src="https://www.youtube.com/embed/f6aKWrDJ3CM?si=e54eR5oa8qj7qR3I"
                   title="About Nextin Vision"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
