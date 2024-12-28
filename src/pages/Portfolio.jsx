@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X, ArrowDown } from 'lucide-react';
 import SectionTitle from '../components/common/SectionTitle';
@@ -174,7 +175,9 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
             className="bg-gray-800 text-gray-300 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-700 transition-all"
           >
+            <Link to="/contact" className="block w-full h-full">
             Contact Us
+            </Link>
           </motion.button>
         </div>
 
