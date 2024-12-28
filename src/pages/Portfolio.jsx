@@ -25,27 +25,20 @@ const YouTubeThumbnail = ({ videoUrl, alt, className }) => {
     };
 
     const videoId = extractVideoId(videoUrl);
-    
+
     if (videoId) {
-      // Attempt different thumbnail sizes
       const thumbnailOptions = [
         `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
         `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
         `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
       ];
 
-      // Try thumbnails in order
       const loadThumbnail = (urls) => {
         if (urls.length === 0) return;
 
         const img = new Image();
-        img.onload = () => {
-          setThumbnailUrl(img.src);
-        };
-        img.onerror = () => {
-          // Try next thumbnail if current fails
-          loadThumbnail(urls.slice(1));
-        };
+        img.onload = () => setThumbnailUrl(img.src);
+        img.onerror = () => loadThumbnail(urls.slice(1));
         img.src = urls[0];
       };
 
@@ -54,10 +47,9 @@ const YouTubeThumbnail = ({ videoUrl, alt, className }) => {
   }, [videoUrl]);
 
   if (!thumbnailUrl) {
-    // Placeholder or loading state
     return (
-      <div className={`${className} bg-gray-800 animate-pulse`}>
-        <Play className="w-16 h-16 text-gray-600 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+      <div className={`${className} bg-gray-800 animate-pulse relative flex items-center justify-center`}>
+        <Play className="w-16 h-16 text-gray-600" />
       </div>
     );
   }
@@ -66,7 +58,7 @@ const YouTubeThumbnail = ({ videoUrl, alt, className }) => {
     <img
       src={thumbnailUrl}
       alt={alt}
-      className={className}
+      className={`${className} object-cover rounded-lg shadow-lg`}
     />
   );
 };
@@ -102,7 +94,6 @@ const ParticleBackground = () => {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        // Wrap around the canvas
         if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
         if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
       }
@@ -115,16 +106,14 @@ const ParticleBackground = () => {
       }
     }
 
-    // Initialize particles
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle());
     }
 
-    // Animation loop
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      particles.forEach(particle => {
+
+      particles.forEach((particle) => {
         particle.update();
         particle.draw();
       });
@@ -134,7 +123,6 @@ const ParticleBackground = () => {
 
     animate();
 
-    // Resize handler
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -147,12 +135,7 @@ const ParticleBackground = () => {
     };
   }, []);
 
-  return (
-    <canvas 
-      ref={canvasRef} 
-      className="fixed inset-0 z-0 pointer-events-none opacity-30" 
-    />
-  );
+  return <canvas ref={canvasRef} className="fixed inset-0 z-0 pointer-events-none opacity-30" />;
 };
 
 // Hero Component
@@ -162,56 +145,53 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative h-screen flex items-center justify-center text-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <ParticleBackground />
-      </div>
-      
-      <motion.div 
+    <div className="relative h-screen flex items-center justify-center text-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+      <ParticleBackground />
+
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 px-4 max-w-4xl mx-auto"
+        className="relative z-10 px-6 max-w-4xl mx-auto"
       >
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-white">
           <span className="text-amber-500">Creative</span> Video Production
         </h1>
-        
-        <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
-          Transforming ideas into compelling visual stories that captivate, 
-          inspire, and drive meaningful connections.
+        <p className="text-lg md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          Transforming ideas into compelling visual stories that captivate, inspire, and drive meaningful connections.
         </p>
-        
+
         <div className="flex justify-center space-x-6">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-amber-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-amber-700 transition-colors"
+            className="bg-amber-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-amber-700 transition-all"
           >
             View Our Work
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gray-800 text-gray-300 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-700 transition-colors"
+            className="bg-gray-800 text-gray-300 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-700 transition-all"
           >
             Contact Us
           </motion.button>
         </div>
-        
+
         <motion.button
           onClick={scrollToPortfolio}
-          animate={{ 
+          animate={{
             y: [0, 10, 0],
-            transition: { 
-              duration: 1.5, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }
+            transition: {
+              duration: 1.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            },
           }}
-          className="absolute bottom- left-1/2 transform -translate-x-1/2 text-white/70 hover:text-white transition-colors"
+          className="mt-10 flex items-center text-gray-300 hover:text-white transition-colors"
         >
-          <ArrowDown className="w-12 h-12" />
+          <ArrowDown className="w-6 h-6 mr-2" />
+          Scroll to Portfolio
         </motion.button>
       </motion.div>
     </div>
