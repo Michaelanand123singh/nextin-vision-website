@@ -1,215 +1,174 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from 'framer-motion';
-import { Play, X, ArrowDown } from 'lucide-react';
+import YouTubeThumbnail from '../components/YouTubeThumbnail';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { 
+  Play, 
+  X, 
+  ArrowDown, 
+  ChevronRight, 
+  Star, 
+  Award, 
+  Clock, 
+  Eye,
+  Heart,
+  Share2,
+  TrendingUp,
+  Camera,
+  Film,
+  Sparkles,
+  Menu,
+  Home,
+  Settings,
+  Users,
+  MessageSquare,
+  LogOut
+} from 'lucide-react';
+import { 
+  LineChart, 
+  Line, 
+  XAxis, 
+  YAxis, 
+  Tooltip, 
+  ResponsiveContainer 
+} from 'recharts';
 import SectionTitle from '../components/common/SectionTitle';
 import { categories, portfolioItems } from '../data/portfolio';
 
-// YouTube Thumbnail Component
-const YouTubeThumbnail = ({ videoUrl, alt, className }) => {
-  const [thumbnailUrl, setThumbnailUrl] = useState(null);
-
-  useEffect(() => {
-    const extractVideoId = (url) => {
-      const patterns = [
-        /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
-        /(?:https?:\/\/)?(?:www\.)?youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/
-      ];
-
-      for (const pattern of patterns) {
-        const match = url.match(pattern);
-        if (match) {
-          return match[1];
-        }
-      }
-      return null;
-    };
-
-    const videoId = extractVideoId(videoUrl);
-
-    if (videoId) {
-      const thumbnailOptions = [
-        `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
-        `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
-        `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
-      ];
-
-      const loadThumbnail = (urls) => {
-        if (urls.length === 0) return;
-
-        const img = new Image();
-        img.onload = () => setThumbnailUrl(img.src);
-        img.onerror = () => loadThumbnail(urls.slice(1));
-        img.src = urls[0];
-      };
-
-      loadThumbnail(thumbnailOptions);
-    }
-  }, [videoUrl]);
-
-  if (!thumbnailUrl) {
-    return (
-      <div className={`${className} bg-gray-800 animate-pulse relative flex items-center justify-center`}>
-        <Play className="w-16 h-16 text-gray-600" />
-      </div>
-    );
-  }
-
-  return (
-    <img
-      src={thumbnailUrl}
-      alt={alt}
-      className={`${className} object-cover rounded-lg shadow-lg`}
-    />
-  );
-};
-
-// Particle Background Component
-const ParticleBackground = () => {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles = [];
-    const particleCount = 100;
-
-    class Particle {
-      constructor() {
-        this.reset();
-      }
-
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.radius = Math.random() * 2 + 1;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = (Math.random() - 0.5) * 0.5;
-        this.color = `rgba(255, 255, 255, ${Math.random() * 0.3})`;
-      }
-
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-      }
-    }
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((particle) => {
-        particle.update();
-        particle.draw();
-      });
-
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  return <canvas ref={canvasRef} className="fixed inset-0 z-0 pointer-events-none opacity-30" />;
-};
-
-// Hero Component
-const Hero = () => {
-  const scrollToPortfolio = () => {
-    document.querySelector('.portfolio-section').scrollIntoView({ behavior: 'smooth' });
-  };
-
-  return (
-    <div className="relative h-screen flex items-center justify-center text-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
-      <ParticleBackground />
-
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 px-6 max-w-4xl mx-auto"
-      >
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-white">
-          <span className="text-amber-500">Creative</span> Video Production
-        </h1>
-        <p className="text-lg md:text-2xl text-gray-300 mb-8 leading-relaxed">
-          Transforming ideas into compelling visual stories that captivate, inspire, and drive meaningful connections.
-        </p>
-
-        <div className="flex justify-center space-x-6">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-amber-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-amber-700 transition-all"
-          >
-            View Our Work
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gray-800 text-gray-300 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-700 transition-all"
-          >
-            <Link to="/contact" className="block w-full h-full">
-            Contact Us
-            </Link>
-          </motion.button>
+// Stats Card Component
+const StatsCard = ({ icon: Icon, title, value, trend }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    className="bg-gray-800/50 rounded-2xl p-6 backdrop-blur-lg border border-gray-700/50"
+  >
+    <div className="flex items-center justify-between">
+      <div className="flex items-center space-x-4">
+        <div className="p-3 bg-gray-700/50 rounded-xl">
+          <Icon className="w-6 h-6 text-amber-500" />
         </div>
-
-        <motion.button
-          onClick={scrollToPortfolio}
-          animate={{
-            y: [0, 10, 0],
-            transition: {
-              duration: 1.5,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            },
-          }}
-          className="mt-10 flex items-center text-gray-300 hover:text-white transition-colors"
-        >
-          <ArrowDown className="w-6 h-6 mr-2" />
-          Scroll to Portfolio
-        </motion.button>
-      </motion.div>
+        <div>
+          <p className="text-gray-400 text-sm">{title}</p>
+          <h4 className="text-2xl font-bold text-white">{value}</h4>
+        </div>
+      </div>
+      <div className={`flex items-center space-x-1 ${trend >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+        <TrendingUp className={`w-4 h-4 ${trend < 0 && 'transform rotate-180'}`} />
+        <span className="text-sm font-medium">{Math.abs(trend)}%</span>
+      </div>
     </div>
+  </motion.div>
+);
+
+// Portfolio Grid Item Component
+const PortfolioItem = ({ item, onClick }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      whileHover={{ y: -5 }}
+      className="group relative rounded-2xl overflow-hidden bg-gradient-to-b from-gray-800 to-gray-900 shadow-2xl cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={onClick}
+    >
+      <div className="relative aspect-video">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent z-10" />
+        <YouTubeThumbnail
+          videoUrl={item.youtubeUrl}
+          alt={item.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        
+        <AnimatePresence>
+          {isHovered && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/60 z-20 flex items-center justify-center"
+            >
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                className="bg-amber-500 rounded-full p-4"
+              >
+                <Play className="w-8 h-8 text-white" />
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.1 }}
+          >
+            <div className="flex items-center space-x-4 mb-3">
+              <span className="flex items-center space-x-2 text-amber-500">
+                <Clock className="w-4 h-4" />
+                <span className="text-sm">3:24</span>
+              </span>
+              <span className="flex items-center space-x-2 text-blue-500">
+                <Eye className="w-4 h-4" />
+                <span className="text-sm">2.4K</span>
+              </span>
+            </div>
+            <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+            <p className="text-gray-300 text-sm line-clamp-2">{item.description}</p>
+          </motion.div>
+        </div>
+      </div>
+    </motion.div>
   );
 };
+
+// Sidebar Component
+const Sidebar = ({ activeCategory, setActiveCategory }) => (
+  <div className="fixed left-0 top-24 h-screen w-64 bg-gray-900 border-r border-gray-800 p-6 overflow-y-auto">
+
+    <div className="space-y-6">
+      <div>
+        <h3 className="text-gray-400 uppercase text-xs font-semibold mb-4">Categories</h3>
+        <div className="space-y-2">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`w-full px-4 py-3 rounded-lg transition-all duration-300 ${
+                activeCategory === category
+                  ? 'bg-amber-500 text-white'
+                  : 'text-gray-400 hover:text-white hover:bg-gray-800'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 // Main Portfolio Component
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-  const filteredItems = activeCategory === 'All'
-    ? portfolioItems
-    : portfolioItems.filter(item => item.category === activeCategory);
+  const filteredItems = useMemo(() => 
+    activeCategory === 'All'
+      ? portfolioItems
+      : portfolioItems.filter(item => item.category === activeCategory),
+    [activeCategory]
+  );
 
   const handleOpenDialog = (item) => {
     setSelectedItem(item);
@@ -222,107 +181,88 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#121212] text-gray-100 overflow-hidden">
-      {/* Hero Section */}
-      <Hero />
+    <div className="relative min-h-screen bg-[#0a0a0a] text-gray-100">
+      {/* Sidebar */}
+      <Sidebar activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
 
-      <div className="relative z-10  portfolio-section">
-        <section className="section">
-          <div className="container">
-            <SectionTitle
-              subtitle="Our Work"
-              title="Featured Projects"
-              description="Explore our collection of successful video projects."
-              center
-            />
-
-            {/* Category Filter */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-wrap justify-center gap-4 mb-12"
-            >
-              {categories.map((category) => (
-                <motion.button
-                  key={category}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 rounded-full transition-all duration-300 ${
-                    activeCategory === category
-                      ? 'bg-amber-600 text-white shadow-lg'
-                      : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-gray-200'
-                  }`}
-                >
-                  {category}
-                </motion.button>
-              ))}
-            </motion.div>
-
-            {/* Portfolio Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {filteredItems.map((item) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="group relative overflow-hidden rounded-lg bg-[#1e1e1e] shadow-xl cursor-pointer"
-                  onClick={() => handleOpenDialog(item)}
-                >
-                  <div className="relative">
-                    <YouTubeThumbnail
-                      videoUrl={item.youtubeUrl}
-                      alt={item.title}
-                      className="w-full h-64 object-cover brightness-75 group-hover:brightness-50 transition-all duration-300"
-                    />
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="text-white text-center p-6 transform translate-y-10 group-hover:translate-y-0 transition-transform duration-300">
-                        <Play className="mx-auto mb-4 text-amber-500 w-12 h-12" />
-                        <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                        <p className="text-sm text-gray-300">{item.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+      {/* Main Content */}
+      <div className="ml-64 min-h-screen pt-24">
+        <div className="p-8">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-white mb-2">Our Work</h1>
+            <p className="text-gray-400">We don't just deliever the project, we deliver within timeline.</p>
           </div>
-        </section>
 
-        {/* Dialog Box */}
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <StatsCard icon={Eye} title="Total Views" value="2.4M" trend={12.5} />
+            <StatsCard icon={Heart} title="Engagement Rate" value="8.9%" trend={-2.3} />
+            <StatsCard icon={Film} title="Videos Created" value="142" trend={5.7} />
+            <StatsCard icon={Share2} title="Client Satisfaction" value="98%" trend={1.8} />
+          </div>
+
+          {/* Portfolio Grid */}
+          <motion.div 
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredItems.map((item) => (
+                <PortfolioItem
+                  key={item.title}
+                  item={item}
+                  onClick={() => handleOpenDialog(item)}
+                />
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+
+        {/* Video Dialog */}
         <AnimatePresence>
           {openDialog && selectedItem && (
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-lg"
               onClick={handleCloseDialog}
             >
               <motion.div 
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
-                className="relative bg-[#1e1e1e] rounded-2xl p-8 w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto"
+                className="relative bg-gradient-to-b from-gray-900 to-black rounded-2xl p-8 w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto border border-gray-800"
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* Close Button */}
-                <button
-                  className="absolute top-4 right-4 text-gray-400 hover:text-white z-10"
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="absolute top-4 right-4 text-gray-400 hover:text-white z-10 bg-gray-800/50 backdrop-blur-lg rounded-full p-2 transition-colors"
                   onClick={handleCloseDialog}
-                  aria-label="Close Dialog"
                 >
-                  <X className="w-8 h-8" />
-                </button>
+                  <X className="w-6 h-6" />
+                </motion.button>
                 
-                {/* Video Title */}
-                <h3 className="text-2xl font-bold mb-4 text-amber-500">{selectedItem.title}</h3>
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-amber-500 mb-2">{selectedItem.title}</h3>
+                  <div className="flex items-center space-x-6 text-gray-400">
+                    <span className="flex items-center">
+                      <Clock className="w-4 h-4 mr-2" />
+                      3:24
+                    </span>
+                    <span className="flex items-center">
+                      <Eye className="w-4 h-4 mr-2" />
+                      2.4K views
+                    </span>
+                    <span className="flex items-center">
+                      <Star className="w-4 h-4 mr-2" />
+                      4.9
+                    </span>
+                  </div>
+                </div>
                 
-                {/* Embedded YouTube Video */}
-                <div className="rounded-lg overflow-hidden shadow-2xl">
+                <div className="rounded-xl overflow-hidden shadow-2xl mb-6 bg-gray-800/50 backdrop-blur-lg">
                   <iframe
                     src={selectedItem.youtubeUrl}
                     title={selectedItem.title}
@@ -332,13 +272,55 @@ export default function Portfolio() {
                   ></iframe>
                 </div>
                 
-                {/* Video Description */}
-                <p className="text-gray-300 mt-6 leading-relaxed">{selectedItem.description}</p>
+                <div className="space-y-4">
+                  <p className="text-gray-300 leading-relaxed">{selectedItem.description}</p>
+                  
+                  <div className="flex items-center space-x-4 pt-4">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center space-x-2 px-4 py-2 bg-gray-800/50 backdrop-blur-lg rounded-lg text-gray-300 hover:text-white transition-colors"
+                    >
+                      <Heart className="w-4 h-4" />
+                      <span>Like</span>
+                    </motion.button>
+                    
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center space-x-2 px-4 py-2 bg-gray-800/50 backdrop-blur-lg rounded-lg text-gray-300 hover:text-white transition-colors"
+                    >
+                      <Share2 className="w-4 h-4" />
+                      <span>Share</span>
+                    </motion.button>
+                  </div>
+                </div>
               </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
+
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        className="fixed bottom-6 right-6 lg:hidden z-50 bg-amber-500 text-white p-4 rounded-full shadow-lg"
+      >
+        <Menu className="w-6 h-6" />
+      </button>
+
+      {/* Mobile Sidebar Overlay */}
+      <AnimatePresence>
+        {isSidebarOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

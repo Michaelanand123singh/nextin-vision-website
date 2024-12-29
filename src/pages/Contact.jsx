@@ -165,7 +165,7 @@ const PremiumContactPage = () => {
                 <Mail className="text-orange-500" />
                 <div>
                   <h3 className="font-semibold text-white">Email</h3>
-                  <p className="text-gray-300">official.nextinvision@gmail.com</p>
+                  <p className="text-gray-300">official@nextinvision.in</p>
                 </div>
               </div>
             </div>
