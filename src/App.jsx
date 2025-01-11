@@ -15,6 +15,7 @@ const Pricing = React.lazy(() => import('./pages/Pricing'));
 const About = React.lazy(() => import('./pages/About'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Testimonial = React.lazy(() => import('./pages/Testimonial'));
+const OnlineOdyssey = React.lazy(() => import('./pages/OnlineOdyssey'))
 
 // Lazy load detailed service pages
 const BrandStoryVideos = React.lazy(() => import('./pages/detailServices/BrandStoryVideos'));
@@ -83,6 +84,7 @@ const AnimatedRoutes = () => {
         <Route path="/about" element={<Suspense fallback={<PageLoader />}><About /></Suspense>} />
         <Route path="/contact" element={<Suspense fallback={<PageLoader />}><Contact /></Suspense>} />
         <Route path="/testimonial" element={<Suspense fallback={<PageLoader />}><Testimonial /></Suspense>} />
+        <Route path="/OnlineOdyssey" element={<Suspense fallback={<PageLoader />}><OnlineOdyssey /></Suspense>} />
 
         {/* Detailed Service Pages */}
         <Route path="/services/brand-story-videos" element={<Suspense fallback={<PageLoader />}><BrandStoryVideos /></Suspense>} />

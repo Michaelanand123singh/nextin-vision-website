@@ -20,7 +20,7 @@ export default function Footer() {
               </a>
               <a href="mailto:info@nextinvision.com" className="flex items-center gap-2 text-gray-400 hover:text-white">
                 <Mail size={16} />
-                official.nextinvision@gmail.com
+                official@nextinvision.in
               </a>
               <p className="flex items-center gap-2 text-gray-400">
                 <MapPin size={16} />
@@ -37,6 +37,7 @@ export default function Footer() {
               <li><Link to="/services" className="text-gray-400 hover:text-orange-500">Product Showcases</Link></li>
               <li><Link to="/services" className="text-gray-400 hover:text-orange-500">Training Content</Link></li>
               <li><Link to="/services" className="text-gray-400 hover:text-orange-500">Social Media</Link></li>
+              <li><Link to="/onlineodyssey" className="text-gray-400 hover:text-orange-500">Online Odyssey</Link></li>
             </ul>
           </div>
 
