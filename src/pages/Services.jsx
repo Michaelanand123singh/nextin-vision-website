@@ -1,272 +1,120 @@
-import React, { useState } from 'react';
-import { 
-  Camera, 
-  Video, 
-  Film, 
-  Lightbulb, 
-  CheckCircle, 
-  Clock, 
-  Target, 
-  Star, 
-  Play, 
-  Award 
-} from 'lucide-react';
-import { motion } from 'framer-motion';
-import { servicesData } from '../data/servicesData';
-import SectionTitle from '../components/common/SectionTitle';
-import ServiceCard from '../components/common/ServiceCard';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function EnhancedServices() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-
-  const processSteps = [
-    { 
-      title: 'Discovery', 
-      description: 'Deep dive into your brand essence and objectives',
-      icon: <Lightbulb className="w-12 h-12 text-orange-500" />,
-      details: 'We conduct in-depth research and consultation to understand your unique brand story, target audience, and strategic goals.'
+const HeroSection = () => {
+  const services = {
+    media: {
+      title: "Media Services (Flicks Studio)",
+      categories: [
+        {
+          name: "Enterprise-Level Video Production",
+          details: [
+            "High-budget cinematic ads, brand films, and corporate documentaries",
+            "Multi-location shoots with top-tier production teams",
+            "Industry partnerships with film studios and ad agencies"
+          ]
+        },
+        {
+          name: "3D & VFX for Corporate & Entertainment",
+          details: [
+            "Advanced CGI, hyper-realistic 3D models, and high-budget VFX",
+            "Augmented Reality (AR) & Virtual Reality (VR) solutions",
+            "Large-scale 3D visualization for real estate, automobile, and engineering industries"
+          ]
+        },
+        {
+          name: "AI-Powered Content Production",
+          details: [
+            "AI-driven automated video editing for large-scale media houses",
+            "Generative AI for digital marketing and brand storytelling",
+            "AI avatars & synthetic media for enterprise solutions"
+          ]
+        }
+      ],
+      link: "/MediaServices"
     },
-    { 
-      title: 'Strategy', 
-      description: 'Crafting a tailored creative roadmap',
-      icon: <Target className="w-12 h-12 text-orange-500" />,
-      details: 'Our creative team develops a comprehensive video strategy that aligns perfectly with your brand identity and marketing objectives.'
-    },
-    { 
-      title: 'Production', 
-      description: 'Precision execution of visual storytelling',
-      icon: <Camera className="w-12 h-12 text-orange-500" />,
-      details: 'Leveraging state-of-the-art equipment and creative expertise, we bring your vision to life with cinematic precision and artistic flair.'
-    },
-    { 
-      title: 'Optimization', 
-      description: 'Refining and elevating the final deliverable',
-      icon: <Star className="w-12 h-12 text-orange-500" />,
-      details: 'Meticulous post-production and strategic optimization ensure your video content maximizes engagement and achieves your marketing goals.'
+    tech: {
+      title: "Tech Services (Odyssey)",
+      categories: [
+        {
+          name: "Metaverse & Immersive Experiences",
+          details: [
+            "Metaverse-based corporate training, branding, and events",
+            "VR-based architectural visualization & product showcases",
+            "Digital twin technology for large-scale industries"
+          ]
+        },
+        {
+          name: "AI, ML & Automation at Scale",
+          details: [
+            "AI-driven analytics & predictive business intelligence",
+            "Large-scale automation for banking, healthcare, and logistics",
+            "Custom AI chatbot & NLP-powered customer service solutions"
+          ]
+        },
+        {
+          name: "Custom Software Solutions",
+          details: [
+            "SaaS Product development with generative AI",
+            "Solutions software development",
+            "E-Commerce - Shopify/WooCommerce and Custom"
+          ]
+        }
+      ],
+      link: "/OnlineOdyssey"
     }
-  ];
+  };
 
-  const testimonials = [
-    {
-      quote: "Their storytelling transformed our brand narrative completely. Simply exceptional!",
-      name: "Sarah Thompson",
-      company: "Tech Innovators Inc.",
-      avatar: "/assets/images/avatars/sarah.jpg"
-    },
-    {
-      quote: "Unparalleled creativity and professional execution. They exceeded all our expectations.",
-      name: "Michael Rodriguez",
-      company: "Global Marketing Solutions",
-      avatar: "/assets/images/avatars/michael.jpg"
-    }
-  ];
+  const ServiceCard = ({ data }) => (
+    <div className="bg-gray-900/90 rounded-xl p-6 shadow-lg border border-gray-800 hover:border-orange-500/50 transition-all duration-300">
+      <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+        {data.title}
+      </h2>
+      
+      <div className="space-y-4">
+        {data.categories.map((category, index) => (
+          <div key={index} className="border-l-2 border-orange-500/30 pl-4">
+            <h3 className="text-lg font-semibold text-white/90 mb-2">{category.name}</h3>
+            <ul className="text-gray-400 text-sm space-y-1.5">
+              {category.details.map((detail, idx) => (
+                <li key={idx} className="flex items-start">
+                  <span className="w-1.5 h-1.5 bg-orange-500/50 rounded-full mr-2 mt-1.5"></span>
+                  <span className="leading-tight">{detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      
+      <Link
+        to={data.link}
+        className="inline-block w-full mt-6 bg-gradient-to-r from-orange-600 to-orange-800 text-white/90 text-sm font-medium px-4 py-2.5 rounded-lg text-center hover:from-orange-700 hover:to-orange-900 transition-all duration-300 transform hover:-translate-y-0.5"
+      >
+        Explore {data.title}
+      </Link>
+    </div>
+  );
 
   return (
-    <div className="bg-black overflow-hidden text-white">
-      {/* Animated Hero Section */}
-      <motion.section 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="relative bg-cover bg-center bg-black h-[600px] flex items-center"
-      >
-        <div className="container mx-auto px-4 lg:px-24 xl:px-36 text-center">
-          <motion.div 
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, type: "spring", stiffness: 120 }}
-            className="bg-gray-900/60 p-10 rounded-2xl max-w-4xl mx-auto backdrop-blur-sm"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600">
-              Elevate Your Brand Through Cinematic Storytelling
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 font-light tracking-wide">
-              Transform your vision into compelling visual narratives that resonate and inspire.
-            </p>
-            <motion.a
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              href="/contact"
-              className="inline-block bg-gradient-to-r from-orange-600 to-orange-800 text-white font-semibold px-10 py-4 rounded-full shadow-xl hover:from-orange-700 hover:to-orange-900 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl"
-            >
-              Explore Our Solutions
-            </motion.a>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Enhanced Services Section with Icons */}
-      <section className="section py-20 bg-black">
-        <div className="container mx-auto px-4 lg:px-24 xl:px-36">
-          <SectionTitle
-            subtitle="Our Expertise"
-            title="Comprehensive Video Production Services"
-            description="Crafting bespoke visual experiences that amplify your brand's unique narrative and market presence."
-            center
-            subtitleClassName="text-orange-500"
-            titleClassName="text-white bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600"
-          />
-          
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { 
-                opacity: 1,
-                transition: { 
-                  staggerChildren: 0.2
-                }
-              }
-            }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-14"
-          >
-            {servicesData.map((service) => (
-              <motion.div 
-                key={service.title} 
-                variants={{
-                  hidden: { opacity: 0, translateY: 50 },
-                  visible: { opacity: 1, translateY: 0 }
-                }}
-                className="relative h-[450px] rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02]"
-              >
-                <ServiceCard {...service} />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Interactive Process Overview */}
-      <section className="section bg-gray-900 py-20">
-        <div className="container mx-auto px-4 lg:px-24 xl:px-36">
-          <SectionTitle
-            subtitle="Our Methodology"
-            title="Strategic Video Production Process"
-            description="A meticulously designed workflow ensuring exceptional quality and client satisfaction."
-            center
-            subtitleClassName="text-orange-500"
-            titleClassName="text-white bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600"
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mt-14">
-            {processSteps.map((step, index) => (
-              <motion.div 
-                key={step.title}
-                initial={{ opacity: 0, translateY: 50 }}
-                whileInView={{ opacity: 1, translateY: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className="bg-gray-800 p-8 rounded-2xl text-center transition-all duration-300 relative overflow-hidden group"
-              >
-                <div className="absolute top-0 left-0 w-1.5 h-full bg-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="w-20 h-20 bg-orange-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold transform group-hover:scale-110 transition-transform duration-300">
-                  {index + 1}
-                </div>
-                {step.icon}
-                <h3 className="text-2xl font-semibold mb-4 text-white tracking-tight">{step.title}</h3>
-                <p className="text-gray-400 leading-relaxed text-base">{step.description}</p>
-                <p className="text-sm text-gray-500 mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  {step.details}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="bg-black py-20">
-        <div className="container mx-auto px-4 lg:px-24 xl:px-36 text-center">
-          <SectionTitle
-            subtitle="Client Voices"
-            title="Success Stories That Speak Volumes"
-            description="Hear from brands that have transformed their visual communication with our expertise."
-            center
-            subtitleClassName="text-orange-500"
-            titleClassName="text-white bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600"
-          />
-
-          <div className="max-w-3xl mx-auto mt-12 relative">
-            <motion.div
-              key={activeTestimonial}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
-              className="bg-gray-900 p-10 rounded-2xl shadow-lg relative"
-            >
-              <div className="absolute top-0 left-0 w-2 h-full bg-orange-500"></div>
-              <blockquote className="text-2xl italic text-gray-300 mb-6">
-                "{testimonials[activeTestimonial].quote}"
-              </blockquote>
-              <div className="flex items-center justify-center">
-                <img 
-                  src={testimonials[activeTestimonial].avatar} 
-                  alt={testimonials[activeTestimonial].name}
-                  className="w-20 h-20 rounded-full mr-6 object-cover"
-                />
-                <div>
-                  <h4 className="text-xl font-semibold text-white">
-                    {testimonials[activeTestimonial].name}
-                  </h4>
-                  <p className="text-gray-400">
-                    {testimonials[activeTestimonial].company}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <div className="flex justify-center mt-6">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTestimonial(index)}
-                  className={`w-3 h-3 rounded-full mx-2 ${
-                    activeTestimonial === index 
-                    ? 'bg-orange-500' 
-                    : 'bg-gray-600'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Premium Call-to-Action with Animation */}
-      <motion.section 
-        initial={{ backgroundPosition: '0% 50%' }}
-        animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-        transition={{ 
-          duration: 10, 
-          repeat: Infinity, 
-          ease: "linear" 
-        }}
-        className="bg-gradient-to-br from-black to-gray-900 text-white py-20 bg-size-200"
-      >
-        <div className="container mx-auto px-4 lg:px-24 xl:px-36 text-center">
-          <motion.h2 
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 120 }}
-            className="text-5xl font-bold mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600"
-          >
-            Ready to Redefine Your Visual Identity?
-          </motion.h2>
-          <p className="text-xl mb-10 text-gray-300 max-w-3xl mx-auto">
-            Unlock the potential of professional video production. Let's collaborate to create extraordinary visual experiences that set you apart.
+    <div className="min-h-screen bg-black text-white">
+      <div className="container mx-auto px-4 py-24">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+            Transform Your Digital Presence
+          </h1>
+          <p className="text-lg text-gray-300/90 max-w-2xl mx-auto">
+            Elevate your brand with cutting-edge media production and technology solutions
           </p>
-          <motion.a 
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            href="/contact" 
-            className="bg-gradient-to-r from-orange-600 to-orange-800 text-white font-semibold px-12 py-5 rounded-full shadow-2xl hover:from-orange-700 hover:to-orange-900 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-3xl tracking-wide"
-          >
-            Schedule Consultation
-          </motion.a>
         </div>
-      </motion.section>
+
+        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          <ServiceCard data={services.media} />
+          <ServiceCard data={services.tech} />
+        </div>
+      </div>
     </div>
   );
 };
+
+export default HeroSection;

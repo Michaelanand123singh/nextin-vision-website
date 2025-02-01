@@ -5,7 +5,6 @@ import LoadingSpinner from './components/common/LoadingSpinner';
 import { AnimatePresence } from 'framer-motion';
 import ScrollToTop from './ScrollToTop';
 
-
 // Lazy load main pages
 const Home = React.lazy(() => import('./pages/Home'));
 const Services = React.lazy(() => import('./pages/Services'));
@@ -15,14 +14,8 @@ const Pricing = React.lazy(() => import('./pages/Pricing'));
 const About = React.lazy(() => import('./pages/About'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Testimonial = React.lazy(() => import('./pages/Testimonial'));
-const OnlineOdyssey = React.lazy(() => import('./pages/OnlineOdyssey'))
-
-// Lazy load detailed service pages
-const BrandStoryVideos = React.lazy(() => import('./pages/detailServices/BrandStoryVideos'));
-const ProductShowcases = React.lazy(() => import('./pages/detailServices/ProductShowcases'));
-const TrainingContent = React.lazy(() => import('./pages/detailServices/TrainingContent'));
-const SocialMediaContent = React.lazy(() => import('./pages/detailServices/SocialMediaContent'));
-const ExecutiveCommunication = React.lazy(() => import('./pages/detailServices/ExecutiveCommunication'));
+const OnlineOdyssey = React.lazy(() => import('./pages/OnlineOdyssey'));
+const MediaServices = React.lazy(() => import('./pages/MediaServices'));
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component {
@@ -73,7 +66,6 @@ const AnimatedRoutes = () => {
 
   return (
     <AnimatePresence mode="wait">
-
       <Routes location={location} key={location.pathname}>
         {/* Main Pages */}
         <Route path="/" element={<Suspense fallback={<PageLoader />}><Home /></Suspense>} />
@@ -84,14 +76,8 @@ const AnimatedRoutes = () => {
         <Route path="/about" element={<Suspense fallback={<PageLoader />}><About /></Suspense>} />
         <Route path="/contact" element={<Suspense fallback={<PageLoader />}><Contact /></Suspense>} />
         <Route path="/testimonial" element={<Suspense fallback={<PageLoader />}><Testimonial /></Suspense>} />
-        <Route path="/OnlineOdyssey" element={<Suspense fallback={<PageLoader />}><OnlineOdyssey /></Suspense>} />
-
-        {/* Detailed Service Pages */}
-        <Route path="/services/brand-story-videos" element={<Suspense fallback={<PageLoader />}><BrandStoryVideos /></Suspense>} />
-        <Route path="/services/product-showcases" element={<Suspense fallback={<PageLoader />}><ProductShowcases /></Suspense>} />
-        <Route path="/services/training-content" element={<Suspense fallback={<PageLoader />}><TrainingContent /></Suspense>} />
-        <Route path="/services/social-media-content" element={<Suspense fallback={<PageLoader />}><SocialMediaContent /></Suspense>} />
-        <Route path="/services/executive-communication" element={<Suspense fallback={<PageLoader />}><ExecutiveCommunication /></Suspense>} />
+        <Route path="/onlineodyssey" element={<Suspense fallback={<PageLoader />}><OnlineOdyssey /></Suspense>} />
+        <Route path="/mediaservices" element={<Suspense fallback={<PageLoader />}><MediaServices /></Suspense>} />
       </Routes>
     </AnimatePresence>
   );
@@ -101,7 +87,7 @@ const App = () => {
   return (
     <ErrorBoundary>
       <Router>
-          <ScrollToTop/>
+        <ScrollToTop />
         <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
           <Layout>
             <AnimatedRoutes />
