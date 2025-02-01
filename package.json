@@ -11,8 +11,6 @@
     "postinstall": "npm install vite"
   },
   "dependencies": {
-    "@cubejs-client/core": "^1.1.12",
-    "@cubejs-client/react": "^1.1.16",
     "@headlessui/react": "^1.7.18",
     "@react-three/drei": "^9.120.4",
     "@react-three/fiber": "^8.17.10",
