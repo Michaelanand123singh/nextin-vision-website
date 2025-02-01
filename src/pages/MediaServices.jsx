@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, Camera, Cube, Sparkles, ArrowRight, Star } from 'lucide-react';
+import { Play, Camera, Box, Sparkles, ArrowRight, Star } from 'lucide-react';
 
 const MediaServices = () => {
   const services = [
@@ -18,7 +18,7 @@ const MediaServices = () => {
     {
       title: "3D & VFX Excellence",
       description: "Creating immersive visual experiences through cutting-edge 3D animation and visual effects, pushing the boundaries of digital storytelling.",
-      icon: <Cube className="w-6 h-6 text-orange-400" />,
+      icon: <Box className="w-6 h-6 text-orange-400" />,
       features: [
         "Photorealistic 3D modeling and animation",
         "Custom VFX solutions for film and advertising",

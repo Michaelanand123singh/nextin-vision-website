@@ -14,8 +14,9 @@ const Pricing = React.lazy(() => import('./pages/Pricing'));
 const About = React.lazy(() => import('./pages/About'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Testimonial = React.lazy(() => import('./pages/Testimonial'));
-const OnlineOdyssey = React.lazy(() => import('./pages/OnlineOdyssey'));
 const MediaServices = React.lazy(() => import('./pages/MediaServices'));
+const OnlineOdyssey = React.lazy(() => import('./pages/OnlineOdyssey'));
+
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component {
@@ -76,8 +77,9 @@ const AnimatedRoutes = () => {
         <Route path="/about" element={<Suspense fallback={<PageLoader />}><About /></Suspense>} />
         <Route path="/contact" element={<Suspense fallback={<PageLoader />}><Contact /></Suspense>} />
         <Route path="/testimonial" element={<Suspense fallback={<PageLoader />}><Testimonial /></Suspense>} />
-        <Route path="/onlineodyssey" element={<Suspense fallback={<PageLoader />}><OnlineOdyssey /></Suspense>} />
         <Route path="/mediaservices" element={<Suspense fallback={<PageLoader />}><MediaServices /></Suspense>} />
+        <Route path="/onlineodyssey" element={<Suspense fallback={<PageLoader />}><OnlineOdyssey /></Suspense>} />
+        
       </Routes>
     </AnimatePresence>
   );
