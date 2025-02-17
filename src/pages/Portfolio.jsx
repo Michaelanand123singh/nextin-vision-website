@@ -5,10 +5,35 @@ import { portfolio } from '../data/portfolio';
 import { smma } from '../data/smma';
 import { techData } from '../data/techdata';
 
+// Add service type to each item in the original data
+const mediaItems = portfolio?.items?.map(item => ({
+  ...item,
+  serviceType: 'media'
+})) || [];
+
+const techItems = techData?.items?.map(item => ({
+  ...item,
+  serviceType: 'tech'
+})) || [];
+
+const smmaItems = smma?.items?.map(item => ({
+  ...item,
+  serviceType: 'smma'
+})) || [];
+
 const portfolioData = {
-  media: { items: portfolio?.items || [], stats: portfolio?.stats || [] },
-  tech: { items: techData?.items || [], stats: techData?.stats || [] },
-  smma: { items: smma?.items || [], stats: smma?.stats || [] }
+  media: { 
+    items: mediaItems, 
+    stats: portfolio?.stats || [] 
+  },
+  tech: { 
+    items: techItems, 
+    stats: techData?.stats || [] 
+  },
+  smma: { 
+    items: smmaItems, 
+    stats: smma?.stats || [] 
+  }
 };
 
 const serviceCategories = {
@@ -43,14 +68,15 @@ const Portfolio = () => {
 
   const filteredItems = useMemo(() => {
     try {
-      const items = portfolioData[activeService]?.items || [];
-      if (!Array.isArray(items)) {
-        console.error('Items is not an array for service:', activeService);
-        return [];
-      }
-      return activeCategory === 'All' 
-        ? items 
-        : items.filter(item => item.category === activeCategory);
+      // First filter by service type
+      const serviceItems = portfolioData[activeService]?.items.filter(
+        item => item.serviceType === activeService
+      ) || [];
+
+      // Then filter by category if not 'All'
+      return activeCategory === 'All'
+        ? serviceItems
+        : serviceItems.filter(item => item.category === activeCategory);
     } catch (error) {
       console.error('Error filtering items:', error);
       return [];
