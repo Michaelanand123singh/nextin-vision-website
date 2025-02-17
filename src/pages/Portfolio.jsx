@@ -15,7 +15,7 @@ const serviceCategories = {
   media: { 
     icon: Film, 
     color: 'amber-500', 
-    categories: ['All', 'Video Editing', 'VFX', 'Motion Graphics', 'Animation'] 
+    categories: ['All', 'Video Editing', 'VFX', 'Motion Graphics', 'Animation', 'CGIs'] 
   },
   tech: { 
     icon: Code, 
