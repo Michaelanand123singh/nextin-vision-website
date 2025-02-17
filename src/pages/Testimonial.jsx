@@ -111,50 +111,10 @@ const servicesData = [
   }
 ];
 
-// Pricing Tiers
-const pricingTiers = [
-  {
-    name: "Startup",
-    price: 999,
-    features: [
-      "2 Video Projects",
-      "Basic Editing",
-      "1 Revision Round",
-      "Standard Turnaround"
-    ],
-    recommended: false
-  },
-  {
-    name: "Pro",
-    price: 2499,
-    features: [
-      "5 Video Projects",
-      "Advanced Editing",
-      "2 Revision Rounds",
-      "Priority Support",
-      "Motion Graphics"
-    ],
-    recommended: true
-  },
-  {
-    name: "Enterprise",
-    price: 4999,
-    features: [
-      "Unlimited Projects",
-      "Premium Editing",
-      "Unlimited Revisions",
-      "Dedicated Team",
-      "Custom Branding",
-      "Strategy Consultation"
-    ],
-    recommended: false
-  }
-];
-
 // Reusable Components
 const ServiceDetailCard = ({ icon: Icon, title, description, details, color }) => (
   <motion.div 
-    className="bg-neutral-900 p-6 rounded-xl border border-neutral-800 hover:border-orange-600/30 transition-all duration-300 group"
+    className="bg-gray-900/90 backdrop-blur-sm p-6 rounded-xl border border-gray-800 hover:border-orange-600/30 transition-all duration-300 group shadow-xl"
     whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.2)" }}
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
@@ -174,7 +134,7 @@ const ServiceDetailCard = ({ icon: Icon, title, description, details, color }) =
       ))}
     </ul>
     <motion.button 
-      className="mt-4 w-full bg-neutral-800 text-orange-500 py-2 rounded-lg hover:bg-orange-600 hover:text-white transition"
+      className="mt-4 w-full bg-gray-800/80 backdrop-blur-sm text-orange-500 py-2 rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-300"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
@@ -186,7 +146,7 @@ const ServiceDetailCard = ({ icon: Icon, title, description, details, color }) =
 const TestimonialCard = ({ testimonial }) => {
   return (
     <motion.div 
-      className="bg-neutral-900 rounded-xl p-6 relative flex flex-col justify-between h-full"
+      className="bg-gray-900/90 backdrop-blur-sm rounded-xl p-6 relative flex flex-col justify-between h-full border border-gray-800 hover:border-orange-600/30 transition-all duration-300 shadow-xl"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -194,7 +154,7 @@ const TestimonialCard = ({ testimonial }) => {
     >
       <div>
         <Quote className="absolute top-4 left-4 text-orange-500/20 w-12 h-12" />
-        <p className="text-gray-200 italic mb-6 pl-8 flex-grow">"{testimonial.quote}"</p>
+        <p className="text-gray-200 italic mb-6 pl-8 flex-grow">{testimonial.quote}</p>
       </div>
       
       <div>
@@ -216,10 +176,10 @@ const TestimonialCard = ({ testimonial }) => {
 
 const ServicesSection = () => {
   return (
-    <section className="py-40 px-4 md:px-12 lg:px-24 bg-black">
+    <section className="relative py-40 px-4 md:px-12 lg:px-24">
       <div className="container mx-auto">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-orange-500"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -245,10 +205,10 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 px-4 md:px-12 lg:px-24 bg-black">
+    <section className="relative py-20 px-4 md:px-12 lg:px-24">
       <div className="container mx-auto">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-orange-500"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -266,7 +226,7 @@ const TestimonialsSection = () => {
           <div className="flex justify-center">
             <motion.button 
               onClick={handleViewAll}
-              className="bg-orange-500 text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition"
+              className="bg-orange-500/90 backdrop-blur-sm text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-all duration-300 shadow-lg shadow-orange-500/20"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -281,10 +241,10 @@ const TestimonialsSection = () => {
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 px-4 md:px-12 lg:px-24 bg-neutral-950">
+    <section className="relative py-20 px-4 md:px-12 lg:px-24">
       <div className="container mx-auto">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-orange-500"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -315,7 +275,7 @@ const WhyChooseUs = () => {
           ].map((item, index) => (
             <motion.div 
               key={index}
-              className="bg-neutral-900 p-8 rounded-xl border border-neutral-800 text-center"
+              className="bg-gray-900/90 backdrop-blur-sm p-8 rounded-xl border border-gray-800 text-center hover:border-orange-600/30 transition-all duration-300 shadow-xl"
               whileHover={{ scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.2)" }}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -334,10 +294,16 @@ const WhyChooseUs = () => {
 
 const NextinVisionContent = () => {
   return (
-    <div className="bg-black text-white">
-      <ServicesSection />
-      <TestimonialsSection />
-      <WhyChooseUs />
+    <div className="relative min-h-screen bg-black text-white">
+      {/* Premium Background Elements */}
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,rgba(255,100,0,0.1)_0%,transparent_70%)]" />
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,100,0,0.05)_0%,transparent_50%)]" />
+      
+      <div className="relative">
+        <ServicesSection />
+        <TestimonialsSection />
+        <WhyChooseUs />
+      </div>
     </div>
   );
 };

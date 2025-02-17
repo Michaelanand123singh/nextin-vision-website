@@ -103,166 +103,195 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="pt-24 px-6 pb-6 max-w-7xl mx-auto">
-      {/* Service Selection */}
-      <div className="flex flex-wrap justify-center gap-4 mb-6">
-        {Object.entries(serviceCategories).map(([service, data]) => (
-          <button
-            key={service}
-            onClick={() => handleServiceChange(service)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors duration-200 ${
-              activeService === service 
-                ? 'bg-orange-500 text-white' 
-                : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
-            }`}
-          >
-            <data.icon className="w-5 h-5" />
-            <span>{service.toUpperCase()}</span>
-          </button>
-        ))}
-      </div>
-
-      {/* Category Selection */}
-      <div className="flex flex-wrap justify-center gap-2 mb-6">
-        {serviceCategories[activeService].categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setActiveCategory(category)}
-            className={`px-4 py-2 rounded-lg transition-colors duration-200 ${
-              activeCategory === category 
-                ? 'bg-orange-500 text-white' 
-                : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-
-      {/* Portfolio Grid */}
-      <motion.div 
-        layout 
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-      >
-        {filteredItems.length > 0 ? (
-          filteredItems.map((item, index) => (
-            <motion.div
-              key={item.id || index}
-              layout
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              className="group bg-gray-800 rounded-xl overflow-hidden cursor-pointer hover:bg-gray-700 transition-colors duration-200"
-              onClick={() => handleOpenDialog(item)}
+    <div className="relative min-h-screen bg-black">
+      {/* Premium Background Elements */}
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,rgba(255,100,0,0.1)_0%,transparent_70%)]" />
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,100,0,0.05)_0%,transparent_50%)]" />
+      
+      {/* Main Content */}
+      <div className="relative pt-24 px-6 pb-6 max-w-7xl mx-auto">
+        {/* Service Selection */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-wrap justify-center gap-4 mb-6"
+        >
+          {Object.entries(serviceCategories).map(([service, data]) => (
+            <button
+              key={service}
+              onClick={() => handleServiceChange(service)}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 backdrop-blur-sm ${
+                activeService === service 
+                  ? 'bg-orange-500/90 text-white shadow-lg shadow-orange-500/20' 
+                  : 'bg-gray-800/80 text-gray-400 hover:bg-gray-700/90 hover:text-gray-200'
+              }`}
             >
-              {/* Thumbnail Container */}
-              <div className="relative aspect-video w-full overflow-hidden">
-                {item.youtubeUrl ? (
-                  <img 
-                    src={`https://img.youtube.com/vi/${getYouTubeID(item.youtubeUrl)}/maxresdefault.jpg`}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                ) : item.image ? (
-                  <img 
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                    <Film className="w-12 h-12 text-gray-500" />
+              <data.icon className="w-5 h-5" />
+              <span>{service.toUpperCase()}</span>
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Category Selection */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-2 mb-6"
+        >
+          {serviceCategories[activeService].categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-4 py-2 rounded-lg transition-all duration-300 backdrop-blur-sm ${
+                activeCategory === category 
+                  ? 'bg-orange-500/90 text-white shadow-lg shadow-orange-500/20' 
+                  : 'bg-gray-800/80 text-gray-400 hover:bg-gray-700/90 hover:text-gray-200'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Portfolio Grid */}
+        <motion.div 
+          layout 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {filteredItems.length > 0 ? (
+            filteredItems.map((item, index) => (
+              <motion.div
+                key={item.id || index}
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                className="group relative bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden cursor-pointer hover:bg-gray-700/90 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10"
+                onClick={() => handleOpenDialog(item)}
+              >
+                {/* Subtle gradient border effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                {/* Thumbnail Container */}
+                <div className="relative aspect-video w-full overflow-hidden">
+                  {item.youtubeUrl ? (
+                    <img 
+                      src={`https://img.youtube.com/vi/${getYouTubeID(item.youtubeUrl)}/maxresdefault.jpg`}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : item.image ? (
+                    <img 
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gray-700/90 flex items-center justify-center">
+                      <Film className="w-12 h-12 text-gray-500" />
+                    </div>
+                  )}
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <Play className="w-12 h-12 text-white" />
+                    </motion.div>
+                  </div>
+                </div>
+                {/* Content */}
+                <div className="relative p-4">
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-orange-400 transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))
+          ) : (
+            <div className="col-span-full text-center text-gray-400 py-8 backdrop-blur-sm bg-gray-800/50 rounded-xl">
+              No items found for this category
+            </div>
+          )}
+        </motion.div>
+
+        {/* Modal Dialog */}
+        <AnimatePresence>
+          {openDialog && selectedItem && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+              onClick={handleCloseDialog}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                className="relative bg-gray-900/90 backdrop-blur-md rounded-2xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto border border-gray-800 shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  onClick={handleCloseDialog}
+                  className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {selectedItem.title}
+                </h3>
+                <p className="text-gray-400 mb-6">{selectedItem.description}</p>
+                {activeService === "media" && selectedItem.youtubeUrl && (
+                  <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-lg">
+                    <iframe
+                      src={selectedItem.youtubeUrl}
+                      title={selectedItem.title}
+                      className="absolute inset-0 w-full h-full"
+                      allowFullScreen
+                    />
                   </div>
                 )}
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Play className="w-12 h-12 text-white" />
-                </div>
-              </div>
-              {/* Content */}
-              <div className="p-4">
-                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-gray-400 text-sm">{item.description}</p>
-              </div>
-            </motion.div>
-          ))
-        ) : (
-          <div className="col-span-full text-center text-gray-400 py-8">
-            No items found for this category
-          </div>
-        )}
-      </motion.div>
-
-      {/* Modal Dialog */}
-      <AnimatePresence>
-        {openDialog && selectedItem && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-            onClick={handleCloseDialog}
-          >
-            <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
-              className="relative bg-gray-900 rounded-2xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto border border-gray-800"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={handleCloseDialog}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-200"
-              >
-                <X className="w-6 h-6" />
-              </button>
-              <h3 className="text-2xl font-bold text-white mb-4">
-                {selectedItem.title}
-              </h3>
-              <p className="text-gray-400 mb-6">{selectedItem.description}</p>
-              {activeService === "media" && selectedItem.youtubeUrl && (
-                <div className="relative aspect-video w-full">
-                  <iframe
-                    src={selectedItem.youtubeUrl}
-                    title={selectedItem.title}
-                    className="absolute inset-0 w-full h-full rounded-xl"
-                    allowFullScreen
-                  />
-                </div>
-              )}
-              {activeService === "tech" && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {selectedItem.technologies && (
-                    <div className="bg-gray-800 p-4 rounded-lg">
-                      <h4 className="text-white font-semibold mb-2">Technologies</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedItem.technologies.map((tech, index) => (
-                          <span key={index} className="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm">
-                            {tech}
-                          </span>
-                        ))}
+                {activeService === "tech" && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {selectedItem.technologies && (
+                      <div className="bg-gray-800/80 backdrop-blur-sm p-4 rounded-lg">
+                        <h4 className="text-white font-semibold mb-2">Technologies</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedItem.technologies.map((tech, index) => (
+                            <span key={index} className="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                  {selectedItem.metrics && (
-                    <div className="bg-gray-800 p-4 rounded-lg">
-                      <h4 className="text-white font-semibold mb-2">Metrics</h4>
-                      <div className="grid grid-cols-2 gap-2">
-                        {Object.entries(selectedItem.metrics).map(([key, value]) => (
-                          <div key={key} className="text-gray-400">
-                            <span className="text-sm capitalize">{key}: </span>
-                            <span className="text-white">{value}</span>
-                          </div>
-                        ))}
+                    )}
+                    {selectedItem.metrics && (
+                      <div className="bg-gray-800/80 backdrop-blur-sm p-4 rounded-lg">
+                        <h4 className="text-white font-semibold mb-2">Metrics</h4>
+                        <div className="grid grid-cols-2 gap-2">
+                          {Object.entries(selectedItem.metrics).map(([key, value]) => (
+                            <div key={key} className="text-gray-400">
+                              <span className="text-sm capitalize">{key}: </span>
+                              <span className="text-white">{value}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-              )}
+                    )}
+                  </div>
+                )}
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };
