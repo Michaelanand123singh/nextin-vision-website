@@ -40,49 +40,6 @@ const portfolio = {
       youtubeUrl: 'https://www.youtube.com/embed/CQe1IQ0zjqc?si=m60TnNS7cxA68_dk'
     },
 
-    // Motion Graphics & Animation
-    {
-      id: 'motion-1',
-      title: 'Project Tramontia',
-      category: 'Motion Graphics',
-      image: '/assets/images/portfolio/motion-1.jpg',
-      description: 'Engaging animations that break down complex concepts into easy-to-understand visualizations',
-      youtubeUrl: 'https://www.youtube.com/embed/BWtajwT6Weg?si=Ynf3B1bJ4qfBZvOA'
-    },
-    {
-      id: 'motion-2',
-      title: 'Website Explainer animation',
-      category: 'Motion Graphics',
-      image: '/assets/images/portfolio/motion-2.jpg',
-      description: 'Website explainer animation videos 2D/ 3D',
-      youtubeUrl: 'https://www.youtube.com/embed/JM9bCHdZ_LA?si=5HfsU8jX92hB1JxA'
-    },
-    {
-      id: 'motion-3',
-      title: 'website explainer videos',
-      category: 'Motion Graphics',
-      image: '/assets/images/portfolio/motion-3.jpg',
-      description: 'Website explainer videos 2D/ 3D',
-      youtubeUrl: 'https://www.youtube.com/embed/2LhaLXd8zGo?si=ifzbwh1rlYCfMKT2'
-    },
-    {
-      id: 'motion-4',
-      title: 'Product Explainer Video 2D/ 3D',
-      category: 'Motion Graphics',
-      image: '/assets/images/portfolio/motion-4.jpg',
-      description: 'Product explainer video 2D/ 3D Rubber products',
-      youtubeUrl: 'https://www.youtube.com/embed/EuYBw4Hgh2c?si=5I0YK1cClQvKovH2'
-    },
-    {
-      id: 'motion-5',
-      title: 'Plannado Product Explainer Video 2D/ 3D',
-      category: 'Motion Graphics',
-      image: '/assets/images/portfolio/motion-5.jpg',
-      description: 'Plannado product explainer video 2D/ 3D',
-      youtubeUrl: 'https://www.youtube.com/embed/eAN7oR7nCU0?si=guMo6bj7eVryhjg_'
-    },
-
-
     // Animation 2D/ 3D
     {
       id: 'motion-2',
