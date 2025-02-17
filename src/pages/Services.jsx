@@ -62,6 +62,66 @@ const HeroSection = () => {
         }
       ],
       link: "/OnlineOdyssey"
+    },
+    smma: {
+      title: "Digital Marketing (SMMA)",
+      categories: [
+        {
+          name: "Social Media Management",
+          details: [
+            "Strategic content planning and scheduling across platforms",
+            "Community management and engagement optimization",
+            "Performance tracking and analytics reporting"
+          ]
+        },
+        {
+          name: "Content Creation & Strategy",
+          details: [
+            "Professional photography and videography for social media",
+            "Graphic design and visual content creation",
+            "Trending content research and implementation"
+          ]
+        },
+        {
+          name: "Brand Development",
+          details: [
+            "Comprehensive brand identity development",
+            "Social media presence optimization",
+            "Influencer partnership and collaboration management"
+          ]
+        }
+      ],
+      link: "/DigitalMarketing"
+    },
+    additional: {
+      title: "Additional Services & Brands",
+      categories: [
+        {
+          name: "AI Solutions Hub",
+          details: [
+            "Custom AI agents and automation tools development",
+            "Integration services with existing systems",
+            "Performance optimization and scaling solutions"
+          ]
+        },
+        {
+          name: "Dev Market",
+          details: [
+            "Ready-to-use software solutions and components",
+            "Custom landing page templates and themes",
+            "Professional development resources and tools"
+          ]
+        },
+        {
+          name: "Premium Business Solutions",
+          details: [
+            "PPT Market: High-end corporate presentations",
+            "SponsorshipFinder.com: Influencer-brand matching",
+            "Enterprise collaboration and partnership opportunities"
+          ]
+        }
+      ],
+      link: "/AdditionalServices"
     }
   };
 
@@ -104,13 +164,15 @@ const HeroSection = () => {
             Transform Your Digital Presence
           </h1>
           <p className="text-lg text-gray-300/90 max-w-2xl mx-auto">
-            Elevate your brand with cutting-edge media production and technology solutions
+            Elevate your brand with cutting-edge media production, technology solutions, and digital marketing
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-7xl mx-auto">
           <ServiceCard data={services.media} />
           <ServiceCard data={services.tech} />
+          <ServiceCard data={services.smma} />
+          <ServiceCard data={services.additional} />
         </div>
       </div>
     </div>

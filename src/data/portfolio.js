@@ -152,7 +152,7 @@ const portfolio = {
     },
     {
       label: 'Video Views',
-      value: '10M+'
+      value: '1M+'
     }
   ]
 };
