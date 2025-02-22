@@ -60,7 +60,17 @@ const HeroSection = () => {
             "Solutions software development",
             "E-Commerce - Shopify/WooCommerce and Custom"
           ]
+        },
+        {
+          name: "Complete Digital Transformation",
+          details: [
+            "Digital transformation for large-scale industries",
+            "Digital transformation for small and medium-sized businesses",
+            "Digital transformation for startups"
+          
+          ]
         }
+
       ],
       link: "/OnlineOdyssey"
     },
@@ -200,7 +210,7 @@ const HeroSection = () => {
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,rgba(255,100,0,0.1)_0%,transparent_70%)]" />
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,100,0,0.05)_0%,transparent_50%)]" />
       
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-28">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

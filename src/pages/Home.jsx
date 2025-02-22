@@ -3,99 +3,175 @@ import { Link } from 'react-router-dom';
 import { 
   Video, Monitor, Users, Award, Play, ArrowRight, 
   ChevronRight, Star, MessageCircle, BookOpen, 
-  Quote, CheckCircle 
+  Quote, CheckCircle, Code, Brain, Globe, Smartphone,
+  Layout, Palette, Share2, Camera, Cpu, Database
 } from 'lucide-react';
 import SectionTitle from '../components/common/SectionTitle';
 import ServiceCard from '../components/common/ServiceCard';
 
 const initialStats = [
-  { label: 'Projects Completed', value: 275, icon: Award },
-  { label: 'Satisfied Clients', value: 36, icon: Users },
-  { label: 'Team Members', value: 12, icon: Users },
-  { label: 'Combined Experience', value: 13, icon: Star },
+  { label: 'Enterprise Clients', value: 150, icon: Award },
+  { label: 'Global Projects', value: 500, icon: Globe },
+  { label: 'Expert Team Members', value: 50, icon: Users },
+  { label: 'Industry Experience', value: 15, icon: Star },
 ];
 
-const services = [
+const serviceCategories = [
   {
+    title: 'Media Services',
+    subtitle: 'Flicks Studio',
     icon: Video,
-    title: 'Short Form Content',
-    description: 'Compelling narratives that showcase your company\'s mission and values.',
-    price: '99'
+    services: [
+      {
+        icon: Camera,
+        title: 'Enterprise-Level Video Production',
+        features: [
+          'High-budget cinematic ads',
+          'Multi-location shoots',
+          'Industry partnerships'
+        ],
+        price: 'Custom'
+      },
+      {
+        icon: Monitor,
+        title: '3D & VFX Solutions',
+        features: [
+          'Advanced CGI & VFX',
+          'AR/VR Solutions',
+          'Large-scale visualization'
+        ],
+        price: 'Custom'
+      },
+      {
+        icon: Cpu,
+        title: 'AI-Powered Content',
+        features: [
+          'Automated video editing',
+          'Generative AI storytelling',
+          'AI avatars & synthetic media'
+        ],
+        price: 'Custom'
+      }
+    ]
   },
   {
-    icon: Monitor,
-    title: 'Commercial Product Animation',
-    description: 'Dynamic demonstrations that highlight your product\'s key features.',
-    price: '99'
+    title: 'Tech Services',
+    subtitle: 'Odyssey',
+    icon: Code,
+    services: [
+      {
+        icon: Globe,
+        title: 'Metaverse Experiences',
+        features: [
+          'Corporate training',
+          'VR visualization',
+          'Digital twin technology'
+        ],
+        price: 'Custom'
+      },
+      {
+        icon: Brain,
+        title: 'AI & ML Solutions',
+        features: [
+          'Business intelligence',
+          'Process automation',
+          'Custom AI chatbots'
+        ],
+        price: 'Custom'
+      },
+      {
+        icon: Database,
+        title: 'Custom Software',
+        features: [
+          'SaaS development',
+          'E-Commerce solutions',
+          'Digital transformation'
+        ],
+        price: 'Custom'
+      }
+    ]
   },
   {
-    icon: Users,
-    title: 'CGI Ads/ VFX',
-    description: 'Engaging educational videos for employee development.',
-    price: '99'
-  },
+    title: 'Digital Marketing',
+    subtitle: 'SMMA',
+    icon: Share2,
+    services: [
+      {
+        icon: MessageCircle,
+        title: 'Social Media Management',
+        features: [
+          'Strategic planning',
+          'Community management',
+          'Analytics reporting'
+        ],
+        price: 'Custom'
+      },
+      {
+        icon: Palette,
+        title: 'Content Creation',
+        features: [
+          'Professional media',
+          'Graphic design',
+          'Content strategy'
+        ],
+        price: 'Custom'
+      },
+      {
+        icon: Layout,
+        title: 'Brand Development',
+        features: [
+          'Brand identity',
+          'Social optimization',
+          'Influencer partnerships'
+        ],
+        price: 'Custom'
+      }
+    ]
+  }
 ];
 
 const portfolioItems = [
   {
-    title: 'Motion Graphics with Porter',
-    description: 'A captivating story about a leading corporation.',
-    videoUrl: 'https://www.youtube.com/embed/f6aKWrDJ3CM?si=P8dGUYI7cxZnDR3V',
-    category: 'Branding'
+    title: 'Enterprise Video Campaign',
+    description: 'High-budget cinematic production for a Fortune 500 company',
+    videoUrl: 'https://www.youtube.com/embed/f6aKWrDJ3CM',
+    thumbnailUrl: 'https://img.youtube.com/vi/f6aKWrDJ3CM/maxresdefault.jpg',
+    category: 'Enterprise'
   },
   {
-    title: 'Product Launch Campaign',
-    description: 'Showcasing a successful product launch.',
-    videoUrl: 'https://www.youtube.com/embed/BWtajwT6Weg?si=ZXV_oGhlh6YMOdAo',
-    category: 'Product'
+    title: 'Product Animation 3D',
+    description: 'Virtual reality corporate training platform',
+    videoUrl: 'https://www.youtube.com/embed/BWtajwT6Weg',
+    thumbnailUrl: 'https://img.youtube.com/vi/BWtajwT6Weg/maxresdefault.jpg',
+    category: 'Tech'
   },
   {
-    title: 'Green Screen VFX',
-    description: 'A green video shifted to rendered video using VFX',
-    videoUrl: 'https://www.youtube.com/embed/5bwsX0fMSI0?si=3IaK6ZahJbxYYhOy',
-    category: 'VFX'
-  },
+    title: 'AI-Powered Marketing',
+    description: 'Automated content generation and distribution system',
+    videoUrl: 'https://www.youtube.com/embed/5bwsX0fMSI0',
+    thumbnailUrl: 'https://img.youtube.com/vi/5bwsX0fMSI0/maxresdefault.jpg',
+    category: 'Digital'
+  }
 ];
 
 const testimonials = [
   {
-    name: 'John Smith',
-    role: 'CEO, Tech Innovations',
-    quote: 'Nextin Vision transformed our corporate story into an incredible visual narrative that truly resonates with our audience.',
+    name: 'Alexander Mitchell',
+    role: 'CEO, Global Innovations Corp',
+    quote: 'Their enterprise-level solutions transformed our digital presence across all channels.',
     image: '/assets/images/testimonial1.jpg'
   },
   {
-    name: 'Sarah Lee',
-    role: 'Marketing Director, Global Solutions',
-    quote: 'Their video production expertise elevated our brand communication to a whole new level.',
+    name: 'Elena Rodriguez',
+    role: 'CTO, Tech Ventures',
+    quote: 'The AI and metaverse solutions provided unprecedented value to our organization.',
     image: '/assets/images/testimonial2.jpg'
   },
   {
-    name: 'Michael Chen',
-    role: 'Startup Founder',
-    quote: 'The team\'s creativity and professionalism exceeded our expectations.',
+    name: 'James Chen',
+    role: 'CMO, Digital Frontiers',
+    quote: 'Their integrated approach to digital marketing delivered exceptional ROI.',
     image: '/assets/images/testimonial3.jpg'
-  }
-];
-
-const resources = [
-  {
-    icon: BookOpen,
-    title: 'Video Marketing Guide',
-    description: 'Comprehensive guide to leveraging video for business growth.',
-    link: '/resources/video-marketing-guide'
-  },
-  {
-    icon: CheckCircle,
-    title: 'Production Checklist',
-    description: 'Essential steps for creating compelling corporate videos.',
-    link: '/resources/production-checklist'
-  },
-  {
-    icon: MessageCircle,
-    title: 'Industry Insights Blog',
-    description: 'Latest trends and tips in video production and marketing.',
-    link: '/blog'
   }
 ];
 
@@ -103,12 +179,13 @@ export default function Home() {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [stats, setStats] = useState(initialStats.map(stat => ({ ...stat, currentValue: 0 })));
-  const [portfolioThumbnails, setPortfolioThumbnails] = useState([]);
+  const [activeCategory, setActiveCategory] = useState('Media Services');
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   // Animated Stats Counter
   useEffect(() => {
     const statsCounters = stats.map(stat => {
-      const duration = 2000; // Total animation duration
+      const duration = 2000;
       const increment = stat.value / (duration / 50);
       
       const counter = setInterval(() => {
@@ -134,21 +211,6 @@ export default function Home() {
     return () => statsCounters.forEach(counter => counter());
   }, []);
 
-  // YouTube Thumbnail Fetcher
-  useEffect(() => {
-    const fetchThumbnails = async () => {
-      const thumbnails = await Promise.all(
-        portfolioItems.map(async (item) => {
-          const videoId = item.videoUrl.split('embed/')[1].split('?')[0];
-          return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-        })
-      );
-      setPortfolioThumbnails(thumbnails);
-    };
-
-    fetchThumbnails();
-  }, []);
-
   // Scroll Event Listener
   useEffect(() => {
     const handleScroll = () => {
@@ -161,38 +223,46 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#121212] text-gray-100">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center">
-        {/* YouTube Background Video */}
-        <div className="absolute inset-0 overflow-hidden">
-          <iframe
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto z-0 opacity-80 filter blur-sm"
-            src="https://player.vimeo.com/video/1037057432?autoplayer=1"
-            title="Background Video"
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          />
-        </div>
+      <section className="relative min-h-screen flex items-center">
+      <div className="absolute inset-0 overflow-hidden">
+  <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-10" />
+  <div className="absolute inset-0">
+    <iframe
+      src="https://player.vimeo.com/video/1059328238?h=5df7f885ae&background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
+      className={`absolute w-full h-full object-cover scale-105 transition-opacity duration-1000 ${
+        videoLoaded ? 'opacity-100' : 'opacity-0'
+      }`}
+      allow="autoplay; fullscreen; picture-in-picture"
+      frameBorder="0"
+      onLoad={() => setVideoLoaded(true)}
+      style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        width: '100%',
+        height: '100%',
+        transform: 'translate(-50%, -50%) scale(1.5)',
+        pointerEvents: 'none'
+      }}
+    />
+  </div>
+</div>
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60 z-10" />
-        
-        <div className="container relative z-20 text-white">
-          <div className="max-w-3xl space-y-6">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in-up text-gray-100">
-              Transforming Corporate Stories into 
-              <span className="text-amber-500"> Visual Impact</span>
+        <div className="container relative z-20">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in-up bg-gradient-to-r from-amber-300 via-amber-500 to-amber-700 bg-clip-text text-transparent">
+              Transform Your Digital Presence
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 animate-fade-in-up delay-200">
-              Professional video production services that elevate your brand and engage your audience.
+            <p className="text-xl md:text-2xl text-gray-300 mt-6 animate-fade-in-up delay-200">
+              Elevate your brand with cutting-edge media production, technology solutions, and digital marketing
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in-up delay-300">
-              <Link to="/contact" className="group inline-flex items-center justify-center px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold transition-all hover:bg-amber-700 hover:transform hover:scale-105">
-                Get Started
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mt-10 animate-fade-in-up delay-300">
+              <Link to="/contact" className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-700 text-white rounded-lg font-semibold transition-all hover:from-amber-600 hover:to-amber-800 hover:scale-105 shadow-lg hover:shadow-amber-500/25">
+                Start Your Transformation
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/portfolio" className="group inline-flex items-center justify-center px-8 py-4 bg-gray-800 text-gray-100 rounded-lg backdrop-blur-sm font-semibold transition-all hover:bg-gray-700">
-                View Our Work
+              <Link to="/portfolio" className="group inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg font-semibold transition-all hover:bg-white/20 border border-white/20">
+                Explore Our Work
                 <Play className="ml-2 w-4 h-4" />
               </Link>
             </div>
@@ -200,50 +270,81 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-          <div className="w-8 h-12 rounded-full border-2 border-gray-600 flex items-start justify-center p-2">
+          <div className="w-8 h-12 rounded-full border-2 border-amber-600/30 flex items-start justify-center p-2">
             <div className="w-1 h-3 bg-amber-500 rounded-full animate-scroll"></div>
           </div>
         </div>
       </section>
 
-      {/* About Video Section */}
-      <section className="py-24 bg-[#121212]">
+      {/* Services Section */}
+      <section className="py-24 bg-[#0a0a0a]">
         <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-100">
-                Welcome to Nextin Vision
-              </h2>
-              <p className="text-amber-500 text-lg">
-                Discover how we transform ideas into compelling visual stories
-              </p>
-            </div>
-            
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-[#1e1e1e]">
-              <div className="aspect-video">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/f6aKWrDJ3CM?si=e54eR5oa8qj7qR3I"
-                  title="About Nextin Vision"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-              
-              <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
-            </div>
+          <SectionTitle
+            subtitle="Our Services"
+            title="Comprehensive Digital Solutions"
+            description="Integrated services across media, technology, and digital marketing"
+            center
+          />
 
-            <div className="mt-12 text-center">
-              <Link
-                to="/about"
-                className="inline-flex items-center px-6 py-4 text-amber-500 rounded-lg font-semibold transition-all hover:bg-gray-800 hover:text-amber-400 hover:transform hover:scale-105"
+          <div className="flex justify-center space-x-4 mt-12 mb-16">
+            {serviceCategories.map(category => (
+              <button
+                key={category.title}
+                onClick={() => setActiveCategory(category.title)}
+                className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                  activeCategory === category.title
+                    ? 'bg-gradient-to-r from-amber-500 to-amber-700 text-white shadow-lg'
+                    : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
+                }`}
               >
-                About Us
-                <ArrowRight className="ml-2" />
-              </Link>
-            </div>
+                <div className="flex items-center space-x-2">
+                  <category.icon className="w-5 h-5" />
+                  <span>{category.title}</span>
+                </div>
+              </button>
+            ))}
           </div>
+
+          {serviceCategories.map(category => (
+            <div
+              key={category.title}
+              className={`grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-300 ${
+                activeCategory === category.title ? 'opacity-100' : 'hidden'
+              }`}
+            >
+              {category.services.map(service => (
+                <div
+                  key={service.title}
+                  className="group p-8 bg-gradient-to-br from-[#1e1e1e] to-[#2a2a2a] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-amber-500/20"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center mb-6 group-hover:from-amber-500 group-hover:to-amber-700 transition-all duration-300">
+                    <service.icon className="w-8 h-8 text-amber-500 group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4 text-gray-100 group-hover:text-amber-500 transition-colors">
+                    {service.title}
+                  </h3>
+                  <ul className="space-y-3 mb-6">
+                    {service.features.map(feature => (
+                      <li key={feature} className="flex items-center text-gray-400">
+                        <CheckCircle className="w-5 h-5 text-amber-500 mr-2" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex items-center justify-between mt-auto">
+                    <span className="text-2xl font-bold text-amber-500">{service.price}</span>
+                    <Link 
+                      to={`/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="inline-flex items-center text-amber-500 hover:text-amber-400 font-semibold"
+                    >
+                      Learn More 
+                      <ChevronRight className="ml-1 w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
 
@@ -254,10 +355,10 @@ export default function Home() {
             {stats.map((stat) => (
               <div 
                 key={stat.label}
-                className="group p-8 bg-[#1e1e1e] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="group p-8 bg-gradient-to-br from-[#1e1e1e]/50 to-[#2a2a2a]/50 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-800/50"
               >
                 <div className="flex flex-col items-center text-center">
-                  <stat.icon className="w-8 h-8 text-amber-500 mb-4" />
+                  <stat.icon className="w-10 h-10 text-amber-500 mb-4" />
                   <div className="text-4xl font-bold text-gray-100 mb-2 group-hover:text-amber-500 transition-colors">
                     {stat.currentValue}+
                   </div>
@@ -269,52 +370,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-[#0a0a0a]">
-        <div className="container">
-          <SectionTitle
-            subtitle="Our Services"
-            title="Professional Video Services"
-            description="We offer a comprehensive range of video production services tailored to your business needs."
-            center
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="group p-6 bg-[#1e1e1e] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div className="w-14 h-14 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
-                  <service.icon className="w-7 h-7 text-amber-500 group-hover:text-white transition-colors" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-100 group-hover:text-amber-500 transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-400 mb-4">{service.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-gray-100">${service.price}</span>
-                  <Link 
-                    to={`/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="inline-flex items-center text-amber-500 hover:text-amber-400 font-semibold"
-                  >
-                    Learn More 
-                    <ChevronRight className="ml-1 w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Portfolio Section */}
-      <section className="py-20 bg-[#121212]">
+      <section className="py-24 bg-[#121212]">
         <div className="container">
           <SectionTitle
             subtitle="Featured Work"
-            title="Our Latest Projects"
-            description="Explore a few of our successful video projects."
+            title="Success Stories"
+            description="Transformative digital solutions for industry leaders"
             center
           />
           
@@ -322,24 +384,28 @@ export default function Home() {
             {portfolioItems.map((item, index) => (
               <div
                 key={item.title}
-                className="group relative bg-[#1e1e1e] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
-                onClick={() => setSelectedVideo(item.videoUrl)}
+                className="group relative bg-gradient-to-br from-[#1e1e1e] to-[#2a2a2a] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-amber-500/20"
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative aspect-video overflow-hidden">
                   <img
-                    src={portfolioThumbnails[index] || '/placeholder-image.jpg'}
+                    src={item.thumbnailUrl}
                     alt={item.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300 brightness-75"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <Play className="w-16 h-16 text-amber-500" />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer"
+                    onClick={() => setSelectedVideo(item.videoUrl)}
+                  >
+                    <div className="w-16 h-16 rounded-full bg-amber-500 flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                      <Play className="w-8 h-8 text-white" />
+                    </div>
                   </div>
                 </div>
                 <div className="p-6">
                   <span className="text-sm text-amber-500 font-semibold">
                     {item.category}
                   </span>
-                  <h3 className="text-xl font-semibold mt-2 mb-2 text-gray-100">
+                  <h3 className="text-xl font-semibold mt-2 mb-2 text-gray-100 group-hover:text-amber-500 transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-gray-400">
@@ -350,25 +416,25 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-          <Link
-            to="/portfolio"
-            className="inline-flex items-center px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold transition-all hover:bg-amber-700 hover:transform hover:scale-105"
-          >
-            View All Projects
-            <ArrowRight className="ml-2" />
-          </Link>
-        </div>
+          <div className="text-center mt-16">
+            <Link
+              to="/portfolio"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-700 text-white rounded-lg font-semibold transition-all hover:from-amber-600 hover:to-amber-800 hover:transform hover:scale-105 shadow-lg hover:shadow-amber-500/25"
+            >
+              View Full Portfolio
+              <ArrowRight className="ml-2" />
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-[#121212]">
+      <section className="py-24 bg-[#0a0a0a]">
         <div className="container">
           <SectionTitle
-            subtitle="What Our Clients Say"
-            title="Client Testimonials"
-            description="Hear from businesses that have experienced our video production magic."
+            subtitle="Client Success"
+            title="What Industry Leaders Say"
+            description="Trusted by innovative companies worldwide"
             center
           />
           
@@ -376,19 +442,19 @@ export default function Home() {
             {testimonials.map((testimonial) => (
               <div
                 key={testimonial.name}
-                className="bg-[#1e1e1e] rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-br from-[#1e1e1e] to-[#2a2a2a] rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-800 hover:border-amber-500/20"
               >
-                <Quote className="text-amber-500 mb-4" />
-                <p className="text-gray-300 italic mb-6">"{testimonial.quote}"</p>
+                <Quote className="w-12 h-12 text-amber-500 mb-6 opacity-50" />
+                <p className="text-gray-300 text-lg italic mb-8 leading-relaxed">"{testimonial.quote}"</p>
                 <div className="flex items-center">
                   <img 
                     src={testimonial.image} 
                     alt={testimonial.name} 
-                    className="w-12 h-12 rounded-full mr-4 object-cover"
+                    className="w-14 h-14 rounded-full mr-4 object-cover ring-2 ring-amber-500/20"
                   />
                   <div>
-                    <h4 className="font-semibold text-gray-100">{testimonial.name}</h4>
-                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                    <h4 className="font-semibold text-gray-100 text-lg">{testimonial.name}</h4>
+                    <p className="text-amber-500">{testimonial.role}</p>
                   </div>
                 </div>
               </div>
@@ -397,36 +463,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Resources Section */}
-      <section className="py-20 bg-[#0a0a0a]">
-        <div className="container">
-          <SectionTitle
-            subtitle="Learn & Grow"
-            title="Industry Resources"
-            description="Free resources to help you leverage video for your business."
-            center
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {resources.map((resource) => (
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-r from-amber-600 to-amber-700 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/assets/images/pattern.svg')] opacity-10" />
+        <div className="container relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Transform Your Digital Presence?
+            </h2>
+            <p className="text-xl text-white/90 mb-10">
+              Let's create something extraordinary together. Our team of experts is ready to help you achieve your digital goals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
-                to={resource.link}
-                key={resource.title}
-                className="group bg-[#1e1e1e] rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-900"
+                to="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-amber-600 rounded-lg font-semibold transition-all hover:bg-gray-100 hover:transform hover:scale-105 shadow-lg"
               >
-                <div className="w-14 h-14 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
-                  <resource.icon className="w-7 h-7 text-amber-500 group-hover:text-white" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-100 group-hover:text-amber-500">
-                  {resource.title}
-                </h3>
-                <p className="text-gray-400 mb-4">{resource.description}</p>
-                <div className="flex items-center text-amber-500 group-hover:text-amber-400">
-                  Learn More
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </div>
+                Schedule a Consultation
+                <ArrowRight className="ml-2" />
               </Link>
-            ))}
+              <Link
+                to="/services"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold transition-all hover:bg-white/10"
+              >
+                Explore Services
+                <ChevronRight className="ml-2" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -434,27 +497,29 @@ export default function Home() {
       {/* Video Modal */}
       {selectedVideo && (
         <div 
-          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black/95 flex items-center justify-center z-50 p-4 backdrop-blur-sm"
           onClick={() => setSelectedVideo(null)}
         >
           <div 
-            className="relative max-w-4xl w-full bg-[#1e1e1e] rounded-xl overflow-hidden"
+            className="relative max-w-5xl w-full bg-[#1e1e1e] rounded-xl overflow-hidden shadow-2xl"
             onClick={e => e.stopPropagation()}
           >
             <button
-              className="absolute top-4 right-4 w-10 h-10 bg-gray-800 text-gray-200 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
+              className="absolute top-4 right-4 w-10 h-10 bg-gray-800/80 text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors z-10"
               onClick={() => setSelectedVideo(null)}
             >
               ×
             </button>
-            <iframe
-              className="w-full aspect-video"
-              src={selectedVideo}
-              title="Video Player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            <div className="aspect-video">
+              <iframe
+                className="w-full h-full"
+                src={selectedVideo}
+                title="Video Player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
       )}
