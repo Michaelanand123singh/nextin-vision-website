@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, X, Code, Film, Globe } from 'lucide-react';
+import { Play, X, Code, Film, Globe, ExternalLink } from 'lucide-react';
 import { portfolio } from '../data/portfolio';
 import { smma } from '../data/smma';
 import { techData } from '../data/techdata';
@@ -102,6 +102,14 @@ const Portfolio = () => {
     }
   };
 
+  // Function to handle external link navigation
+  const handleExternalLink = (e, url) => {
+    e.stopPropagation(); // Prevent opening the modal
+    if (url) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <div className="relative min-h-screen bg-black">
       {/* Premium Background Elements */}
@@ -176,7 +184,7 @@ const Portfolio = () => {
                 
                 {/* Thumbnail Container */}
                 <div className="relative aspect-video w-full overflow-hidden">
-                  {item.youtubeUrl ? (
+                  {activeService === 'media' && item.youtubeUrl ? (
                     <img 
                       src={`https://img.youtube.com/vi/${getYouTubeID(item.youtubeUrl)}/maxresdefault.jpg`}
                       alt={item.title}
@@ -190,27 +198,58 @@ const Portfolio = () => {
                     />
                   ) : (
                     <div className="w-full h-full bg-gray-700/90 flex items-center justify-center">
-                      <Film className="w-12 h-12 text-gray-500" />
+                      {activeService === 'tech' ? (
+                        <Code className="w-12 h-12 text-blue-500" />
+                      ) : activeService === 'smma' ? (
+                        <Globe className="w-12 h-12 text-green-500" />
+                      ) : (
+                        <Film className="w-12 h-12 text-gray-500" />
+                      )}
                     </div>
                   )}
-                  {/* Play Button Overlay */}
+                  
+                  {/* Play/View Button Overlay */}
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                     <motion.div
                       whileHover={{ scale: 1.1 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      <Play className="w-12 h-12 text-white" />
+                      {activeService === 'tech' && item.url ? (
+                        <button 
+                          onClick={(e) => handleExternalLink(e, item.url)}
+                          className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full transition-colors duration-300"
+                        >
+                          <span>View</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </button>
+                      ) : (
+                        <Play className="w-12 h-12 text-white" />
+                      )}
                     </motion.div>
                   </div>
                 </div>
+                
                 {/* Content */}
                 <div className="relative p-4">
                   <h3 className="text-lg font-bold text-white mb-2 group-hover:text-orange-400 transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
+                  <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300 line-clamp-2">
                     {item.description}
                   </p>
+                  
+                  {/* View Button for Tech items with URL */}
+                  {activeService === 'tech' && item.url && (
+                    <div className="mt-4 flex justify-end">
+                      <button 
+                        onClick={(e) => handleExternalLink(e, item.url)}
+                        className="flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm transition-colors duration-300"
+                      >
+                        <span>View Project</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </button>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))
@@ -248,6 +287,7 @@ const Portfolio = () => {
                   {selectedItem.title}
                 </h3>
                 <p className="text-gray-400 mb-6">{selectedItem.description}</p>
+                
                 {activeService === "media" && selectedItem.youtubeUrl && (
                   <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-lg">
                     <iframe
@@ -258,31 +298,61 @@ const Portfolio = () => {
                     />
                   </div>
                 )}
+                
                 {activeService === "tech" && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {selectedItem.technologies && (
-                      <div className="bg-gray-800/80 backdrop-blur-sm p-4 rounded-lg">
-                        <h4 className="text-white font-semibold mb-2">Technologies</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {selectedItem.technologies.map((tech, index) => (
-                            <span key={index} className="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
+                  <div className="space-y-6">
+                    {/* Software screenshot or preview */}
+                    {selectedItem.image && (
+                      <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-lg">
+                        <img 
+                          src={selectedItem.image} 
+                          alt={selectedItem.title} 
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     )}
-                    {selectedItem.metrics && (
-                      <div className="bg-gray-800/80 backdrop-blur-sm p-4 rounded-lg">
-                        <h4 className="text-white font-semibold mb-2">Metrics</h4>
-                        <div className="grid grid-cols-2 gap-2">
-                          {Object.entries(selectedItem.metrics).map(([key, value]) => (
-                            <div key={key} className="text-gray-400">
-                              <span className="text-sm capitalize">{key}: </span>
-                              <span className="text-white">{value}</span>
-                            </div>
-                          ))}
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {selectedItem.technologies && (
+                        <div className="bg-gray-800/80 backdrop-blur-sm p-4 rounded-lg">
+                          <h4 className="text-white font-semibold mb-2">Technologies</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {selectedItem.technologies.map((tech, index) => (
+                              <span key={index} className="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm">
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
                         </div>
+                      )}
+                      
+                      {selectedItem.metrics && (
+                        <div className="bg-gray-800/80 backdrop-blur-sm p-4 rounded-lg">
+                          <h4 className="text-white font-semibold mb-2">Metrics</h4>
+                          <div className="grid grid-cols-2 gap-2">
+                            {Object.entries(selectedItem.metrics).map(([key, value]) => (
+                              <div key={key} className="text-gray-400">
+                                <span className="text-sm capitalize">{key}: </span>
+                                <span className="text-white">{value}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    
+                    {/* View Project Button */}
+                    {selectedItem.url && (
+                      <div className="mt-6 flex justify-center">
+                        <a 
+                          href={selectedItem.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-lg transition-all duration-300 shadow-lg shadow-blue-500/20"
+                        >
+                          <span>Visit Project</span>
+                          <ExternalLink className="w-5 h-5" />
+                        </a>
                       </div>
                     )}
                   </div>

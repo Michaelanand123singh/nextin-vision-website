@@ -1,85 +1,222 @@
-import { 
-    Terminal, 
-    Cpu, 
-    Users, 
-    LineChartIcon,
-    Code,
-    Cloud,
-    Shield,
-    Smartphone
-  } from 'lucide-react';
-  
-  export const techData = {
-    items: [
-      {
-        id: 't1',
-        title: 'E-commerce Platform',
-        description: 'Full-stack e-commerce solution with real-time inventory management, payment processing, and analytics dashboard',
-        technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Stripe'],
-        metrics: {
-          users: '50K+',
-          transactions: '100K+',
-          uptime: '99.9%',
-          performance: '98/100'
-        },
-        category: 'Web Development',
-        github: 'https://github.com/example/ecommerce',
-        liveDemo: 'https://demo-ecommerce.example.com',
-        thumbnail: '/images/portfolio/tech/ecommerce.jpg'
+import {
+  Terminal,
+  Cpu,
+  Users,
+  LineChartIcon,
+  Code,
+  Cloud,
+  Shield,
+  Smartphone
+} from 'lucide-react';
+
+export const techData = {
+  items: [
+    {
+      id: 't1',
+      title: 'SkytechInfotech',
+      description: 'Full-stack website for SkytechInfotech solutions with integrated payment system and cloud hosting',
+      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Stripe', 'TypeScript'],
+      metrics: {
+        users: '75K+',
+        transactions: '150K+',
+        uptime: '99.99%',
+        performance: '99/100'
       },
-      {
-        id: 't2',
-        title: 'AI-Powered Analytics Dashboard',
-        description: 'Machine learning-based analytics platform for business intelligence with predictive modeling capabilities',
-        technologies: ['Python', 'TensorFlow', 'React', 'Django', 'PostgreSQL'],
-        metrics: {
-          accuracy: '94%',
-          processedData: '2TB+',
-          predictions: '1M+',
-          companies: '25+'
-        },
-        category: 'Machine Learning',
-        github: 'https://github.com/example/ai-analytics',
-        liveDemo: 'https://demo-analytics.example.com',
-        thumbnail: '/images/portfolio/tech/ai-analytics.jpg'
+      category: 'Web Development',
+      image: '/images/skytechinfotech.png',
+      url: 'https://skytechinfotech.com',
+      github: 'https://github.com/skytechinfotech/main-website',
+      icon: Code,
+      status: 'active',
+      featured: true
+    },
+
+    {
+      id: 't2',
+      title: 'NYWNFT',
+      description: ' NYWNFTs, the bridge between Blockchain and AI, lets you own a piece of the action',
+      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Stripe', 'TypeScript'],
+      metrics: {
+        users: '75K+',
+        transactions: '150K+',
+        uptime: '99.99%',
+        performance: '99/100'
       },
-      {
-        id: 't3',
-        title: 'Mobile Fitness App',
-        description: 'Cross-platform fitness tracking application with social features and personalized workout plans',
-        technologies: ['React Native', 'Firebase', 'Node.js', 'MongoDB'],
-        metrics: {
-          downloads: '100K+',
-          activeUsers: '45K',
-          rating: '4.8/5',
-          workouts: '250K+'
-        },
-        category: 'Mobile Development',
-        github: 'https://github.com/example/fitness-app',
-        liveDemo: 'https://demo-fitness.example.com',
-        thumbnail: '/images/portfolio/tech/fitness-app.jpg'
+      category: 'Web Development',
+      image: '/images/nft.png',
+      url: 'https://nft-place-lake.vercel.app/',
+      github: 'https://github.com/skytechinfotech/main-website',
+      icon: Code,
+      status: 'active',
+      featured: true
+    },
+
+    {
+      id: 't3',
+      title: 'Sanjay Cateering',
+      description: 'Book Sanjay Caterers For Your Dream Event',
+      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Stripe', 'TypeScript'],
+      metrics: {
+        users: '75K+',
+        transactions: '150K+',
+        uptime: '99.99%',
+        performance: '99/100'
       },
-      {
-        id: 't4',
-        title: 'Real Estate Management System',
-        description: 'Cloud-based property management platform with virtual tours and automated tenant screening',
-        technologies: ['Vue.js', 'Laravel', 'MySQL', 'AWS', 'Docker'],
-        metrics: {
-          properties: '15K+',
-          users: '75K+',
-          transactions: '$50M+',
-          uptime: '99.95%'
-        },
-        category: 'Web Development',
-        github: 'https://github.com/example/realestate',
-        liveDemo: 'https://demo-realestate.example.com',
-        thumbnail: '/images/portfolio/tech/realestate.jpg'
-      }
-    ],
-    stats: [
-      { icon: Terminal, title: "Projects Completed", value: "87", trend: 15.2 },
-      { icon: Cpu, title: "Apps Deployed", value: "34", trend: 8.7 },
-      { icon: Users, title: "Active Users", value: "125K", trend: 22.4 },
-      { icon: LineChartIcon, title: "Success Rate", value: "96%", trend: 3.2 }
-    ]
-  };
+      category: 'Web Development',
+      image: '/images/sanjay-catering.png',
+      url: 'https://architecture-xi.vercel.app/',
+      github: 'https://github.com/skytechinfotech/main-website',
+      icon: Code,
+      status: 'active',
+      featured: true
+    },
+
+    {
+      id: 't4',
+      title: 'Nation First 9',
+      description: 'News website',
+      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Stripe', 'TypeScript'],
+      metrics: {
+        users: '75K+',
+        transactions: '150K+',
+        uptime: '99.99%',
+        performance: '99/100'
+      },
+      category: 'Web Development',
+      image: '/images/nation-first.png',
+      url: 'https://nation-first9.vercel.app/',
+      github: 'https://github.com/skytechinfotech/main-website',
+      icon: Code,
+      status: 'active',
+      featured: true
+    },
+
+    {
+      id: 't5',
+      title: 'E-Commerce Jewellery website',
+      description: 'Jewellery website',
+      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Stripe', 'TypeScript'],
+      metrics: {
+        users: '75K+',
+        transactions: '150K+',
+        uptime: '99.99%',
+        performance: '99/100'
+      },
+      category: 'Web Development',
+      image: '/images/ecommerce.png',
+      url: 'https://ecommerce-flax-chi.vercel.app/',
+      github: 'https://github.com/skytechinfotech/main-website',
+      icon: Code,
+      status: 'active',
+      featured: true
+    },
+
+    {
+      id: 't6',
+      title: 'Event Website',
+      description: 'Dreamday Event Planner website',
+      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Stripe', 'TypeScript'],
+      metrics: {
+        users: '75K+',
+        transactions: '150K+',
+        uptime: '99.99%',
+        performance: '99/100'
+      },
+      category: 'Web Development',
+      image: '/images/event.png',
+      url: 'https://website-event-beta.vercel.app/',
+      github: 'https://github.com/skytechinfotech/main-website',
+      icon: Code,
+      status: 'active',
+      featured: true
+    },
+
+    {
+      id: 't6',
+      title: 'NFT Marketplace',
+      description: 'NFTs Marketplace',
+      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Stripe', 'TypeScript'],
+      metrics: {
+        users: '75K+',
+        transactions: '150K+',
+        uptime: '99.99%',
+        performance: '99/100'
+      },
+      category: 'Web Development',
+      image: '/images/neft-marketplace.png',
+      url: 'https://nft-market-place-rho.vercel.app/',
+      github: 'https://github.com/skytechinfotech/main-website',
+      icon: Code,
+      status: 'active',
+      featured: true
+    },
+    
+    {
+      id: 't7',
+      title: 'E-Commerce Store',
+      description: 'E-commerce store website',
+      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Stripe', 'TypeScript'],
+      metrics: {
+        users: '75K+',
+        transactions: '150K+',
+        uptime: '99.99%',
+        performance: '99/100'
+      },
+      category: 'Web Development',
+      image: '/images/ecommerce-1.png',
+      url: 'https://ecommerce-automation-website.vercel.app/',
+      github: 'https://github.com/skytechinfotech/main-website',
+      icon: Code,
+      status: 'active',
+      featured: true
+    },
+
+    {
+      id: 't8',
+      title: 'Company website- Renderverse',
+      description: ' website',
+      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Stripe', 'TypeScript'],
+      metrics: {
+        users: '75K+',
+        transactions: '150K+',
+        uptime: '99.99%',
+        performance: '99/100'
+      },
+      category: 'Web Development',
+      image: '/images/renderverse-website.png',
+      url: 'https://renderverse-website.vercel.app/',
+      github: 'https://github.com/skytechinfotech/main-website',
+      icon: Code,
+      status: 'active',
+      featured: true
+    },
+
+    {
+      id: 't9',
+      title: 'Lets Code Job Portal',
+      description: ' website',
+      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Stripe', 'TypeScript'],
+      metrics: {
+        users: '75K+',
+        transactions: '150K+',
+        uptime: '99.99%',
+        performance: '99/100'
+      },
+      category: 'Web Development',
+      image: '/images/lets-code-job-portal.png',
+      url: 'https://letscode-job-portal.vercel.app/',
+      github: 'https://github.com/skytechinfotech/main-website',
+      icon: Code,
+      status: 'active',
+      featured: true
+    },
+
+
+  ],
+  stats: [
+    { icon: Terminal, title: "Projects Completed", value: "87", trend: 15.2 },
+    { icon: Cpu, title: "Apps Deployed", value: "34", trend: 8.7 },
+    { icon: Users, title: "Active Users", value: "125K", trend: 22.4 },
+    { icon: LineChartIcon, title: "Success Rate", value: "96%", trend: 3.2 }
+  ]
+};
