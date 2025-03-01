@@ -24,7 +24,7 @@ export const techData = {
       },
       category: 'Web Development',
       image: '/images/skytechinfotech.png',
-      url: 'https://skytechinfotech.com',
+      url: 'https://skytech-infotech.vercel.app/',
       github: 'https://github.com/skytechinfotech/main-website',
       icon: Code,
       status: 'active',
