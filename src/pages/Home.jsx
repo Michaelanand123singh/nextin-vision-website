@@ -4,60 +4,24 @@ import {
   Video, Monitor, Users, Award, Play, ArrowRight, 
   ChevronRight, Star, MessageCircle, BookOpen, 
   Quote, CheckCircle, Code, Brain, Globe, Smartphone,
-  Layout, Palette, Share2, Camera, Cpu, Database
+  Layout, Palette, Share2, Camera, Cpu, Database, Handshake
 } from 'lucide-react';
 import SectionTitle from '../components/common/SectionTitle';
 import ServiceCard from '../components/common/ServiceCard';
 
 const initialStats = [
-  { label: 'Enterprise Clients', value: 150, icon: Award },
+  { label: 'Enterprise Partners', value: 150, icon: Handshake },
   { label: 'Global Projects', value: 500, icon: Globe },
   { label: 'Expert Team Members', value: 50, icon: Users },
-  { label: 'Industry Experience', value: 15, icon: Star },
+  { label: 'Years of Partnership', value: 15, icon: Star },
 ];
 
-const serviceCategories = [
+const partnerTypes = [
   {
-    title: 'Media Services',
-    subtitle: 'Flicks Studio',
-    icon: Video,
-    services: [
-      {
-        icon: Camera,
-        title: 'Enterprise-Level Video Production',
-        features: [
-          'High-budget cinematic ads',
-          'Multi-location shoots',
-          'Industry partnerships'
-        ],
-        price: 'Custom'
-      },
-      {
-        icon: Monitor,
-        title: '3D & VFX Solutions',
-        features: [
-          'Advanced CGI & VFX',
-          'AR/VR Solutions',
-          'Large-scale visualization'
-        ],
-        price: 'Custom'
-      },
-      {
-        icon: Cpu,
-        title: 'AI-Powered Content',
-        features: [
-          'Automated video editing',
-          'Generative AI storytelling',
-          'AI avatars & synthetic media'
-        ],
-        price: 'Custom'
-      }
-    ]
-  },
-  {
-    title: 'Tech Services',
+    title: 'Tech Partner',
     subtitle: 'Odyssey',
     icon: Code,
+    description: 'We collaborate with companies to provide cutting-edge technology solutions, driving innovation and digital transformation.',
     services: [
       {
         icon: Globe,
@@ -92,9 +56,48 @@ const serviceCategories = [
     ]
   },
   {
-    title: 'Digital Marketing',
-    subtitle: 'SMMA',
+    title: 'Media Partner',
+    subtitle: 'Flicks Studio',
+    icon: Video,
+    description: 'We partner with brands to create high-impact media content, from cinematic productions to AI-powered storytelling.',
+    services: [
+      {
+        icon: Camera,
+        title: 'Enterprise-Level Video Production',
+        features: [
+          'High-budget cinematic ads',
+          'Multi-location shoots',
+          'Industry partnerships'
+        ],
+        price: 'Custom'
+      },
+      {
+        icon: Monitor,
+        title: '3D & VFX Solutions',
+        features: [
+          'Advanced CGI & VFX',
+          'AR/VR Solutions',
+          'Large-scale visualization'
+        ],
+        price: 'Custom'
+      },
+      {
+        icon: Cpu,
+        title: 'AI-Powered Content',
+        features: [
+          'Automated video editing',
+          'Generative AI storytelling',
+          'AI avatars & synthetic media'
+        ],
+        price: 'Custom'
+      }
+    ]
+  },
+  {
+    title: 'SMMA Partner',
+    subtitle: 'Social Media Marketing Agency',
     icon: Share2,
+    description: 'We work closely with businesses to amplify their digital presence through strategic social media management and marketing.',
     services: [
       {
         icon: MessageCircle,
@@ -136,21 +139,21 @@ const portfolioItems = [
     description: 'High-budget cinematic production for a Fortune 500 company',
     videoUrl: 'https://www.youtube.com/embed/f6aKWrDJ3CM',
     thumbnailUrl: 'https://img.youtube.com/vi/f6aKWrDJ3CM/maxresdefault.jpg',
-    category: 'Enterprise'
+    category: 'Media Partner'
   },
   {
     title: 'Product Animation 3D',
     description: 'Virtual reality corporate training platform',
     videoUrl: 'https://www.youtube.com/embed/BWtajwT6Weg',
     thumbnailUrl: 'https://img.youtube.com/vi/BWtajwT6Weg/maxresdefault.jpg',
-    category: 'Tech'
+    category: 'Tech Partner'
   },
   {
     title: 'AI-Powered Marketing',
     description: 'Automated content generation and distribution system',
     videoUrl: 'https://www.youtube.com/embed/5bwsX0fMSI0',
     thumbnailUrl: 'https://img.youtube.com/vi/5bwsX0fMSI0/maxresdefault.jpg',
-    category: 'Digital'
+    category: 'SMMA Partner'
   }
 ];
 
@@ -158,7 +161,7 @@ const testimonials = [
   {
     name: 'Alexander Mitchell',
     role: 'CEO, Global Innovations Corp',
-    quote: 'Their enterprise-level solutions transformed our digital presence across all channels.',
+    quote: 'Their partnership transformed our digital presence across all channels.',
     image: '/assets/images/testimonial1.jpg'
   },
   {
@@ -179,7 +182,7 @@ export default function Home() {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [stats, setStats] = useState(initialStats.map(stat => ({ ...stat, currentValue: 0 })));
-  const [activeCategory, setActiveCategory] = useState('Media Services');
+  const [activeCategory, setActiveCategory] = useState('Tech Partner');
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   // Animated Stats Counter
@@ -224,41 +227,41 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#121212] text-gray-100">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">
-      <div className="absolute inset-0 overflow-hidden">
-  <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-10" />
-  <div className="absolute inset-0">
-    <iframe
-      src="https://player.vimeo.com/video/1059328238?h=5df7f885ae&background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
-      className={`absolute w-full h-full object-cover scale-105 transition-opacity duration-1000 ${
-        videoLoaded ? 'opacity-100' : 'opacity-0'
-      }`}
-      allow="autoplay; fullscreen; picture-in-picture"
-      frameBorder="0"
-      onLoad={() => setVideoLoaded(true)}
-      style={{
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        width: '100%',
-        height: '100%',
-        transform: 'translate(-50%, -50%) scale(1.5)',
-        pointerEvents: 'none'
-      }}
-    />
-  </div>
-</div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-10" />
+          <div className="absolute inset-0">
+            <iframe
+              src="https://player.vimeo.com/video/1059328238?h=5df7f885ae&background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
+              className={`absolute w-full h-full object-cover scale-105 transition-opacity duration-1000 ${
+                videoLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              allow="autoplay; fullscreen; picture-in-picture"
+              frameBorder="0"
+              onLoad={() => setVideoLoaded(true)}
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                width: '100%',
+                height: '100%',
+                transform: 'translate(-50%, -50%) scale(1.5)',
+                pointerEvents: 'none'
+              }}
+            />
+          </div>
+        </div>
 
         <div className="container relative z-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in-up bg-gradient-to-r from-amber-300 via-amber-500 to-amber-700 bg-clip-text text-transparent">
-              Transform Your Digital Presence
+              Transform Your Business Through Partnership
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mt-6 animate-fade-in-up delay-200">
-              Elevate your brand with cutting-edge media production, technology solutions, and digital marketing
+              We partner with companies as their Tech, Media, and SMMA experts, delivering long-term value and innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center mt-10 animate-fade-in-up delay-300">
               <Link to="/contact" className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-700 text-white rounded-lg font-semibold transition-all hover:from-amber-600 hover:to-amber-800 hover:scale-105 shadow-lg hover:shadow-amber-500/25">
-                Start Your Transformation
+                Become a Partner
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link to="/portfolio" className="group inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg font-semibold transition-all hover:bg-white/20 border border-white/20">
@@ -276,75 +279,96 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* About Us Section */}
       <section className="py-24 bg-[#0a0a0a]">
         <div className="container">
           <SectionTitle
-            subtitle="Our Services"
-            title="Comprehensive Digital Solutions"
-            description="Integrated services across media, technology, and digital marketing"
+            subtitle="About Us"
+            title="Who We Are"
+            description="We are a forward-thinking digital agency that partners with companies to deliver long-term value through technology, media, and digital marketing solutions. Our mission is to empower businesses with innovative strategies that drive growth and transformation."
             center
           />
 
-          <div className="flex justify-center space-x-4 mt-12 mb-16">
-            {serviceCategories.map(category => (
-              <button
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="p-8 bg-gradient-to-br from-[#1e1e1e] to-[#2a2a2a] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-amber-500/20">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-100">Our Vision</h3>
+              <p className="text-gray-400">
+                To be the leading partner for companies seeking innovative digital solutions that drive long-term success.
+              </p>
+            </div>
+            <div className="p-8 bg-gradient-to-br from-[#1e1e1e] to-[#2a2a2a] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-amber-500/20">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-100">Our Mission</h3>
+              <p className="text-gray-400">
+                To deliver exceptional digital experiences through strategic partnerships that create lasting value for our clients.
+              </p>
+            </div>
+            <div className="p-8 bg-gradient-to-br from-[#1e1e1e] to-[#2a2a2a] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-amber-500/20">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-100">Our Values</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center text-gray-400">
+                  <CheckCircle className="w-5 h-5 text-amber-500 mr-2" />
+                  Innovation
+                </li>
+                <li className="flex items-center text-gray-400">
+                  <CheckCircle className="w-5 h-5 text-amber-500 mr-2" />
+                  Integrity
+                </li>
+                <li className="flex items-center text-gray-400">
+                  <CheckCircle className="w-5 h-5 text-amber-500 mr-2" />
+                  Excellence
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partnership Types Section */}
+      <section className="py-24 bg-[#121212]">
+        <div className="container">
+          <SectionTitle
+            subtitle="Our Partnership Models"
+            title="How We Partner With You"
+            description="We offer three types of partnerships to meet your business needs. Whether you need technology solutions, media production, or digital marketing expertise, we’ve got you covered."
+            center
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {partnerTypes.map(category => (
+              <div
                 key={category.title}
-                onClick={() => setActiveCategory(category.title)}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-                  activeCategory === category.title
-                    ? 'bg-gradient-to-r from-amber-500 to-amber-700 text-white shadow-lg'
-                    : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
-                }`}
+                className="group p-8 bg-gradient-to-br from-[#1e1e1e] to-[#2a2a2a] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-amber-500/20"
               >
-                <div className="flex items-center space-x-2">
-                  <category.icon className="w-5 h-5" />
-                  <span>{category.title}</span>
+                <div className="w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center mb-6 group-hover:from-amber-500 group-hover:to-amber-700 transition-all duration-300">
+                  <category.icon className="w-8 h-8 text-amber-500 group-hover:text-white transition-colors" />
                 </div>
-              </button>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-100 group-hover:text-amber-500 transition-colors">
+                  {category.title}
+                </h3>
+                <p className="text-gray-400 mb-6">
+                  {category.subtitle}
+                </p>
+                <p className="text-gray-400 mb-6">
+                  {category.description}
+                </p>
+                <ul className="space-y-3 mb-6">
+                  {category.services.map(service => (
+                    <li key={service.title} className="flex items-center text-gray-400">
+                      <ChevronRight className="w-5 h-5 text-amber-500 mr-2" />
+                      {service.title}
+                    </li>
+                  ))}
+                </ul>
+                <Link 
+                  to={`/partnerships/${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="inline-flex items-center text-amber-500 hover:text-amber-400 font-semibold"
+                >
+                  Learn More 
+                  <ChevronRight className="ml-1 w-4 h-4" />
+                </Link>
+              </div>
             ))}
           </div>
-
-          {serviceCategories.map(category => (
-            <div
-              key={category.title}
-              className={`grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-300 ${
-                activeCategory === category.title ? 'opacity-100' : 'hidden'
-              }`}
-            >
-              {category.services.map(service => (
-                <div
-                  key={service.title}
-                  className="group p-8 bg-gradient-to-br from-[#1e1e1e] to-[#2a2a2a] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-amber-500/20"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center mb-6 group-hover:from-amber-500 group-hover:to-amber-700 transition-all duration-300">
-                    <service.icon className="w-8 h-8 text-amber-500 group-hover:text-white transition-colors" />
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-4 text-gray-100 group-hover:text-amber-500 transition-colors">
-                    {service.title}
-                  </h3>
-                  <ul className="space-y-3 mb-6">
-                    {service.features.map(feature => (
-                      <li key={feature} className="flex items-center text-gray-400">
-                        <CheckCircle className="w-5 h-5 text-amber-500 mr-2" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex items-center justify-between mt-auto">
-                    <span className="text-2xl font-bold text-amber-500">{service.price}</span>
-                    <Link 
-                      to={`/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="inline-flex items-center text-amber-500 hover:text-amber-400 font-semibold"
-                    >
-                      Learn More 
-                      <ChevronRight className="ml-1 w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ))}
         </div>
       </section>
 
@@ -371,12 +395,12 @@ export default function Home() {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-24 bg-[#121212]">
+      <section className="py-24 bg-[#0a0a0a]">
         <div className="container">
           <SectionTitle
             subtitle="Featured Work"
-            title="Success Stories"
-            description="Transformative digital solutions for industry leaders"
+            title="Our Success Stories"
+            description="Transformative digital solutions for industry leaders through long-term partnerships."
             center
           />
           
@@ -429,12 +453,12 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-[#0a0a0a]">
+      <section className="py-24 bg-[#121212]">
         <div className="container">
           <SectionTitle
             subtitle="Client Success"
-            title="What Industry Leaders Say"
-            description="Trusted by innovative companies worldwide"
+            title="What Our Partners Say"
+            description="Trusted by innovative companies worldwide through long-term partnerships."
             center
           />
           
@@ -469,24 +493,24 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Digital Presence?
+              Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-white/90 mb-10">
-              Let's create something extraordinary together. Our team of experts is ready to help you achieve your digital goals.
+              Let's create something extraordinary together. Our team of experts is ready to partner with you for long-term success.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-amber-600 rounded-lg font-semibold transition-all hover:bg-gray-100 hover:transform hover:scale-105 shadow-lg"
               >
-                Schedule a Consultation
+                Become a Partner
                 <ArrowRight className="ml-2" />
               </Link>
               <Link
-                to="/services"
+                to="/partnerships"
                 className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold transition-all hover:bg-white/10"
               >
-                Explore Services
+                Explore Partnership Models
                 <ChevronRight className="ml-2" />
               </Link>
             </div>
