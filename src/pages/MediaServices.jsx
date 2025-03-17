@@ -4,7 +4,7 @@ import { Play, Camera, Box, Sparkles, ArrowRight, Star } from 'lucide-react';
 const MediaServices = () => {
   const services = [
     {
-      title: "Enterprise Video Production",
+      title: "Corporates Video Production",
       description: "Creating cinematic brand stories that captivate and inspire. Our award-winning team combines technical mastery with artistic vision to produce content that elevates your brand.",
       icon: <Camera className="w-6 h-6 text-amber-500" />,
       features: [
