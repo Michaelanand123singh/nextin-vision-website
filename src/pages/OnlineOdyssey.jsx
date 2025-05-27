@@ -34,7 +34,7 @@ const OnlineOdyssey = () => {
 
   const services = [
     {
-      title: "Metaverse Solutions",
+      title: "Metaverse Related Software development",
       description: "Pioneering virtual environments that transform business interactions and training through immersive technology.",
       icon: <Globe className="w-5 h-5 text-blue-500" />,
       features: [
@@ -64,7 +64,7 @@ const OnlineOdyssey = () => {
       imageUrl: "/api/placeholder/600/400"
     },
     {
-      title: "Custom Software",
+      title: "Custom Software Solution",
       description: "Tailored development solutions that drive innovation and sustainable business growth.",
       icon: <Code className="w-5 h-5 text-blue-500" />,
       features: [
