@@ -151,7 +151,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="relative min-h-screen mt-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+    <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black">
       {/* Premium Background Effects */}
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(59,130,246,0.1)_0%,transparent_50%)]" />
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(16,185,129,0.1)_0%,transparent_50%)]" />
@@ -174,7 +174,7 @@ const Portfolio = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-6">
+          <h1 className="mt-20 text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-6">
             Our Portfolio
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
