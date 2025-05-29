@@ -34,6 +34,29 @@ const jobOpenings = [
     "applyLink": "https://docs.google.com/forms/d/e/1FAIpQLScJ2dCwfPK0xZyWb-chu2-LluKvwbR2WQC37tGGD_L_xzmJdQ/viewform?usp=header",
     "featured": true
   },
+
+  {
+  "id": 2,
+  "title": "SEO Expert",
+  "department": "Digital Marketing",
+  "location": "Remote / Hybrid",
+  "type": "Part-Time",
+  "experience": "2-4 years",
+  "salary": "To be discussed",
+  "posted": "Today",
+  "description": "NEXTIN VISION is looking for a skilled SEO Expert to join our Digital Marketing team. You will be responsible for improving our website rankings, driving organic traffic, and optimizing content for search engines. If you have a passion for SEO strategies and staying ahead of algorithm updates, we want to hear from you.",
+  "requirements": [
+    "2-4 years of hands-on SEO experience",
+    "Proficiency in tools like Google Analytics, Search Console, SEMrush, and Ahrefs",
+    "Strong understanding of on-page, off-page, and technical SEO",
+    "Experience with keyword research, backlink strategies, and content optimization",
+    "Up-to-date with the latest SEO trends and algorithm changes"
+  ],
+  "skills": ["SEO", "Keyword Research", "Technical SEO", "Google Analytics", "Content Optimization"],
+  "benefits": ["Remote Work", "Flexible Timing", "Performance Bonuses", "Skill Development Support"],
+  "featured": true
+},
+
   
 ];
 
