@@ -146,7 +146,7 @@ const ServicesSection = () => {
         </div>
         
         {/* Responsive Services Grid */}
-        <div className="grid gap-4 sm:gap-6 lg:gap-8 grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto">
+        <div className="grid gap-4 sm:gap-6 lg:gap-8 grid-cols-1 md:grid-cols-3 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <div 
               key={index}
