@@ -5,9 +5,9 @@ import { Menu, X, ChevronRight, Eye, Phone } from 'lucide-react';
 const navigation = [
   { name: 'Home', path: '/' },
   { name: 'Services', path: '/services' },
-  { name: 'Our Work', path: '/portfolio' },
+  { name: 'Projects', path: '/portfolio' },
   { name: 'Testimonial', path: '/testimonial' },
-  { name: 'Pricing', path: '/pricing' },
+  { name: 'Career', path: '/careers' },
 ];
 
 function Header() {
@@ -198,14 +198,6 @@ function Header() {
               {/* Compact Mobile CTAs */}
               <div className="p-3 bg-gradient-to-r from-gray-900/40 to-black/40 border-t border-gray-800/40">
                 <div className="flex gap-2">
-                  {/* Compact Secondary CTA */}
-                  <Link 
-                    to="/portfolio"
-                    className="group flex-1 flex items-center justify-center px-3 py-2.5 border border-orange-500/40 text-orange-400 rounded-lg font-medium text-sm transition-all duration-300 hover:border-orange-400 hover:bg-orange-500/8 hover:text-orange-300 hover:scale-105"
-                  >
-                    <Eye size={14} className="mr-1.5 group-hover:scale-110 transition-transform duration-300" />
-                    Work
-                  </Link>
                   
                   {/* Compact Primary CTA */}
                   <Link 
