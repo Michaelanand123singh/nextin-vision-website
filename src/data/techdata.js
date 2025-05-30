@@ -14,18 +14,7 @@ export const techData = {
       icon: Code,
       featured: true
     },
-    {
-      id: 't2',
-      title: 'NYWNFT',
-      description: 'Blockchain and AI NFT marketplace platform',
-      technologies: ['React', 'Solidity', 'Web3', 'Node.js', 'IPFS'],
-      metrics: { users: '75K+', transactions: '150K+', uptime: '99.99%' },
-      category: 'Blockchain',
-      image: '/images/nft.png',
-      url: 'https://nft-place-lake.vercel.app/',
-      icon: Code,
-      featured: true
-    },
+    
     {
       id: 't3',
       title: 'Sanjay Catering',
@@ -48,17 +37,7 @@ export const techData = {
       url: 'https://nation-first9.vercel.app/',
       icon: Code
     },
-    {
-      id: 't5',
-      title: 'Jewellery E-Commerce',
-      description: 'Online jewellery store',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      metrics: { products: '200+', transactions: '5K+' },
-      category: 'E-Commerce',
-      image: '/images/ecommerce.png',
-      url: 'https://ecommerce-flax-chi.vercel.app/',
-      icon: Code
-    },
+    
     {
       id: 't6',
       title: 'Event Planner',
@@ -70,17 +49,7 @@ export const techData = {
       url: 'https://website-event-beta.vercel.app/',
       icon: Code
     },
-    {
-      id: 't7',
-      title: 'NFT Marketplace',
-      description: 'Digital art NFT trading platform',
-      technologies: ['React', 'Solidity', 'Web3'],
-      metrics: { collections: '50+', volume: '1K ETH' },
-      category: 'Blockchain',
-      image: '/images/neft-marketplace.png',
-      url: 'https://nft-market-place-rho.vercel.app/',
-      icon: Code
-    },
+    
     {
       id: 't8',
       title: 'Automation E-Commerce',
@@ -289,17 +258,7 @@ export const techData = {
       url: 'https://studentsays.com/',
       icon: Code
     },
-    {
-      id: 't28',
-      title: 'Book2500',
-      description: 'Online book marketplace and booking platform',
-      technologies: ['React', 'Node.js', 'Payment Gateway', 'Booking System'],
-      metrics: { books: '2.5K+', users: '1K+' },
-      category: 'E-Commerce',
-      image: '/images/book2500.png',
-      url: 'https://www.book2500.in/',
-      icon: Code
-    },
+    
     {
       id: 't29',
       title: '21SEC',
