@@ -92,17 +92,7 @@ export const techData = {
       url: 'https://ecommerce-automation-website.vercel.app/',
       icon: Code
     },
-    {
-      id: 't9',
-      title: 'Renderverse',
-      description: 'Company website for Renderverse',
-      technologies: ['React', 'Three.js', 'WebGL'],
-      metrics: { clients: '50+' },
-      category: 'Corporate',
-      image: '/images/renderverse-website.png',
-      url: 'https://renderverse.in/',
-      icon: Code
-    },
+    
     {
       id: 't10',
       title: 'Lets Code Job Portal',
