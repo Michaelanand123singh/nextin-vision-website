@@ -57,6 +57,73 @@ const jobOpenings = [
   "featured": true
 },
 
+{
+  "id": 3,
+  "title": "Full Stack Developer",
+  "department": "Engineering",
+  "location": "Remote / Hybrid",
+  "type": "Full-Time",
+  "experience": "3-5 years",
+  "salary": "To be discussed",
+  "posted": "Today",
+  "description": "NEXTIN VISION is hiring a skilled Full Stack Developer to build scalable and efficient web applications. You'll work on both frontend and backend components using modern frameworks and cloud technologies.",
+  "requirements": [
+    "3-5 years of full stack development experience",
+    "Proficiency in React.js, Node.js, and TypeScript",
+    "Experience with MongoDB or PostgreSQL",
+    "Familiarity with AWS or other cloud platforms",
+    "Strong debugging and problem-solving skills"
+  ],
+  "skills": ["React.js", "Node.js", "TypeScript", "MongoDB", "AWS", "API Integration"],
+  "benefits": ["Remote Work", "Flexible Hours", "Project Bonuses", "Learning Budget"],
+  "featured": true
+},
+
+{
+  "id": 4,
+  "title": "Frontend Developer",
+  "department": "Engineering",
+  "location": "Remote / Hybrid",
+  "type": "Full-Time",
+  "experience": "2-4 years",
+  "salary": "To be discussed",
+  "posted": "Today",
+  "description": "NEXTIN VISION is seeking a talented Frontend Developer to create clean, responsive, and user-friendly interfaces. You will work closely with our design and backend teams to deliver seamless user experiences.",
+  "requirements": [
+    "2-4 years of frontend development experience",
+    "Strong proficiency in React.js and modern JavaScript",
+    "Experience with responsive design and cross-browser compatibility",
+    "Familiarity with RESTful APIs and state management (Redux/Zustand)",
+    "Basic understanding of UI/UX principles"
+  ],
+  "skills": ["React.js", "HTML", "CSS", "JavaScript", "Redux", "UI/UX"],
+  "benefits": ["Remote Work", "Flexible Schedule", "Team Collaboration", "Learning Support"],
+  "featured": true
+},
+
+{
+  "id": 5,
+  "title": "Project Manager",
+  "department": "Operations",
+  "location": "Remote / Hybrid",
+  "type": "Full-Time",
+  "experience": "4-6 years",
+  "salary": "To be discussed",
+  "posted": "Today",
+  "description": "NEXTIN VISION is looking for a result-driven Project Manager to oversee our IT and AI projects from conception to delivery. The ideal candidate will have excellent communication skills and strong leadership abilities to coordinate between cross-functional teams.",
+  "requirements": [
+    "4-6 years of project management experience in IT or software development",
+    "Familiarity with Agile/Scrum methodologies",
+    "Excellent communication and organizational skills",
+    "Experience in managing remote teams",
+    "Proficiency with project management tools like Jira, Trello, or Asana"
+  ],
+  "skills": ["Project Management", "Agile", "Scrum", "Team Leadership", "Risk Management"],
+  "benefits": ["Remote Work", "Leadership Role", "Performance Bonuses", "Career Growth"],
+  "featured": true
+},
+
+
   
 ];
 
