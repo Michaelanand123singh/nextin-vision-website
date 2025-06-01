@@ -4,19 +4,19 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://nextinvision.com/</loc>
+    <loc>https://nextinvision.in/</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://nextinvision.com/images/NEXTIN VISION.png</image:loc>
+      <image:loc>https://nextinvision.in/images/NEXTIN VISION.png</image:loc>
       <image:title>NEXTIN VISION - IT Services, Agentic AI Development &amp; ERP Solutions</image:title>
     </image:image>
   </url>
 
   <!-- Services Page -->
   <url>
-    <loc>https://nextinvision.com/services</loc>
+    <loc>https://nextinvision.in/services</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -24,7 +24,7 @@
 
   <!-- Portfolio Page -->
   <url>
-    <loc>https://nextinvision.com/portfolio</loc>
+    <loc>https://nextinvision.in/portfolio</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -32,27 +32,27 @@
 
   <!-- About Page -->
   <url>
-    <loc>https://nextinvision.com/about</loc>
+    <loc>https://nextinvision.in/about</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://nextinvision.com/images/aditya.jpg</image:loc>
+      <image:loc>https://nextinvision.in/images/aditya.jpg</image:loc>
       <image:title>Aditya - NEXTIN VISION Team</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextinvision.com/images/anand.png</image:loc>
+      <image:loc>https://nextinvision.in/images/anand.png</image:loc>
       <image:title>Anand - NEXTIN VISION Team</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextinvision.com/images/ankit.jpg</image:loc>
+      <image:loc>https://nextinvision.in/images/ankit.jpg</image:loc>
       <image:title>Ankit - NEXTIN VISION Team</image:title>
     </image:image>
   </url>
 
   <!-- Contact Page -->
   <url>
-    <loc>https://nextinvision.com/contact</loc>
+    <loc>https://nextinvision.in/contact</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -60,7 +60,7 @@
 
   <!-- Process Page -->
   <url>
-    <loc>https://nextinvision.com/process</loc>
+    <loc>https://nextinvision.in/process</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -68,7 +68,7 @@
 
   <!-- Careers Page -->
   <url>
-    <loc>https://nextinvision.com/careers</loc>
+    <loc>https://nextinvision.in/careers</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -76,7 +76,7 @@
 
   <!-- Testimonials Page -->
   <url>
-    <loc>https://nextinvision.com/testimonials</loc>
+    <loc>https://nextinvision.in/testimonials</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -84,7 +84,7 @@
 
   <!-- Media Services Page -->
   <url>
-    <loc>https://nextinvision.com/media-services</loc>
+    <loc>https://nextinvision.in/media-services</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -92,7 +92,7 @@
 
   <!-- Online Odyssey Page -->
   <url>
-    <loc>https://nextinvision.com/online-odyssey</loc>
+    <loc>https://nextinvision.in/online-odyssey</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
