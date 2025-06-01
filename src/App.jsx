@@ -110,7 +110,7 @@ const AnimatedRoutes = () => {
           } 
         />
         <Route 
-          path="/testimonials" 
+          path="/testimonial" 
           element={
             <SEORoute pageKey="testimonials">
               <Suspense fallback={<PageLoader />}>
