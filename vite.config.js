@@ -1,11 +1,20 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  publicDir: 'public',
+  build: {
+    outDir: 'dist',
+    copyPublicDir: true
+  },
   server: {
-    port: 3000,
-    open: true
+    // Ensure static files are served properly in development
+    middlewareMode: false,
+  },
+  // Handle static file routing
+  define: {
+    // This ensures public files are accessible
+    __PUBLIC_PATH__: JSON.stringify('/')
   }
 })

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/layout/Layout';
 import LoadingSpinner from './components/common/LoadingSpinner';
-import SEOHead from './components/SEO/SEO.Head';
+import SEOHead from './components/SEO/SEOHead';
 import { AnimatePresence } from 'framer-motion';
 import ScrollToTop from './ScrollToTop';
 import { seoData, generateStructuredData } from './components/SEO/StructuredData';

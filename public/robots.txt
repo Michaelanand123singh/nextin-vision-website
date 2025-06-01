@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Important pages for crawling
+# Important pages for crawling - IT Services, AI Development & ERP Solutions
 Allow: /services
 Allow: /portfolio
 Allow: /about
@@ -12,20 +12,34 @@ Allow: /process
 Allow: /media-services
 Allow: /online-odyssey
 
-# Block unnecessary files
+# Block unnecessary development files
 Disallow: /src/
 Disallow: /node_modules/
 Disallow: *.json
 Disallow: /*.css$
 Disallow: /*.js$
 Disallow: /dist/
+Disallow: /build/
+Disallow: /.git/
+Disallow: /config/
+Disallow: /tests/
+Disallow: /temp/
 
-# Allow important assets
+# Allow important assets and resources
 Allow: /images/
+Allow: /assets/
 Allow: /favicon.ico
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Block admin and sensitive areas
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /private/
 
 # Sitemap location
 Sitemap: https://nextinvision.com/sitemap.xml
 
-# Crawl delay (optional - adjust based on server capacity)
+# Crawl delay (recommended for IT service sites)
 Crawl-delay: 1

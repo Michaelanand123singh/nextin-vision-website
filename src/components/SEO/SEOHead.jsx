@@ -2,9 +2,9 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 const SEOHead = ({ 
-  title = "NEXTIN VISION - Digital Marketing & Web Development Agency",
-  description = "Transform your business with NEXTIN VISION's comprehensive digital marketing, web development, and creative services. Expert team delivering results-driven solutions.",
-  keywords = "digital marketing, web development, SEO, social media marketing, brand design, NEXTIN VISION",
+  title = "NEXTIN VISION - IT Services, Agentic AI Development & ERP Solutions",
+  description = "Transform your business with NEXTIN VISION's professional IT services, cutting-edge agentic AI development, ERP software implementations, and comprehensive digital solutions. Expert team delivering enterprise-grade results.",
+  keywords = "IT services, agentic AI development, ERP solutions, software implementation, digital transformation, enterprise solutions, artificial intelligence, business automation, machine learning, cloud solutions, NEXTIN VISION",
   canonicalUrl = "https://nextinvision.com",
   ogImage = "/images/NEXTIN VISION.png",
   ogType = "website",
@@ -34,7 +34,7 @@ const SEOHead = ({
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:image:alt" content="NEXTIN VISION - Digital Marketing Agency" />
+      <meta property="og:image:alt" content="NEXTIN VISION - IT Services, Agentic AI Development & ERP Solutions" />
       <meta property="og:site_name" content="NEXTIN VISION" />
       <meta property="og:locale" content="en_US" />
       
@@ -43,7 +43,7 @@ const SEOHead = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:image:alt" content="NEXTIN VISION - Digital Marketing Agency" />
+      <meta name="twitter:image:alt" content="NEXTIN VISION - IT Services & AI Development Company" />
       
       {/* Additional SEO Meta Tags */}
       <meta name="theme-color" content="#f97316" />
