@@ -139,7 +139,6 @@ const AnimatedRoutes = () => {
             </SEORoute>
           } 
         />
-        
         {/* 404 Page */}
         <Route path="*" element={<NotFound />} />
       </Routes>

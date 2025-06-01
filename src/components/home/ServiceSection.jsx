@@ -100,6 +100,19 @@ const ServicesSection = () => {
       ],
       gradient: "from-orange-600 to-amber-500",
       glowColor: "orange-600/20"
+    },
+    {
+      icon: Palette,
+      title: "Microsoft D365 Business Central/ LS Central",
+      headline:"Implementation Support & Integration for businesses",
+      description: "Complete Support and Development",
+      features: [
+        { icon: Target, text: "Technology roadmapping" },
+        { icon: Cpu, text: "Performance optimization" },
+        { icon: Shield, text: "24/7 technical support" }
+      ],
+      gradient: "from-orange-600 to-amber-500",
+      glowColor: "orange-600/20"
     }
   ];
 
