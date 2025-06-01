@@ -21,9 +21,9 @@
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^2.0.5",
     "react-router-dom": "^6.29.0",
-    "react-router-sitemap": "^1.2.0",
     "react-tsparticles": "^2.12.2",
     "recharts": "^2.15.0",
+    "sitemap": "^8.0.0",
     "three": "^0.171.0",
     "tsparticles": "^3.7.1"
   },
