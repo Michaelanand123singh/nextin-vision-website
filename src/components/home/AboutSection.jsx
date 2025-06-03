@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Zap, BarChart3, Users, Calendar, Target, Rocket } from 'lucide-react';
+import { Bot, Workflow, TrendingUp, Users, Calendar, Target, Rocket, Cpu, Settings, CheckCircle2 } from 'lucide-react';
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,31 +25,10 @@ const AboutSection = () => {
   }, [isVisible]);
 
   const steps = [
-    { icon: Users, title: "Initial Partnership", desc: "We integrate with your team and understand your vision", time: "Week 1-2" },
-    { icon: Zap, title: "Proactive Collaboration", desc: "Early engagement with rapid ideation and fast execution", time: "Ongoing" },
-    { icon: BarChart3, title: "Long-Term Focus", desc: "Building scalable systems that grow with your business", time: "Month 1+" },
-    { icon: Rocket, title: "Sustained Success", desc: "Continuous evolution and optimization for lasting impact", time: "Partnership" }
-  ];
-
-  const values = [
-    {
-      icon: Zap,
-      title: "Proactive Collaboration",
-      desc: "We engage early and often to bring ideas to life and move fast with clarity.",
-      badge: { icon: Calendar, text: "Real-time engagement" }
-    },
-    {
-      icon: BarChart3,
-      title: "Long-Term Focus", 
-      desc: "We build scalable systems and sustainable code that grow with your business.",
-      badge: { icon: Target, text: "Scalable architecture" }
-    },
-    {
-      icon: Users,
-      title: "Real Partnership",
-      desc: "We work with you, not for you—acting as an embedded extension of your team.",
-      badge: { icon: Rocket, text: "Embedded integration" }
-    }
+    { icon: Users, title: "Process Discovery", desc: "We analyze your current workflows and identify automation opportunities", time: "Week 1-2" },
+    { icon: Bot, title: "AI Agent Development", desc: "Custom AI agents designed for your specific business processes", time: "Week 2-4" },
+    { icon: Workflow, title: "System Integration", desc: "Seamlessly integrate automation into your existing systems", time: "Week 4-6" },
+    { icon: TrendingUp, title: "Continuous Optimization", desc: "Monitor, learn, and improve automation performance over time", time: "Ongoing" }
   ];
 
   const fadeClass = (delay = 0) => 
@@ -62,14 +41,17 @@ const AboutSection = () => {
       id="about-section"
       className="relative py-24 lg:py-32 bg-gradient-to-br from-black via-gray-900 to-slate-950 overflow-hidden"
     >
-      {/* Background Effects - More Subtle */}
+      {/* Background Effects - Consistent with Hero */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-gradient-to-r from-orange-500/8 to-amber-500/8 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-gradient-to-l from-amber-400/6 to-orange-500/6 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, orange 1px, transparent 0)',
-          backgroundSize: '80px 80px'
-        }} />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-500/5 via-transparent to-amber-500/5"></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/10 to-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-gradient-to-l from-orange-400/8 to-red-500/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        
+        {/* Grid Pattern - Same as Hero */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '100px 100px'
+        }}></div>
       </div>
       
       <div className="relative container mx-auto px-8 lg:px-12 max-w-6xl">
@@ -77,27 +59,27 @@ const AboutSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className={`inline-flex items-center px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-500/8 to-amber-500/8 border border-orange-500/15 backdrop-blur-sm mb-8 ${fadeClass()}`}>
             <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2 animate-pulse" />
-            <span className="text-orange-300/80 text-xs font-medium tracking-wider uppercase">Partnership Excellence</span>
+            <span className="text-orange-300/80 text-xs font-medium tracking-wider uppercase">Automation Excellence</span>
           </div>
           
           <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight ${fadeClass(200)}`}>
-            <span className="block text-white mb-2 font-light">We Become Your</span>
+            <span className="block text-white mb-2 font-light">Transform Your Business with</span>
             <span className="block bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent font-semibold">
-              Tech Partner
+              Smart Automation
             </span>
           </h2>
           
           <div className={`max-w-2xl mx-auto space-y-4 ${fadeClass(400)}`}>
             <p className="text-lg text-gray-300/90 leading-relaxed font-light">
-              We go beyond typical agency-client relationships. We collaborate as long-term partners—deeply integrated with your teams.
+              We don't just build software – we create intelligent systems that work tirelessly for your business. Our AI agents handle repetitive tasks, optimize workflows, and free your team to focus on growth.
             </p>
             <p className="text-base text-gray-400/80 leading-relaxed font-light">
-              Think of us as your embedded tech team—committed, capable, and always evolving with you.
+              From simple task automation to complex business process optimization, we deliver solutions that scale with your ambitions.
             </p>
           </div>
         </div>
 
-        {/* Partnership Steps - Cleaner Layout */}
+        {/* Automation Process Steps - Cleaner Layout */}
         <div className={`mb-24 ${fadeClass(600)}`}>
           {/* Desktop Flow - More Refined */}
           <div className="hidden lg:block">
@@ -186,33 +168,41 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Value Cards - Premium Layout */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
-          {values.map((value, i) => {
-            const Icon = value.icon;
-            const BadgeIcon = value.badge.icon;
-            
-            return (
-              <div key={i} className={`group relative ${i === 2 ? 'md:col-span-2 lg:col-span-1' : ''} ${fadeClass(800 + i * 100)}`}>
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/15 to-amber-500/15 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                <div className="relative bg-gradient-to-br from-gray-900/60 to-black/60 backdrop-blur-sm border border-orange-500/15 rounded-xl p-6 hover:border-orange-400/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/5">
-                  <div className="relative w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-500 rounded-lg flex items-center justify-center mb-5 shadow-md group-hover:scale-105 transition-transform duration-300">
-                    <Icon className="w-5 h-5 text-white" />
-                  </div>
-                  <h4 className="text-lg font-semibold text-white mb-4">
-                    {value.title}
-                  </h4>
-                  <p className="text-gray-300/90 leading-relaxed mb-5 font-light text-sm">
-                    {value.desc}
-                  </p>
-                  <div className="flex items-center text-orange-300/80 text-sm font-medium">
-                    <BadgeIcon className="w-4 h-4 mr-2" />
-                    <span className="font-light">{value.badge.text}</span>
-                  </div>
+        
+
+        {/* Results Preview Section */}
+        <div className={`mt-20 max-w-4xl mx-auto ${fadeClass(1000)}`}>
+          <div className="bg-gradient-to-br from-gray-900/40 to-black/40 backdrop-blur-sm border border-orange-500/10 rounded-2xl p-8 text-center">
+            <h3 className="text-xl font-semibold text-white mb-6">
+              What Automation Delivers
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="space-y-2">
+                <div className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+                  80%
                 </div>
+                <div className="text-sm text-gray-400">Time Saved</div>
               </div>
-            );
-          })}
+              <div className="space-y-2">
+                <div className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+                  60%
+                </div>
+                <div className="text-sm text-gray-400">Cost Reduction</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+                  95%
+                </div>
+                <div className="text-sm text-gray-400">Accuracy Rate</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+                  24/7
+                </div>
+                <div className="text-sm text-gray-400">Operation</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Accent - More Subtle */}
@@ -220,9 +210,6 @@ const AboutSection = () => {
           <div className="w-16 h-px bg-gradient-to-r from-orange-500/60 to-amber-500/60 rounded-full" />
         </div>
       </div>
-
-      {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/60 to-transparent" />
     </section>
   );
 };
