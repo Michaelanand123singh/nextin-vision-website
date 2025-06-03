@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronRight, Eye, Phone } from 'lucide-react';
+import { Menu, X, ChevronRight, Eye, Cpu } from 'lucide-react';
 
 const navigation = [
   { name: 'Home', path: '/' },
@@ -123,15 +123,15 @@ function Header() {
                 </span>
               </Link>
               
-              {/* Compact Primary CTA Button */}
+              {/* Compact Primary CTA Button - AI Tools */}
               <Link 
-                to="/contact" 
+                to="/aitools" 
                 className="group relative ml-1.5 px-4 xl:px-5 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-lg font-semibold text-sm transition-all duration-300 hover:from-orange-600 hover:to-amber-600 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center">
-                  <Phone size={14} className="mr-1.5 group-hover:scale-110 transition-transform duration-300" />
-                  Contact
+                  <Cpu size={14} className="mr-1.5 group-hover:scale-110 transition-transform duration-300" />
+                  AI Tools
                   <ChevronRight size={14} className="ml-1.5 group-hover:translate-x-0.5 transition-transform duration-300" />
                 </span>
               </Link>
@@ -199,13 +199,13 @@ function Header() {
               <div className="p-3 bg-gradient-to-r from-gray-900/40 to-black/40 border-t border-gray-800/40">
                 <div className="flex gap-2">
                   
-                  {/* Compact Primary CTA */}
+                  {/* Compact Primary CTA - AI Tools */}
                   <Link 
-                    to="/contact"
+                    to="/aitools"
                     className="group flex-1 flex items-center justify-center px-3 py-2.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-lg font-semibold text-sm transition-all duration-300 hover:from-orange-600 hover:to-amber-600 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25"
                   >
-                    <Phone size={14} className="mr-1.5 group-hover:scale-110 transition-transform duration-300" />
-                    Contact
+                    <Cpu size={14} className="mr-1.5 group-hover:scale-110 transition-transform duration-300" />
+                    AI Tools
                     <ChevronRight size={14} className="ml-1.5 group-hover:translate-x-0.5 transition-transform duration-300" />
                   </Link>
                 </div>

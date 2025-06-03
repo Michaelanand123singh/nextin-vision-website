@@ -22,6 +22,7 @@ const Contact = React.lazy(() => import('./pages/Contact'));
 const Testimonial = React.lazy(() => import('./pages/Testimonial'));
 const MediaServices = React.lazy(() => import('./pages/MediaServices'));
 const OnlineOdyssey = React.lazy(() => import('./pages/OnlineOdyssey'));
+const AiTools = React.lazy(() => import('./pages/AiTools'));
 
 // Loading component
 const PageLoader = () => (
@@ -135,6 +136,16 @@ const AnimatedRoutes = () => {
             <SEORoute pageKey="onlineOdyssey">
               <Suspense fallback={<PageLoader />}>
                 <OnlineOdyssey />
+              </Suspense>
+            </SEORoute>
+          } 
+        />
+        <Route 
+          path="/aitools" 
+          element={
+            <SEORoute pageKey="aiTools">
+              <Suspense fallback={<PageLoader />}>
+                <AiTools />
               </Suspense>
             </SEORoute>
           } 
