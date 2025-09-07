@@ -52,64 +52,18 @@ const ServicesPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-black relative overflow-hidden">
-      {/* Enhanced Background with Tech Elements */}
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-slate-950 relative overflow-hidden">
+      {/* Background Effects */}
       <div className="absolute inset-0">
-        {/* Dynamic gradient orbs */}
-        <div 
-          className="absolute w-96 h-96 bg-gradient-to-r from-orange-500/6 via-amber-500/8 to-orange-600/6 rounded-full blur-3xl"
-          style={{
-            left: `${20 + mousePosition.x * 0.02}%`,
-            top: `${30 + mousePosition.y * 0.02 - scrollY * 0.1}%`,
-            transform: `rotate(${scrollY * 0.1}deg)`
-          }}
-        ></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-500/5 via-transparent to-amber-500/5"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/10 to-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-orange-400/8 to-red-500/8 rounded-full blur-3xl animate-pulse delay-2000"></div>
         
-        <div 
-          className="absolute w-80 h-80 bg-gradient-to-l from-purple-500/4 via-pink-500/6 to-purple-600/4 rounded-full blur-3xl"
-          style={{
-            right: `${15 + mousePosition.x * 0.015}%`,
-            bottom: `${25 + mousePosition.y * 0.015 + scrollY * 0.05}%`,
-            transform: `rotate(${-scrollY * 0.08}deg)`
-          }}
-        ></div>
-
-        <div 
-          className="absolute w-72 h-72 bg-gradient-to-r from-blue-500/3 via-cyan-500/5 to-teal-500/3 rounded-full blur-3xl"
-          style={{
-            left: `${50 + mousePosition.x * 0.01}%`,
-            top: `${60 + mousePosition.y * 0.01 - scrollY * 0.03}%`,
-            transform: `rotate(${scrollY * 0.05}deg)`
-          }}
-        ></div>
-
-        {/* Tech-inspired floating elements */}
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-gradient-to-r from-orange-400/30 to-amber-400/30 rounded-full animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${3 + Math.random() * 2}s`
-              }}
-            ></div>
-          ))}
-        </div>
-
-        {/* Code-like grid pattern */}
-        <div 
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
-            backgroundSize: '60px 60px',
-            color: getCurrentCategory().color === 'orange' ? '#f97316' : 
-                   getCurrentCategory().color === 'purple' ? '#a855f7' :
-                   getCurrentCategory().color === 'blue' ? '#3b82f6' : '#22c55e'
-          }}
-        ></div>
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '100px 100px'
+        }}></div>
       </div>
 
       <section 
@@ -128,34 +82,34 @@ const ServicesPage = () => {
                                  getCurrentCategory().color === 'blue' ? '#3b82f6' + '20' : '#22c55e' + '20'
                    }}>
                 <div className={`w-2 h-2 bg-gradient-to-r ${getCurrentCategory().gradient} rounded-full mr-3 animate-pulse`}></div>
-                <span className="text-white/80 text-sm font-semibold tracking-wider uppercase">Enterprise Solutions</span>
+                <span className="text-white/80 text-sm font-semibold tracking-wider uppercase">AI-Powered Solutions</span>
               </div>
               
               <h1 className={`text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <span className="block text-white mb-2">Next-Gen</span>
+                <span className="block text-white mb-2">Next-Generation</span>
                 <span className={`block bg-gradient-to-r ${getCurrentCategory().gradient} bg-clip-text text-transparent bg-[length:200%_200%] animate-gradient-shift`}>
-                  Software
+                  AI & Automation
                 </span>
                 <span className="block text-white">Solutions</span>
               </h1>
               
               <p className={`text-lg text-gray-300/90 leading-relaxed font-light max-w-lg transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-                Empowering businesses with cutting-edge technology, innovative software development, and digital transformation solutions that drive growth and competitive advantage.
+                Transform your business with cutting-edge Agentic AI, intelligent automation, and AI chatbots. We build AI solutions that work autonomously, learn continuously, and deliver measurable results.
               </p>
 
               {/* Tech Stats */}
               <div className={`flex flex-wrap gap-6 pt-6 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
                 <div className="text-center">
-                  <div className={`text-2xl font-bold bg-gradient-to-r ${getCurrentCategory().gradient} bg-clip-text text-transparent`}>500+</div>
-                  <div className="text-xs text-gray-400 font-medium">Projects Delivered</div>
+                  <div className={`text-2xl font-bold bg-gradient-to-r ${getCurrentCategory().gradient} bg-clip-text text-transparent`}>100+</div>
+                  <div className="text-xs text-gray-400 font-medium">AI Agents Deployed</div>
                 </div>
                 <div className="text-center">
                   <div className={`text-2xl font-bold bg-gradient-to-r ${getCurrentCategory().gradient} bg-clip-text text-transparent`}>99.9%</div>
-                  <div className="text-xs text-gray-400 font-medium">Uptime Guarantee</div>
+                  <div className="text-xs text-gray-400 font-medium">Automation Accuracy</div>
                 </div>
                 <div className="text-center">
                   <div className={`text-2xl font-bold bg-gradient-to-r ${getCurrentCategory().gradient} bg-clip-text text-transparent`}>24/7</div>
-                  <div className="text-xs text-gray-400 font-medium">Technical Support</div>
+                  <div className="text-xs text-gray-400 font-medium">AI Operations</div>
                 </div>
               </div>
             </div>
@@ -171,8 +125,8 @@ const ServicesPage = () => {
                       <Play className="text-white" size={20} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white">Watch Our Process</h3>
-                      <p className="text-gray-400">See how we build solutions</p>
+                      <h3 className="text-xl font-bold text-white">AI in Action</h3>
+                      <p className="text-gray-400">See our AI agents at work</p>
                     </div>
                   </div>
                   
@@ -183,8 +137,8 @@ const ServicesPage = () => {
                   </div>
                   
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-400">Development Process Overview</span>
-                    <span className="text-white font-medium">4:32 min</span>
+                    <span className="text-gray-400">AI Agent Demo & Use Cases</span>
+                    <span className="text-white font-medium">6:15 min</span>
                   </div>
                 </div>
               </div>
@@ -195,8 +149,8 @@ const ServicesPage = () => {
           <div className={`mb-16 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
               <div>
-                <h2 className="text-xl font-bold text-white mb-2">Our Service Portfolio</h2>
-                <p className="text-sm text-gray-400">Comprehensive solutions across all technology domains</p>
+                <h2 className="text-xl font-bold text-white mb-2">AI & Automation Portfolio</h2>
+                <p className="text-sm text-gray-400">Comprehensive AI solutions for modern businesses</p>
               </div>
               
               <div className="flex flex-wrap gap-3">
@@ -311,13 +265,13 @@ const ServicesPage = () => {
               
               <div className="relative bg-gradient-to-br from-gray-900/40 via-gray-800/30 to-gray-900/40 backdrop-blur-xl border border-gray-700/40 rounded-2xl p-8 lg:p-10">
                 <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
-                  Ready to Build the 
+                  Ready to Deploy 
                   <span className={`block bg-gradient-to-r ${getCurrentCategory().gradient} bg-clip-text text-transparent mt-1`}>
-                    Future Together?
+                    AI Agents?
                   </span>
                 </h2>
                 <p className="text-lg text-gray-400/90 mb-8 leading-relaxed max-w-xl mx-auto">
-                  Let's discuss how our enterprise-grade solutions can accelerate your digital transformation and drive unprecedented growth for your business.
+                  Let's discuss how our AI and automation solutions can transform your business operations and give you a competitive edge in the AI era.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -344,15 +298,15 @@ const ServicesPage = () => {
                 <div className="flex items-center justify-center gap-6 mt-8 pt-6 border-t border-gray-700/30">
                   <div className="flex items-center gap-2 text-gray-400">
                     <Award size={14} />
-                    <span className="text-xs">Industry Leader</span>
+                    <span className="text-xs">AI Innovation Leader</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-400">
                     <Shield size={14} />
-                    <span className="text-xs">ISO Certified</span>
+                    <span className="text-xs">Enterprise Security</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-400">
                     <TrendingUp size={14} />
-                    <span className="text-xs">97% Success Rate</span>
+                    <span className="text-xs">99% AI Accuracy</span>
                   </div>
                 </div>
               </div>

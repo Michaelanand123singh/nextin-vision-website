@@ -1,15 +1,15 @@
-import { Code, Bot, Settings, Cloud, Palette, Users, Zap, Shield, Smartphone, Globe, Cpu, Target, Camera, Megaphone, Lightbulb, Briefcase, Layers, Sparkles, TrendingUp, Eye, Award } from 'lucide-react';
+import { Code, Bot, Settings, Cloud, Palette, Users, Zap, Shield, Smartphone, Globe, Cpu, Target, Camera, Megaphone, Lightbulb, Briefcase, Layers, Sparkles, TrendingUp, Eye, Award, Brain, BrainCircuit, MessageCircle, Workflow, Database, Network, Rocket, Gauge, Lock, RefreshCw, BarChart3, FileText, Command, Terminal, Server, Monitor, Globe2, ShieldCheck, Users2, Building, BookOpen, Headphones, AlertTriangle } from 'lucide-react';
 
 export const coreServices = [
   {
-    icon: Code,
-    title: "Web & Mobile Development",
-    headline: "Custom Web Apps — From MVP to Enterprise",
-    description: "Scalable applications tailored to your business needs with modern architecture",
+    icon: Bot,
+    title: "Agentic AI Development",
+    headline: "Intelligent AI Agents That Work For You",
+    description: "Custom AI agents that can autonomously handle complex tasks, make decisions, and learn from interactions to continuously improve performance.",
     features: [
-      { icon: Smartphone, text: "Mobile-first responsive design" },
-      { icon: Zap, text: "High-performance architecture" },
-      { icon: Shield, text: "Enterprise-grade security" }
+      { icon: Brain, text: "Autonomous decision-making AI" },
+      { icon: Workflow, text: "Multi-step task automation" },
+      { icon: Zap, text: "Continuous learning & adaptation" }
     ],
     gradient: "from-orange-500 via-amber-500 to-orange-600",
     glowColor: "orange-500/30",
@@ -17,14 +17,14 @@ export const coreServices = [
     borderGradient: "from-orange-500/20 via-amber-500/30 to-orange-600/20"
   },
   {
-    icon: Bot,
-    title: "Agentic AI Assistants",
-    headline: "Smart AI That Works — No Hype, Just Results",
-    description: "Intelligent automation handling tasks, support, and research efficiently",
+    icon: MessageCircle,
+    title: "AI Chatbot Solutions",
+    headline: "Conversational AI That Converts",
+    description: "Intelligent chatbots and virtual assistants that provide 24/7 customer support, lead generation, and personalized user experiences.",
     features: [
-      { icon: Target, text: "Task-specific AI solutions" },
-      { icon: Cpu, text: "Advanced NLP processing" },
-      { icon: Zap, text: "Real-time decision making" }
+      { icon: Brain, text: "Natural language processing" },
+      { icon: Users, text: "Multi-language support" },
+      { icon: Zap, text: "Seamless human handoff" }
     ],
     gradient: "from-amber-500 via-orange-600 to-red-500",
     glowColor: "amber-500/30",
@@ -32,14 +32,14 @@ export const coreServices = [
     borderGradient: "from-amber-500/20 via-orange-600/30 to-red-500/20"
   },
   {
-    icon: Settings,
-    title: "Business Operations Software",
-    headline: "Internal Tools That Save Time — ERP, CRMs, HR & More",
-    description: "Custom platforms designed to streamline your business processes",
+    icon: Workflow,
+    title: "Business Process Automation",
+    headline: "Streamline Operations with AI",
+    description: "End-to-end automation solutions that eliminate manual tasks, reduce errors, and increase operational efficiency across your organization.",
     features: [
-      { icon: Target, text: "Workflow automation" },
-      { icon: Globe, text: "Real-time dashboards" },
-      { icon: Shield, text: "Role-based access control" }
+      { icon: Zap, text: "Workflow automation" },
+      { icon: Database, text: "Data processing automation" },
+      { icon: Shield, text: "Compliance & audit trails" }
     ],
     gradient: "from-orange-600 via-red-500 to-pink-500",
     glowColor: "orange-600/30",
@@ -47,14 +47,14 @@ export const coreServices = [
     borderGradient: "from-orange-600/20 via-red-500/30 to-pink-500/20"
   },
   {
-    icon: Cloud,
-    title: "Cloud Migration & Infrastructure",
-    headline: "Bulletproof Cloud Setup — AWS, Azure & GCP",
-    description: "Secure cloud architecture with seamless migration and maintenance",
+    icon: Code,
+    title: "Custom Software Development",
+    headline: "Tailored Solutions for Your Business",
+    description: "Bespoke software applications built with modern technologies, designed to solve your specific business challenges and scale with your growth.",
     features: [
-      { icon: Shield, text: "Security-first architecture" },
-      { icon: Zap, text: "Auto-scaling infrastructure" },
-      { icon: Globe, text: "Multi-cloud expertise" }
+      { icon: Smartphone, text: "Cross-platform development" },
+      { icon: Zap, text: "High-performance architecture" },
+      { icon: Shield, text: "Enterprise-grade security" }
     ],
     gradient: "from-orange-500 via-amber-600 to-yellow-500",
     glowColor: "orange-500/30",
@@ -62,14 +62,14 @@ export const coreServices = [
     borderGradient: "from-orange-500/20 via-amber-600/30 to-yellow-500/20"
   },
   {
-    icon: Palette,
-    title: "Product Design & UX/UI",
-    headline: "Interfaces People Love — Functional & Beautiful",
-    description: "User-centered design that converts visitors into loyal customers",
+    icon: Cloud,
+    title: "AI Infrastructure & Cloud",
+    headline: "Scalable AI Computing Power",
+    description: "Cloud-native AI infrastructure that provides the computing power, storage, and scalability needed for enterprise AI applications.",
     features: [
-      { icon: Target, text: "User research & testing" },
-      { icon: Smartphone, text: "Conversion-optimized flows" },
-      { icon: Zap, text: "Rapid prototyping" }
+      { icon: Server, text: "GPU-optimized computing" },
+      { icon: Zap, text: "Auto-scaling infrastructure" },
+      { icon: Shield, text: "Enterprise security & compliance" }
     ],
     gradient: "from-amber-400 via-orange-500 to-red-400",
     glowColor: "amber-400/30",
@@ -77,14 +77,14 @@ export const coreServices = [
     borderGradient: "from-amber-400/20 via-orange-500/30 to-red-400/20"
   },
   {
-    icon: Users,
-    title: "Tech Consulting & Support",
-    headline: "Your Tech Strategy Partners — Planning to Scale",
-    description: "Strategic guidance and ongoing support for technology decisions",
+    icon: Brain,
+    title: "AI Strategy & Consulting",
+    headline: "Your AI Transformation Partner",
+    description: "Strategic guidance on AI implementation, technology selection, and digital transformation to maximize ROI and competitive advantage.",
     features: [
-      { icon: Target, text: "Technology roadmapping" },
-      { icon: Cpu, text: "Performance optimization" },
-      { icon: Shield, text: "24/7 technical support" }
+      { icon: Target, text: "AI roadmap development" },
+      { icon: Cpu, text: "Technology assessment" },
+      { icon: Shield, text: "Change management support" }
     ],
     gradient: "from-orange-600 via-amber-500 to-orange-400",
     glowColor: "orange-600/30",
@@ -93,16 +93,16 @@ export const coreServices = [
   }
 ];
 
-export const mediaServices = [
+export const aiSpecializedServices = [
   {
-    icon: Camera,
-    title: "Enterprise Video Production",
-    headline: "Cinematic Quality — Brand Films & Corporate Documentaries",
-    description: "High-budget production with top-tier teams for industry-leading content",
+    icon: BrainCircuit,
+    title: "Large Language Model Integration",
+    headline: "Harness the Power of Advanced AI",
+    description: "Seamlessly integrate GPT, Claude, and other LLMs into your applications for enhanced natural language understanding and generation.",
     features: [
-      { icon: Award, text: "Multi-location shoot capabilities" },
-      { icon: Layers, text: "Film studio partnerships" },
-      { icon: Sparkles, text: "Cinematic advertising campaigns" }
+      { icon: Zap, text: "Multi-model integration" },
+      { icon: Shield, text: "Enterprise security compliance" },
+      { icon: Gauge, text: "Performance optimization" }
     ],
     gradient: "from-purple-500 via-pink-500 to-rose-500",
     glowColor: "purple-500/30",
@@ -110,14 +110,14 @@ export const mediaServices = [
     borderGradient: "from-purple-500/20 via-pink-500/30 to-rose-500/20"
   },
   {
-    icon: Layers,
-    title: "3D & VFX Solutions",
-    headline: "Hyper-Realistic CGI — AR/VR & Advanced Visual Effects",
-    description: "Cutting-edge 3D visualization for corporate and entertainment industries",
+    icon: Network,
+    title: "AI Agent Orchestration",
+    headline: "Coordinate Multiple AI Agents",
+    description: "Build complex systems where multiple AI agents work together, communicating and collaborating to solve sophisticated business problems.",
     features: [
-      { icon: Eye, text: "Photorealistic 3D modeling" },
-      { icon: Zap, text: "AR/VR immersive experiences" },
-      { icon: Globe, text: "Large-scale visualization projects" }
+      { icon: Users2, text: "Multi-agent coordination" },
+      { icon: Workflow, text: "Complex workflow management" },
+      { icon: Zap, text: "Real-time collaboration" }
     ],
     gradient: "from-pink-500 via-purple-600 to-indigo-500",
     glowColor: "pink-500/30",
@@ -125,14 +125,14 @@ export const mediaServices = [
     borderGradient: "from-pink-500/20 via-purple-600/30 to-indigo-500/20"
   },
   {
-    icon: Sparkles,
-    title: "AI-Powered Content Production",
-    headline: "Automated Excellence — AI-Driven Video & Digital Content",
-    description: "Revolutionary AI tools for automated editing and synthetic media creation",
+    icon: Database,
+    title: "AI Data Pipeline & Analytics",
+    headline: "Turn Data into AI Intelligence",
+    description: "End-to-end data solutions including collection, processing, training, and analytics to fuel your AI applications with quality data.",
     features: [
-      { icon: Bot, text: "AI-driven video editing" },
-      { icon: Target, text: "Generative content creation" },
-      { icon: Users, text: "AI avatars & synthetic media" }
+      { icon: BarChart3, text: "Advanced analytics & insights" },
+      { icon: RefreshCw, text: "Real-time data processing" },
+      { icon: Shield, text: "Data privacy & compliance" }
     ],
     gradient: "from-purple-600 via-indigo-500 to-blue-500",
     glowColor: "purple-600/30",
@@ -141,16 +141,16 @@ export const mediaServices = [
   }
 ];
 
-export const digitalMarketingServices = [
+export const automationServices = [
   {
-    icon: Megaphone,
-    title: "Social Media Management",
-    headline: "Strategic Social Presence — Content Planning & Community Growth",
-    description: "Comprehensive social media strategy with performance-driven results",
+    icon: Zap,
+    title: "RPA & Intelligent Automation",
+    headline: "Robotic Process Automation",
+    description: "Automate repetitive tasks with intelligent bots that can handle complex workflows, data entry, and system integrations.",
     features: [
-      { icon: Target, text: "Strategic content planning" },
-      { icon: Users, text: "Community engagement optimization" },
-      { icon: TrendingUp, text: "Analytics & performance tracking" }
+      { icon: Workflow, text: "Process mapping & optimization" },
+      { icon: Shield, text: "Audit trails & compliance" },
+      { icon: Zap, text: "Exception handling & alerts" }
     ],
     gradient: "from-blue-500 via-cyan-500 to-teal-500",
     glowColor: "blue-500/30",
@@ -158,14 +158,14 @@ export const digitalMarketingServices = [
     borderGradient: "from-blue-500/20 via-cyan-500/30 to-teal-500/20"
   },
   {
-    icon: Palette,
-    title: "Content Creation & Strategy",
-    headline: "Visual Storytelling — Photography, Design & Trending Content",
-    description: "Professional content creation that captures attention and drives engagement",
+    icon: Command,
+    title: "API Integration & Automation",
+    headline: "Connect & Automate Everything",
+    description: "Seamlessly integrate your existing systems and third-party services with custom APIs and automated workflows.",
     features: [
-      { icon: Camera, text: "Professional photography & videography" },
-      { icon: Sparkles, text: "Graphic design & visual content" },
-      { icon: TrendingUp, text: "Trending content research" }
+      { icon: Network, text: "Multi-system integration" },
+      { icon: Zap, text: "Real-time synchronization" },
+      { icon: Shield, text: "Secure data transmission" }
     ],
     gradient: "from-cyan-500 via-blue-600 to-indigo-500",
     glowColor: "cyan-500/30",
@@ -173,14 +173,14 @@ export const digitalMarketingServices = [
     borderGradient: "from-cyan-500/20 via-blue-600/30 to-indigo-500/20"
   },
   {
-    icon: Award,
-    title: "Brand Development",
-    headline: "Complete Brand Identity — From Concept to Market Leadership",
-    description: "Strategic brand development with influencer partnerships and market positioning",
+    icon: Monitor,
+    title: "AI-Powered Monitoring & Alerting",
+    headline: "Proactive System Intelligence",
+    description: "Intelligent monitoring systems that use AI to detect anomalies, predict issues, and automatically respond to system events.",
     features: [
-      { icon: Lightbulb, text: "Comprehensive brand identity" },
-      { icon: Globe, text: "Social media optimization" },
-      { icon: Users, text: "Influencer collaboration management" }
+      { icon: Eye, text: "Anomaly detection" },
+      { icon: Zap, text: "Predictive maintenance" },
+      { icon: AlertTriangle, text: "Smart alerting & escalation" }
     ],
     gradient: "from-blue-600 via-indigo-500 to-purple-500",
     glowColor: "blue-600/30",
@@ -189,16 +189,16 @@ export const digitalMarketingServices = [
   }
 ];
 
-export const additionalServices = [
+export const enterpriseSolutions = [
   {
-    icon: Bot,
-    title: "AI Solutions Hub",
-    headline: "Custom AI Agents — Automation Tools & System Integration",
-    description: "Bespoke AI solutions designed to integrate seamlessly with your existing systems",
+    icon: Building,
+    title: "Enterprise AI Platforms",
+    headline: "Scalable AI for Large Organizations",
+    description: "Comprehensive AI platforms designed for enterprise-scale deployment with advanced security, compliance, and governance features.",
     features: [
-      { icon: Settings, text: "Custom AI agent development" },
-      { icon: Zap, text: "System integration services" },
-      { icon: TrendingUp, text: "Performance optimization & scaling" }
+      { icon: Shield, text: "Enterprise security & compliance" },
+      { icon: Users, text: "Role-based access control" },
+      { icon: Zap, text: "High availability & scalability" }
     ],
     gradient: "from-green-500 via-emerald-500 to-teal-500",
     glowColor: "green-500/30",
@@ -206,14 +206,14 @@ export const additionalServices = [
     borderGradient: "from-green-500/20 via-emerald-500/30 to-teal-500/20"
   },
   {
-    icon: Code,
-    title: "Dev Market Solutions",
-    headline: "Ready-to-Deploy — Templates, Components & Development Resources",
-    description: "Professional development resources and ready-to-use software solutions",
+    icon: Rocket,
+    title: "AI Transformation Services",
+    headline: "Complete Digital Transformation",
+    description: "End-to-end services to help your organization adopt AI technologies, from strategy to implementation and ongoing support.",
     features: [
-      { icon: Layers, text: "Ready-to-use software components" },
-      { icon: Palette, text: "Custom landing page templates" },
-      { icon: Briefcase, text: "Professional development tools" }
+      { icon: Target, text: "Transformation roadmap" },
+      { icon: Users, text: "Change management" },
+      { icon: Zap, text: "Ongoing optimization" }
     ],
     gradient: "from-emerald-500 via-green-600 to-lime-500",
     glowColor: "emerald-500/30",
@@ -221,14 +221,14 @@ export const additionalServices = [
     borderGradient: "from-emerald-500/20 via-green-600/30 to-lime-500/20"
   },
   {
-    icon: Briefcase,
-    title: "Premium Business Solutions",
-    headline: "Enterprise Services — Presentations, Partnerships & Collaboration",
-    description: "High-end business solutions including corporate presentations and partnership opportunities",
+    icon: Globe2,
+    title: "AI Training & Support",
+    headline: "Empower Your Team",
+    description: "Comprehensive training programs and ongoing support to ensure your team can effectively use and maintain AI solutions.",
     features: [
-      { icon: Award, text: "High-end corporate presentations" },
-      { icon: Users, text: "Influencer-brand matching platform" },
-      { icon: Globe, text: "Enterprise collaboration opportunities" }
+      { icon: Users, text: "Custom training programs" },
+      { icon: BookOpen, text: "Documentation & resources" },
+      { icon: Headphones, text: "24/7 technical support" }
     ],
     gradient: "from-green-600 via-teal-500 to-cyan-500",
     glowColor: "green-600/30",
@@ -240,29 +240,29 @@ export const additionalServices = [
 export const categories = [
   { 
     id: 'core', 
-    name: 'Core Tech Services', 
+    name: 'AI & Automation Core', 
     services: coreServices, 
     color: 'orange',
     gradient: 'from-orange-500 to-amber-500'
   },
   { 
-    id: 'media', 
-    name: 'Media & Production', 
-    services: mediaServices, 
+    id: 'ai-specialized', 
+    name: 'AI Specialized Services', 
+    services: aiSpecializedServices, 
     color: 'purple',
     gradient: 'from-purple-500 to-pink-500'
   },
   { 
-    id: 'marketing', 
-    name: 'Digital Marketing', 
-    services: digitalMarketingServices, 
+    id: 'automation', 
+    name: 'Process Automation', 
+    services: automationServices, 
     color: 'blue',
     gradient: 'from-blue-500 to-cyan-500'
   },
   { 
-    id: 'additional', 
-    name: 'Additional Services', 
-    services: additionalServices, 
+    id: 'enterprise', 
+    name: 'Enterprise Solutions', 
+    services: enterpriseSolutions, 
     color: 'green',
     gradient: 'from-green-500 to-emerald-500'
   }

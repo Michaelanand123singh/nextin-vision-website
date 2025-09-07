@@ -1,58 +1,54 @@
 import React from 'react';
 import {
-  Handshake,
-  Target,
-  MessageCircle,
-  Package,
+  Bot,
+  Brain,
+  Zap,
+  Shield,
 } from 'lucide-react';
 
 const WhyChooseUs = () => {
   const benefits = [
     {
-      icon: Handshake,
-      text: 'Long-Term Collaboration',
-      description: 'We build lasting partnerships, not just projects.',
-      color: 'from-blue-500 to-blue-600',
+      icon: Bot,
+      text: 'Autonomous AI Agents',
+      description: 'AI that works 24/7 without human intervention, learning and improving continuously.',
+      color: 'from-orange-500 to-orange-600',
     },
     {
-      icon: Target,
-      text: 'Business-Focused Development',
-      description: 'Every line of code serves your strategic goals.',
-      color: 'from-green-500 to-green-600',
-    },
-    {
-      icon: MessageCircle,
-      text: 'Transparent Communication',
-      description: 'Clear updates and honest dialogue throughout.',
+      icon: Brain,
+      text: 'Intelligent Decision Making',
+      description: 'AI agents that understand context and make smart decisions in real-time.',
       color: 'from-purple-500 to-purple-600',
     },
     {
-      icon: Package,
-      text: 'Full Lifecycle Support',
-      description: 'From concept to scale, we grow with you.',
-      color: 'from-orange-500 to-orange-600',
+      icon: Zap,
+      text: 'Lightning-Fast Automation',
+      description: 'Process thousands of tasks in seconds with intelligent automation workflows.',
+      color: 'from-blue-500 to-blue-600',
+    },
+    {
+      icon: Shield,
+      text: 'Enterprise-Grade Security',
+      description: 'Bank-level security with AI-powered threat detection and compliance.',
+      color: 'from-green-500 to-green-600',
     },
   ];
 
   return (
-    <section className="py-24 lg:py-32 bg-gray-900 relative overflow-hidden">
-      {/* Subtle Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+    <section className="relative overflow-hidden">
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-6 lg:px-8 relative z-10 py-24 lg:py-32">
         <div className="max-w-5xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-20">
             <h2 className="text-4xl lg:text-5xl font-light text-white mb-6 leading-tight tracking-tight">
-              Why Teams Choose{' '}
+              Why Choose Our{' '}
               <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent font-medium">
-                NEXTIN VISION
+                AI Solutions
               </span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
-              Your technology partner for sustainable growth
+              Your AI partner for intelligent automation and business transformation
             </p>
           </div>
 
@@ -82,21 +78,21 @@ const WhyChooseUs = () => {
             ))}
           </div>
 
-          {/* Trust Indicators */}
+          {/* AI Performance Indicators */}
           <div className="flex justify-center items-center space-x-12 p-8 bg-gradient-to-r from-gray-800/10 to-gray-900/10 backdrop-blur-sm border border-gray-700/20 rounded-2xl max-w-3xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-light text-orange-400 mb-2">95%</div>
-              <div className="text-gray-400 text-sm font-light tracking-wide">Client Retention</div>
+              <div className="text-3xl font-light text-orange-400 mb-2">99.9%</div>
+              <div className="text-gray-400 text-sm font-light tracking-wide">AI Accuracy</div>
             </div>
             <div className="w-px h-12 bg-gray-700/50"></div>
             <div className="text-center">
-              <div className="text-3xl font-light text-orange-400 mb-2">4.9★</div>
-              <div className="text-gray-400 text-sm font-light tracking-wide">Average Rating</div>
+              <div className="text-3xl font-light text-orange-400 mb-2">24/7</div>
+              <div className="text-gray-400 text-sm font-light tracking-wide">AI Operations</div>
             </div>
             <div className="w-px h-12 bg-gray-700/50"></div>
             <div className="text-center">
-              <div className="text-3xl font-light text-orange-400 mb-2">3+ Years</div>
-              <div className="text-gray-400 text-sm font-light tracking-wide">Partnership</div>
+              <div className="text-3xl font-light text-orange-400 mb-2">85%</div>
+              <div className="text-gray-400 text-sm font-light tracking-wide">Efficiency Gain</div>
             </div>
           </div>
         </div>

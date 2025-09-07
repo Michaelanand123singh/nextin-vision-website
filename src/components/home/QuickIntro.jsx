@@ -166,10 +166,10 @@ const QuickIntro = () => {
   const sectionRef = useRef(null);
 
   const features = [
-    'Software Solutions',
-    'AI Integration',
-    'Cloud Architecture',
-    'Digital Transformation'
+    'AI Agents',
+    'Process Automation',
+    'Intelligent Chatbots',
+    'Smart Workflows'
   ];
 
   useEffect(() => {
@@ -211,39 +211,28 @@ const QuickIntro = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-32 lg:py-40 bg-gradient-to-b from-black via-slate-950 to-gray-900 relative overflow-hidden">
-      {/* Minimal Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-orange-500/5 to-amber-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-to-l from-orange-400/3 to-red-500/3 rounded-full blur-3xl"></div>
-        
-        {/* Subtle Grid */}
-        <div className="absolute inset-0 opacity-[0.01]" style={{
-          backgroundImage: `radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '80px 80px'
-        }}></div>
-      </div>
+    <section ref={sectionRef} className="relative overflow-hidden">
 
-      <div className="container mx-auto px-8 lg:px-12 relative z-10">
+      <div className="container mx-auto px-8 lg:px-12 relative z-10 py-32 lg:py-40">
         <div className="max-w-7xl mx-auto">
           {/* Refined Header Section */}
           <div className={`text-center mb-24 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {/* Minimal Badge */}
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-10">
-              <Code className="w-3.5 h-3.5 text-orange-400 mr-2" />
-              <span className="text-white/70 text-sm font-medium">Enterprise Solutions</span>
+              <Bot className="w-3.5 h-3.5 text-orange-400 mr-2" />
+              <span className="text-white/70 text-sm font-medium">AI-Powered Solutions</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-light text-white mb-8 leading-[1.1] tracking-tight">
-              Premium
+              Intelligent
               <br />
-              <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent bg-300% animate-gradient-shift block font-normal">
+              <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent bg-300 animate-gradient-shift block font-normal">
                 {features[currentFeature]}
               </span>
             </h2>
             
             <p className="text-lg lg:text-xl text-white/60 leading-relaxed mb-16 font-light max-w-3xl mx-auto">
-              We craft exceptional software experiences that transform businesses and elevate digital presence through thoughtful design and innovative technology.
+              We build AI-powered solutions that work autonomously, learn continuously, and deliver measurable business results through intelligent automation and smart workflows.
             </p>
           </div>
 
@@ -262,10 +251,10 @@ const QuickIntro = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium text-white mb-3">Latest Project</h3>
+                      <h3 className="text-lg font-medium text-white mb-3">AI Agent Deployment</h3>
                       <p className="text-white/70 mb-6 leading-relaxed text-sm">
-                        Delivered a comprehensive fintech platform processing 
-                        <span className="text-orange-400 font-medium"> $50M+ monthly</span> with exceptional reliability.
+                        Deployed intelligent AI agents handling 
+                        <span className="text-orange-400 font-medium"> 10,000+ daily tasks</span> with 99.9% accuracy and zero human intervention.
                       </p>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="flex items-center text-sm text-green-400">
@@ -274,7 +263,7 @@ const QuickIntro = () => {
                         </div>
                         <div className="flex items-center text-sm text-blue-400">
                           <Zap className="w-4 h-4 mr-2" />
-                          <span>40% savings</span>
+                          <span>85% efficiency</span>
                         </div>
                       </div>
                     </div>
@@ -400,21 +389,6 @@ const QuickIntro = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes gradient-shift {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-        
-        .animate-gradient-shift {
-          animation: gradient-shift 4s ease-in-out infinite;
-        }
-        
-        .bg-300% {
-          background-size: 300% 300%;
-        }
-      `}</style>
     </section>
   );
 };

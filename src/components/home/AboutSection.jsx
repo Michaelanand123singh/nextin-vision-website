@@ -39,22 +39,10 @@ const AboutSection = () => {
   return (
     <section 
       id="about-section"
-      className="relative py-24 lg:py-32 bg-gradient-to-br from-black via-gray-900 to-slate-950 overflow-hidden"
+      className="relative overflow-hidden"
     >
-      {/* Background Effects - Consistent with Hero */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-500/5 via-transparent to-amber-500/5"></div>
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/10 to-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-gradient-to-l from-orange-400/8 to-red-500/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        
-        {/* Grid Pattern - Same as Hero */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '100px 100px'
-        }}></div>
-      </div>
       
-      <div className="relative container mx-auto px-8 lg:px-12 max-w-6xl">
+      <div className="relative container mx-auto px-8 lg:px-12 max-w-6xl py-24 lg:py-32">
         {/* Header - More Refined */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className={`inline-flex items-center px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-500/8 to-amber-500/8 border border-orange-500/15 backdrop-blur-sm mb-8 ${fadeClass()}`}>

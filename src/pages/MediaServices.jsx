@@ -42,7 +42,7 @@ const MediaServices = () => {
   ];
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-gradient-to-br from-black via-gray-900 to-slate-950 min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center">
         <div className="absolute inset-0 bg-gradient-to-b from-amber-900/10 to-black" />

@@ -134,7 +134,7 @@ const OnlineOdyssey = () => {
   );
 
   return (
-    <div className="bg-gray-950 min-h-screen">
+    <div className="bg-gradient-to-br from-black via-gray-900 to-slate-950 min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center py-16">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-transparent to-transparent" />

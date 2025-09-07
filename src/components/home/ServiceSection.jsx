@@ -340,22 +340,10 @@ const ServicesSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative py-20 bg-gradient-to-br from-black via-slate-950 to-gray-900 overflow-hidden"
+      className="relative overflow-hidden"
     >
-      {/* Background Effects - Matching HeroSection theme */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-500/5 via-transparent to-amber-500/5"></div>
-        <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-orange-500/8 to-amber-500/8 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-to-l from-orange-400/6 to-red-500/6 rounded-full blur-3xl animate-pulse delay-2000"></div>
-        
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '80px 80px'
-        }}></div>
-      </div>
 
-      <div className="relative container mx-auto px-6 lg:px-8 max-w-6xl z-10">
+      <div className="relative container mx-auto px-6 lg:px-8 max-w-6xl z-10 py-20">
         {/* Header - Compact and Premium */}
         <div className="text-center max-w-4xl mx-auto mb-16">
           <div className={`inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-orange-500/10 to-amber-500/10 border border-orange-500/20 backdrop-blur-sm mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
@@ -364,15 +352,15 @@ const ServicesSection = () => {
           </div>
           
           <h2 className={`text-4xl lg:text-5xl font-bold mb-6 leading-tight tracking-tight transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="block text-white mb-2 font-light">We Don't Just Build.</span>
-            <span className="block bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent bg-300% animate-gradient-shift font-bold">
-              We Automate Everything
+            <span className="block text-white mb-2 font-light">We Don't Just Build Software.</span>
+            <span className="block bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent bg-300 animate-gradient-shift font-bold">
+              We Build AI Agents
             </span>
           </h2>
           
           <div className={`max-w-3xl mx-auto transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
             <p className="text-lg text-gray-300/90 leading-relaxed font-light mb-4">
-              Transform your business with intelligent automation systems that deliver measurable ROI through seamless technology integration.
+              Deploy AI agents that work 24/7, automate complex processes, and deliver measurable ROI through intelligent automation and smart decision-making.
             </p>
             
             <div className="flex items-center justify-center gap-6 text-sm text-gray-400/80">
@@ -440,30 +428,6 @@ const ServicesSection = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes gradient-shift {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-        
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateX(10px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-        
-        .animate-gradient-shift {
-          animation: gradient-shift 4s ease-in-out infinite;
-        }
-        
-        .animate-fadeIn {
-          animation: fadeIn 0.5s ease-out;
-        }
-        
-        .bg-300% {
-          background-size: 300% 300%;
-        }
-      `}</style>
     </section>
   );
 };

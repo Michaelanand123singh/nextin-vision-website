@@ -225,7 +225,7 @@ const PhilosophySection = () => {
           {/* Main Heading */}
           <h2 className="text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-4">
             <span className="block mb-3 font-light text-gray-200">We Don't Just Build.</span>
-            <span className="block bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent transition-all duration-1000 bg-300% animate-gradient-shift relative font-bold">
+            <span className="block bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent transition-all duration-1000 bg-300 animate-gradient-shift relative font-bold">
               We {texts[currentText]}
               <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 to-amber-500 rounded-full transform scale-x-0 animate-expand origin-left"></div>
             </span>
@@ -350,30 +350,6 @@ const PhilosophySection = () => {
         </div>
 
       </div>
-
-      <style jsx>{`
-        @keyframes gradient-shift {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-        
-        @keyframes expand {
-          0% { transform: scaleX(0); }
-          100% { transform: scaleX(1); }
-        }
-        
-        .animate-gradient-shift {
-          animation: gradient-shift 4s ease-in-out infinite;
-        }
-        
-        .animate-expand {
-          animation: expand 1s ease-out 0.8s forwards;
-        }
-        
-        .bg-300% {
-          background-size: 300% 300%;
-        }
-      `}</style>
     </section>
   );
 };

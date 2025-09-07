@@ -4,12 +4,12 @@ import {
   Play, X, Code, Globe, ExternalLink, Monitor, Smartphone, 
   Cloud, Database, Search, BarChart3, Target, TrendingUp,
   Palette, Settings, Award, Clock, Users, Star, Terminal,
-  Cpu, User, LineChartIcon, DollarSign
+  Cpu, User, LineChartIcon, DollarSign, Bot
 } from 'lucide-react';
 
 // Import data files
 import { developmentData, developmentCategories, techData } from '../data/techdata';
-import { marketingData, marketingCategories, digitalMarketingData } from '../data/digitalMarketingdata';
+import { aiAgentsData, aiCategories, aiServiceCategories } from '../data/aiAgentsData';
 
 // Portfolio data structure
 const portfolioData = {
@@ -18,10 +18,10 @@ const portfolioData = {
     stats: techData.stats,
     categories: developmentCategories
   },
-  marketing: {
-    items: marketingData,
-    stats: digitalMarketingData.stats,
-    categories: marketingCategories
+  aiAgents: {
+    items: aiAgentsData.items,
+    stats: aiAgentsData.stats,
+    categories: aiCategories
   }
 };
 
@@ -32,16 +32,16 @@ const serviceCategories = {
     title: 'IT Development',
     categories: developmentCategories
   },
-  marketing: {
-    icon: Target,
-    color: 'amber-500',
-    title: 'Digital Marketing',
-    categories: marketingCategories
+  aiAgents: {
+    icon: Bot,
+    color: 'purple-500',
+    title: 'AI Agents & Automation',
+    categories: aiCategories
   }
 };
 
 const Portfolio = () => {
-  const [activeService, setActiveService] = useState('development');
+  const [activeService, setActiveService] = useState('aiAgents');
   const [activeCategory, setActiveCategory] = useState('All');
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -78,7 +78,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-black overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-slate-950 overflow-hidden">
       {/* Enhanced Animated Background Effects */}
       <div className="fixed inset-0">
         {/* Primary moving gradient orbs */}
@@ -211,7 +211,7 @@ const Portfolio = () => {
               backgroundSize: '200% 100%',
             }}
           >
-            Our Portfolio
+            AI-Powered Solutions Portfolio
           </motion.h1>
           <motion.p 
             className="text-lg text-gray-300/85 max-w-2xl mx-auto leading-relaxed font-light"
@@ -219,7 +219,7 @@ const Portfolio = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Discover our expertise in cutting-edge solutions and results-driven strategies
+            Explore our innovative AI agents, intelligent automation, and cutting-edge software solutions that transform businesses
           </motion.p>
         </motion.div>
 
@@ -563,6 +563,29 @@ const Portfolio = () => {
                       )}
                     </div>
 
+                    {/* AI Features for AI Agents projects */}
+                    {activeService === 'aiAgents' && item.aiFeatures && (
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Bot className="w-4 h-4 text-purple-400" />
+                          <span className="text-xs font-medium text-purple-400">AI Features</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1">
+                          {item.aiFeatures.slice(0, 2).map((feature, featureIndex) => (
+                            <motion.span
+                              key={featureIndex}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: 0.4 + featureIndex * 0.1 }}
+                              className="px-2 py-1 text-xs rounded-md bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 border border-purple-500/30 backdrop-blur-sm"
+                            >
+                              {feature}
+                            </motion.span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     {/* Enhanced Metrics Preview */}
                     {item.metrics && (
                       <motion.div 
@@ -820,6 +843,51 @@ const Portfolio = () => {
                       </motion.div>
                     )}
 
+                    {/* AI Features for AI Agents projects */}
+                    {activeService === 'aiAgents' && selectedItem.aiFeatures && (
+                      <motion.div 
+                        className="bg-gradient-to-br from-purple-800/60 to-pink-900/60 backdrop-blur-xl p-6 rounded-2xl border border-purple-700/50 relative overflow-hidden"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.8 }}
+                        whileHover={{ 
+                          borderColor: 'rgba(168, 85, 247, 0.3)',
+                          boxShadow: '0 10px 30px rgba(168, 85, 247, 0.1)'
+                        }}
+                      >
+                        <h4 className="text-white font-bold mb-4 flex items-center gap-3 relative z-10">
+                          <motion.div
+                            animate={{ 
+                              scale: [1, 1.1, 1],
+                              rotate: [0, 5, -5, 0]
+                            }}
+                            transition={{ 
+                              duration: 3,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }}
+                          >
+                            <Bot className="w-5 h-5 text-purple-400" />
+                          </motion.div>
+                          AI Features
+                        </h4>
+                        <div className="flex flex-wrap gap-3 relative z-10">
+                          {selectedItem.aiFeatures.map((feature, index) => (
+                            <motion.span
+                              key={index}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: 0.9 + index * 0.1 }}
+                              whileHover={{ scale: 1.05 }}
+                              className="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 border border-purple-500/30 font-medium text-sm backdrop-blur-sm"
+                            >
+                              {feature}
+                            </motion.span>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+
                     {/* Metrics */}
                     {selectedItem.metrics && (
                       <motion.div 
@@ -890,6 +958,35 @@ const Portfolio = () => {
                       </motion.div>
                     )}
                   </div>
+
+                  {/* Credentials for AI projects */}
+                  {activeService === 'aiAgents' && selectedItem.credentials && (
+                    <motion.div 
+                      className="mt-6 bg-gradient-to-br from-blue-800/60 to-cyan-900/60 backdrop-blur-xl p-6 rounded-2xl border border-blue-700/50 relative overflow-hidden"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.9 }}
+                    >
+                      <h4 className="text-white font-bold mb-4 flex items-center gap-3">
+                        <Shield className="w-5 h-5 text-blue-400" />
+                        Demo Credentials
+                      </h4>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <span className="text-blue-300 font-medium w-20">Email:</span>
+                          <code className="bg-gray-800/50 px-3 py-1 rounded text-blue-200 text-sm">
+                            {selectedItem.credentials.email}
+                          </code>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="text-blue-300 font-medium w-20">Password:</span>
+                          <code className="bg-gray-800/50 px-3 py-1 rounded text-blue-200 text-sm">
+                            {selectedItem.credentials.password}
+                          </code>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
 
                   {/* Enhanced Action Button */}
                   {selectedItem.url && (

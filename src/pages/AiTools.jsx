@@ -140,7 +140,7 @@ const AIToolsPage = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-slate-950 text-white overflow-hidden">
       {/* Subtle Background */}
       <div className="absolute inset-0 bg-black">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-900/10 via-black to-orange-800/5"></div>

@@ -95,7 +95,7 @@ const FeaturedProjects = () => {
           
           <h2 className={`text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-6 leading-[0.9] tracking-tight transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <span className="block text-white mb-2">Work That Speaks</span>
-            <span className="block bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent bg-300% animate-gradient-shift">
+            <span className="block bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent bg-300 animate-gradient-shift">
               for Itself
             </span>
           </h2>
@@ -228,21 +228,6 @@ const FeaturedProjects = () => {
 
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/80 to-transparent"></div>
-      
-      <style jsx>{`
-        @keyframes gradient-shift {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-        
-        .animate-gradient-shift {
-          animation: gradient-shift 4s ease-in-out infinite;
-        }
-        
-        .bg-300% {
-          background-size: 300% 300%;
-        }
-      `}</style>
     </section>
   );
 };

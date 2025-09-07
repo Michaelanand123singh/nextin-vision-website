@@ -1,4 +1,6 @@
 /* styles/index.css */
+@import './styles/animation.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -170,7 +170,7 @@ const Career = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-black overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-slate-950 overflow-hidden">
       {/* Enhanced Animated Background Effects */}
       <div className="fixed inset-0">
         <motion.div

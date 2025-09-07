@@ -19,16 +19,16 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-gradient-to-br from-black via-gray-900 to-slate-950 overflow-hidden">
-      {/* Subtle Background Effects */}
+      {/* Background Effects - Same as main page */}
       <div className="absolute inset-0">
-        {/* Refined glow effects */}
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-to-r from-orange-500/4 to-amber-500/4 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-gradient-to-l from-amber-400/3 to-orange-500/3 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-500/5 via-transparent to-amber-500/5"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/10 to-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-orange-400/8 to-red-500/8 rounded-full blur-3xl animate-pulse delay-2000"></div>
         
-        {/* Minimal grid pattern */}
-        <div className="absolute inset-0 opacity-[0.005]" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, orange 1px, transparent 0)`,
-          backgroundSize: '80px 80px'
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '100px 100px'
         }}></div>
       </div>
 

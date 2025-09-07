@@ -78,8 +78,9 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-16 bg-black">
-      <div className="container mx-auto px-6">
+    <section className="relative overflow-hidden">
+      
+      <div className="container mx-auto px-6 relative z-10 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             What Our{' '}
@@ -177,13 +178,6 @@ const TestimonialsSection = () => {
           </div>
         </div>
       </div>
-      
-      {/* Custom CSS to hide scrollbar */}
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </section>
   );
 };
